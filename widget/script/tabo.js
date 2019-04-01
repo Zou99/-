@@ -5,11 +5,16 @@ $(function() {
 
 
   $(".zzq_shop_lef").click(function() {
-    //   $(".zzq_shp_car_check::after").css('content'," ");
-    // $(".zzq_shp_car_check::before").css('content'," ");
     $(".zzq_shp_car_check").toggleClass("zzq_sh_chek_col");
     $(".zzq_sho_fig_fix").toggle();
   })
+
+  // 复选框的选择单独的框时候的点击事件
+$(".zzq_car_checking").click(function(){
+    $(this).toggleClass("zzq_sh_chek_col");
+    $(this).parents('.aui-list').siblings().find('.zzq_car_checking').toggleClass("zzq_sh_chek_col");
+})
+
 
   $("#search-input").on('keyup focus', function() {
 
@@ -40,7 +45,29 @@ $(function() {
 
     function currentFun(index) {}
 
-
+    // 购物车页面的按钮加减按钮
+    $('.zzq_car_btn_r').click(function() {
+            $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) + 1);
+            if ($(".zzq_car_btn_num").html() > 1) {
+                $('.aui-icon-minus').show();
+            } else {
+                $('.aui-icon-minus').hide();
+            }
+            var i = $(".Price_tit").html();
+            var n = $(".zzq_car_btn_num").html();
+            $(".Price_foot").html(i * n);
+        });
+        $(".zzq_car_btn_l").click(function() {
+            $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) - 1);
+            if ($(".zzq_car_btn_num").html() == 1) {
+                $('.aui-icon-minus').hide();
+            } else {
+                $('.aui-icon-minus').show();
+            }
+            var i = $(".Price_tit").html();
+            var n = $(".add_num").html();
+            $(".Price_foot").html(i * n);
+        });
 
 
 });
