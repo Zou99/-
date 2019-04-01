@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/aui-slide.css" />
+    <link rel="stylesheet" href="../css/tabo.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_gd8po82zgzc.css">
+    <style media="screen">
+        html,
+        body {
+            height: 100%;
+        }
+
+        .flex-1 {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            padding-top: 68px;
+        }
+
+        .wrap {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
+        }
+
+        header {
+            height: 44px;
+            width: 100%;
+            text-align: center;
+            /*background-color: #81a9c3;*/
+            color: #fff;
+            line-height: 44px;
+            font-size: 20px;
+            background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+            position: fixed;
+        }
+
+        footer {
+            height: 30px;
+            width: 100%;
+            background-color: #81a9c3;
+            color: white;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .aui-row {
+            width: 100%;
+        }
+
+        .aui-active>i {
+            color: #FF5511;
+        }
+
+        .aui-active>.aui-bar-tab-label {
+            color: #df6019;
+        }
+
+        .zzq_shopcar_all {
+            color: #7a7a7a;
+            display: inline-block;
+            font-size: 14px;
+        }
+
+        .zzq_shp_car_check::after {
+            content: '';
+            width: 0.5rem;
+            height: 0.3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -0.25rem;
+            margin-top: -0.25rem;
+            background: transparent;
+            border: 1px solid #ffffff;
+            border-top: none;
+            border-right: none;
+            z-index: 2;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+            -webkit-transform: rotate(-45deg);
+            /* transform: rotate(-45deg); */
+        }
+
+        .zzq_shp_car_check {
+            border-radius: 50%;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-color: #ffffff;
+            border: solid 1px #dddddd;
+            -webkit-border-radius: 0.6rem;
+            border-radius: 0.6rem;
+            font-size: 0.8rem;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            cursor: default;
+            -webkit-appearance: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-transition: background-color ease 0.1s;
+            transition: background-color ease 0.1s;
+        }
+
+        .zzq_sh_chek_col {
+            background-color: #ff5400!important;
+            border: solid 1px #ff5400!important;
+        }
+
+        .zzq_shopp_tras {
+            font-size: 14px;
+        }
+
+        .zzq_shop_quan {
+            width: 100%;
+            text-align: right;
+            padding-right: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" style="position:fixed;">
+        <div class="aui-pull-left aui-btn">
+            <!-- <span class="iconfont icon-saoma"></span> -->
+        </div>
+        <div class="aui-title" style="left:2rem; right: 2rem;">
+            <div class="zzq_shop_head">
+                购物车<span>(<span>2</span>)</span>
+            </div>
+        </div>
+        <div class="aui-pull-right aui-btn zzq_shop_head">
+            <span>管理</span>
+        </div>
+    </header>
+
+    <section class="flex-1">
+      <div class="zzq_shop_main">
+
+        <div class="aui-list">
+            <div class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-row">
+                        <div class="aui-col-xs-2">
+                            <input class="zzq_shp_car_check" type="checkbox" name="demo1" checked="">
+                        </div>
+                        <div class="aui-col-xs-10">
+                            <div class="zzq_shopp_head_dian">
+                                <i class="iconfont icon-shangpu" style="color:#c9c9c9;"></i><span class="zzq_shopp_tras">天涯の动漫</span><i class="iconfont icon-icon-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="aui-list-item-label">
+                    <div class="zzq_shop_quan">
+                        领券
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 订单中的商品的样 -->
+        <div class="aui-row">
+          <div class="aui-col-xs-5 zzq_shop_mile_img">
+            <div class="aui-row">
+            <div class="aui-col-xs-6">
+              <input class="zzq_shp_car_check" type="checkbox" name="demo1" checked="">
+            </div>
+            <div class="aui-col-xs-6">
+              <img src="../image/list/saya.jpg" alt="">
+            </div>
+            </div>
+          </div>
+          <div class="aui-col-xs-7"></div>
+        </div>
+
+  </div>
+    </section>
+
+
+    <!-- 结算 -->
+    <div class="aui-list zzq_foot_list_shop">
+        <div class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-row" style="width:100%;">
+                    <div class="aui-col-xs-4 zzq_shop_lef">
+                        <input class="zzq_shp_car_check" type="checkbox" name="demo1" checked="">
+                        <div class="zzq_shopcar_all">
+                            全选
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-8">
+                        <div class="zzq_sho_car_rig">
+                            <span class="zzq_sho_fig_fix">不含运费</span><span class="zzq_sho_fig_fix_two">合计:</span>
+                            <div class="zzq_sho_fig_txt">
+                                <i class="iconfont icon-qian" style="font-size:10px;"></i><span style="padding:0 5px;font-size: 14px;">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="aui-list-item-label">
+                <div class="zzq_shop_car_mon">
+                    结算(<span>0</span>)
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="aui-bar aui-bar-tab">
+        <!-- 底部栏 -->
+        <div class="aui-bar-tab-item" tapmode onclick="closhop()">
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-star"></i>
+            <div class="aui-bar-tab-label">分类</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <i class="aui-iconfont aui-icon-comment"></i>
+            <div class="aui-bar-tab-label">通知</div>
+        </div>
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <div class="aui-badge">99</div>
+            <i class="aui-iconfont aui-icon-cart"></i>
+            <div class="aui-bar-tab-label">购物车</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode>
+            <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-my"></i>
+            <div class="aui-bar-tab-label">个人中心</div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/tabo.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var header = $api.dom('header'); // 获取 header 标签元素
+        var footer = $api.dom('footer'); // 获取 footer 标签元素
+        // 1.修复开启沉浸式效果带来的顶部Header与手机状态栏重合的问题，最新api.js方法已支持适配iPhoneX；
+        // 2.默认已开启了沉浸式效果 config.xml中 <preference name="statusBarAppearance" value="true"/>
+        // 3.沉浸式效果适配支持iOS7+，Android4.4+以上版本
+        var headerH = $api.fixStatusBar(header);
+        // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
+        var footerH = $api.fixTabBar(footer);
+    };
+
+    function closhop() {
+        api.closeWin({
+            name: 'shop'
+        });
+
+    }
+</script>
+
+</html>

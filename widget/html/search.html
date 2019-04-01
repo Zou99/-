@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>search</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/aui-slide.css" />
+    <link rel="stylesheet" href="../css/tabo.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_7w15vhdx4yq.css">
+    <style media="screen">
+        .aui-bar-nav,
+        .aui-searchbar {
+            background-color: #f9f9f9;
+        }
+
+        .icon-zuo1 {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .zzq_head_sec {
+            background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+            border-radius: 10px;
+            font-size: 14px;
+            color: #fff;
+            padding: 0 10px;
+        }
+
+        .zzq_sea_all {
+            background-color: #f9f9f9;
+        }
+
+        .aui-tab-item.aui-active {
+            color: #ff4a00;
+            border-bottom: 2px solid #ff4a00;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav">
+        <div class="aui-pull-left aui-btn" style="padding:0 1rem;">
+            <span class="iconfont icon-zuo1" onclick="cle()"></span>
+        </div>
+        <div class="aui-title" style="left:2rem; right: 2rem;width:75%;">
+            <div class="aui-searchbar">
+                <div class="aui-searchbar-input aui-border-radius">
+                    <!-- <i class="aui-iconfont aui-icon-search"></i> -->
+                    <input type="search" placeholder="请输入你要的宝贝" id="search-input">
+                    <div class="aui-searchbar-clear-btn">
+                        <i class="aui-iconfont aui-icon-close"></i>
+                    </div>
+                </div>
+                <div class="aui-searchbar-btn" tapmode>取消</div>
+            </div>
+        </div>
+        <div class="aui-pull-right aui-btn" style="padding:0 5px;line-height:2.1;">
+            <div class="zzq_head_sec" onclick="list()">
+                搜索
+            </div>
+        </div>
+    </header>
+
+    <section>
+
+        <div class="aui-tab aui-border-b" id="tab" style="background-color:#f9f9f9;">
+            <div class="aui-tab-item aui-active">全部</div>
+            <div class="aui-tab-item">爱买</div>
+            <div class="aui-tab-item">店铺</div>
+        </div>
+        <div class="aui-padded-5 " id="tab1-con" style="background-color:#fff;">
+            <div id="tab1-con1">
+              <div class="zzq_sec_lis_new" style="width:100%;">
+                <div class="aui-list" style="background-image:none;">
+                    <div class="aui-list-item" style="background-image:none;">
+                        <div class="aui-list-item-inner">
+                            <div class="zzq_sec_lis_txt">
+                                历史记录
+                            </div>
+                        </div>
+                        <div class="aui-list-item-label">
+                            <div class="zzq_sear_lis_rig">
+                                <i class="iconfont icon-shanchu"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 这里放置的是历史记录搜索的印记 -->
+                <div class="aui-row" style="margin-bottom:20px;">
+                    <div class="aui-col-xs-12">
+                        <ul class="zzq_sear_lis_ul">
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">好好说</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">情侣春秋外套</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">VIVO X27</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">
+                              三只松鼠猪肉脯
+                            </a>
+                            </li>
+                            <li>
+                               <a href="javascript:;" class="zzq_sear_lis_a">
+                                 龙珠超
+                               </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 这里写的是下面一层搜索发现 -->
+                <div class="aui-list" style="background-image:none;">
+                    <div class="aui-list-item" style="background-image:none;">
+                        <div class="aui-list-item-inner">
+                            <div class="zzq_sec_lis_txt">
+                                搜索发现
+                            </div>
+                        </div>
+                        <div class="aui-list-item-label">
+                            <div class="zzq_sear_lis_rig">
+                                <i class="iconfont icon-yanjing" style="font-size:20px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 这里放置的是搜索发现下的记录 -->
+                <div class="aui-row">
+                    <div class="aui-col-xs-12">
+                        <ul class="zzq_sear_lis_ul">
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">生日礼品创意礼物</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">手机 OPPO</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">网红零食</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">
+                              施华洛世奇
+                            </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                情侣外套春季
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+                <!-- 这里写搜素记录，点击后显示的选项 -->
+              <div class="zzq_histor">
+                      <ul class="zzq_histor_scr">
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                    零食大礼包
+                                </span>
+
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span  class="zzq_sec_sp">&nbsp;女 &nbsp;女生&nbsp;&nbsp; 整箱</span>
+                                </span>
+
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;一箱&nbsp;&nbsp;良品铺子</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;超大&nbsp;巨型&nbsp;&nbsp;三只松鼠</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;男生版&nbsp;&nbsp; 良品铺子</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;组合&nbsp;&nbsp; 麻辣</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;肉食类</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;混合装</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                      </ul>
+                  </div>
+            </div>
+            <div class="aui-hide" id="tab1-con2">人生没有彩排，每天都是直播，不仅收视率低，而且工资不高。</div>
+            <div class="aui-hide" id="tab1-con3">
+              <div class="zzq_sec_lis_new" style="width:100%;">
+                <div class="aui-list" style="background-image:none;">
+                    <div class="aui-list-item" style="background-image:none;">
+                        <div class="aui-list-item-inner">
+                            <div class="zzq_sec_lis_txt">
+                                历史记录
+                            </div>
+                        </div>
+                        <div class="aui-list-item-label">
+                            <div class="zzq_sear_lis_rig">
+                                <i class="iconfont icon-shanchu"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 这里放置的是历史记录搜索的印记 -->
+                <div class="aui-row" style="margin-bottom:20px;">
+                    <div class="aui-col-xs-12">
+                        <ul class="zzq_sear_lis_ul">
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">好好说</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">情侣春秋外套</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">VIVO X27</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">
+                              三只松鼠猪肉脯
+                            </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 这里写的是下面一层搜索发现 -->
+                <div class="aui-list" style="background-image:none;">
+                    <div class="aui-list-item" style="background-image:none;">
+                        <div class="aui-list-item-inner">
+                            <div class="zzq_sec_lis_txt">
+                                搜索发现
+                            </div>
+                        </div>
+                        <div class="aui-list-item-label">
+                            <div class="zzq_sear_lis_rig">
+                                <i class="iconfont icon-yanjing" style="font-size:20px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 这里放置的是搜索发现下的记录 -->
+                <div class="aui-row">
+                    <div class="aui-col-xs-12">
+                        <ul class="zzq_sear_lis_ul">
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">生日礼品创意礼物</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">手机 OPPO</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">网红零食</a>
+                            </li>
+                            <li>
+                                <a href="#" class="zzq_sear_lis_a">
+                              施华洛世奇
+                            </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                情侣外套春季
+                              </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+                <!-- 这里写搜素记录，点击后显示的选项 -->
+              <div class="zzq_histor">
+                      <ul class="zzq_histor_scr">
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                    零食大礼包
+                                </span>
+
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span  class="zzq_sec_sp">&nbsp;女 &nbsp;女生&nbsp;&nbsp; 整箱</span>
+                                </span>
+
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;一箱&nbsp;&nbsp;良品铺子</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;超大&nbsp;巨型&nbsp;&nbsp;三只松鼠</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;男生版&nbsp;&nbsp; 良品铺子</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;组合&nbsp;&nbsp; 麻辣</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;肉食类</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+
+                        <li class="aui-list" style="background-image:none;">
+                            <div class="aui-list-item">
+                              <div class="aui-list-item-inner zzq_sec_his_txt">
+                                <span class="zzq_sec_sptxt">
+                                  零食大礼包<span class="zzq_sec_sp">&nbsp;&nbsp;混合装</span>
+                                </span>
+                              </div>
+                              <div class="aui-list-item-label" >
+                                <div style="text-align:right;width:100%;padding-right:5px;">
+                                      <i class="iconfont icon-zuoshangjiao"></i>
+                                </div>
+                              </div>
+                            </div>
+                        </li>
+                      </ul>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- 底部，按钮录音 -->
+      <footer class="zzq_sear_fot">
+          <div class="zzq_sfot aui-row">
+             <div class="aui-col-xs-12">
+                <div class="zzq_sear_vioc">
+                  <div class="zzq_sear_ioc">
+                    <i class="iconfont icon-luyin" style="font-size:20px;"></i>
+                    <span>按住 说出你想要的宝贝</span>
+                  </div>
+
+                </div>
+             </div>
+          </div>
+      </footer>
+
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/tabo.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+
+        var header = $api.dom('header'); // 获取 header 标签元素
+        var footer = $api.dom('footer'); // 获取 footer 标签元素
+        // 1.修复开启沉浸式效果带来的顶部Header与手机状态栏重合的问题，最新api.js方法已支持适配iPhoneX；
+        // 2.默认已开启了沉浸式效果 config.xml中 <preference name="statusBarAppearance" value="true"/>
+        // 3.沉浸式效果适配支持iOS7+，Android4.4+以上版本
+        var headerH = $api.fixStatusBar(header);
+        // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
+        var footerH = $api.fixTabBar(footer);
+    };
+    var tab = new auiTab({
+        element: document.getElementById("tab"),
+
+    }, function(ret) {
+        if (ret) {
+            //定义获取对象的所有兄弟节点的函数，
+            function siblings(elm) {
+                var a = [];
+                var p = elm.parentNode.children;
+                for (var i = 0, pl = p.length; i < pl; i++) {
+                    if (p[i] !== elm) a.push(p[i]);
+                }
+                return a;
+            }
+            var index = ret.index;
+            var activeC = document.getElementById("tab1-con" + index);
+            activeC.className = "";
+            for (var i = 0; i < siblings(activeC).length; i++) {
+                siblings(activeC)[i].className = "aui-hide";
+            }
+        }
+    });
+
+    // 关闭搜索框,s搜索页面
+    function cle() {
+      api.closeWin();
+    }
+
+    // 商品列表页面跳转
+    function list() {
+      api.openWin({
+         name: 'list',
+         url: './list.html',
+         pageParam: {
+            name:'test'
+         }
+     })
+    }
+</script>
+
+</html>

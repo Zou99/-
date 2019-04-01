@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/api.css">
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
+    <link rel="stylesheet" href="../css/tabo.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_ekca9omct94.css">
+    <style type="text/css">
+        .text-light {
+            color: #999;
+        }
+
+        .text-dark {
+            color: #333 !important;
+        }
+
+        .bg-white {
+            background: #ffffff;
+        }
+
+        .aui-list .aui-list-item-label-icon.label-text {
+            line-height: 2.1rem;
+            align-items: baseline;
+            -webkit-align-items: baseline;
+        }
+
+        .aui-tab-item {
+            width: 2rem;
+            margin: 0 auto;
+        }
+
+        .zzq_detai_img {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .zzq_detai_txt>span {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .zzq_detai_txt {
+            padding: 0 0.75rem;
+        }
+
+        .aui-text-danger {
+            color: #ed6c2e !important;
+        }
+
+        .zzq_li_frm_he {
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+            height: 40px;
+            top: 20px;
+            padding: 0 10px;
+        }
+
+        #aui-header {
+            display: none;
+            z-index: 10000;
+            position: fixed;
+        }
+
+        .aui-tab-item.aui-active {
+            color: #ed6c2e;
+            border-bottom: 2px solid #ed6c2e;
+        }
+
+        .zzq_detia_hea_nv2 {
+            z-index: 10;
+            right: 5px;
+            top: 85%;
+        }
+
+        .zzq_sanjiao {
+            top: -15%;
+            right: 1%;
+            /*color: #000;*/
+        }
+
+        .triangle_border_up {
+            width: 0;
+            height: 0;
+            border-width: 0 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent #eeeeeb;
+            /*透明 透明  灰*/
+            margin: 40px auto;
+            position: absolute;
+            right: 4%;
+            top: -21%;
+        }
+        .zzq_sear_lis_ul>li>a {
+          font-size: 12px;
+        }
+        .zzq_sear_deta_size{
+          background-color: #fe5100!important;
+          color: #fff!important;
+        }
+        .zzq_detail_num_btn{
+          background-color: #f5f5f5;
+          border: none;
+        }
+        .zzq_detail_num_btn>i{
+          color: #c8c8c8;
+        }
+        .zzq_detail_num_btnb{
+          border: none;
+          background-color: #f5f5f5;
+        }
+        .zzq_detail_num_btnb>i{
+          color: #949494;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav aui-bar-light zzq_details_nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="detclo()">
+            <span class="aui-iconfont aui-icon-left" style="color:#000!important;"></span>
+        </a>
+        <div class="aui-title" style="color:#000;">商品详情</div>
+        <a class="aui-btn aui-pull-right" style="color:#000;padding:0 1rem">
+            <span class="iconfont icon-fenxiang1" style="padding-right: 20px;"></span>
+            <span class="iconfont icon-menu zzq_detail_a_btn"></span>
+        </a>
+
+        <div class="zzq_detai_hea_nwe zzq_detia_hea_nv2" style="z-index:9999;">
+            <ul>
+                <li>
+                    <div class="triangle_border_up zzq_sanjiao_div">
+                        <span></span>
+                    </div>
+                </li>
+                <li>
+                    <i class="iconfont icon-xiaoxi2"></i>
+                    <a>消息</a>
+
+                </li>
+                <li>
+                    <i class="iconfont icon-fangzi1"></i>
+                    <a>首页</a>
+                </li>
+                <li>
+                    <i class="iconfont icon-kefu1"></i>
+                    <a>客服小米</a>
+                </li>
+                <li>
+                    <i class="iconfont icon-fankui"></i>
+                    <a>我要反馈</a>
+                </li>
+                <li> <i class="iconfont icon-fenxiang3"></i> <a>分享</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- 显示导航来一开始按钮 -->
+    <div class="zzq_li_frm_he">
+        <!-- 这里写一个导航栏按钮 -->
+        <div class="zzq_de_frm_head" onclick="detclo()">
+            <i class="iconfont icon-zuo"></i>
+        </div>
+        <div class="zzq_de_frm_head_rig">
+            <i class="iconfont icon-fenxiang1"></i>
+        </div>
+        <div class="zzq_de_frm_head_cent">
+            <i class="iconfont icon-menu"></i>
+        </div>
+        <!-- 三个按钮点击后显示的框 -->
+        <div class="zzq_detai_hea_nwe">
+            <ul>
+                <li><i class="iconfont icon-xiasanjiao zzq_det_sanjiao"></i></li>
+                <li>
+                    <i class="iconfont icon-xiaoxi2"></i>
+                    <a>消息</a>
+
+                </li>
+                <li>
+                    <i class="iconfont icon-fangzi1"></i>
+                    <a>首页</a>
+                </li>
+                <li>
+                    <i class="iconfont icon-kefu1"></i>
+                    <a>客服小米</a>
+                </li>
+                <li>
+                    <i class="iconfont icon-fankui"></i>
+                    <a>我要反馈</a>
+                </li>
+                <li> <i class="iconfont icon-fenxiang3"></i> <a>分享</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="aui-card-list">
+        <div class="aui-card-list-content" id="aui-slide">
+            <div class="aui-slide-wrap">
+                <div class="aui-slide-node bg-dark">
+                    <div class="zzq_detai_img">
+                        <img src="../image/list/saya.jpg" />
+                    </div>
+
+                </div>
+                <div class="aui-slide-node bg-dark">
+                    <div class="zzq_detai_img">
+                        <img src="../image/list/sun1.jpg" />
+                    </div>
+                </div>
+                <div class="aui-slide-node bg-dark">
+                    <div class="zzq_detai_img">
+                        <img src="../image/list/sun2.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="aui-slide-page-wrap">
+                <!--分页容器-->
+            </div>
+        </div>
+        <div class="aui-card-list-header aui-padded-b-0">
+            <div>
+                <span class="aui-label aui-label-danger aui-margin-r-5">淘买自营</span>漫画角色龙珠手办模型孙悟空摆件超级赛亚人SMSP大号玩具超大组立
+            </div>
+        </div>
+        <!-- <div class="aui-card-list-footer aui-text-danger aui-font-size-12 aui-padded-t-0 aui-padded-b-0" style="min-height:1.6rem;">iPhone7，现以红色呈现！购买红色特别版请点击！</div> -->
+        <div class="aui-card-list-header aui-padded-t-0" style="padding: 0rem 0.75rem;">
+            <div class="aui-text-danger">
+                <small><i class="iconfont icon-qian" style="font-size:10px;"></i></small><big class="aui-font-size-20">188.3</big> - <small></small><big class="aui-font-size-20"><i class="iconfont icon-qian" style="font-size:10px;"></i>1080.8</big>
+            </div>
+        </div>
+        <div class="aui-row">
+            <div class="aui-col-xs-4">
+                <div class="zzq_detai_txt">
+                    <span>快递:</span><span>免运费</span>
+                </div>
+            </div>
+            <div class="aui-col-xs-4">
+                <div class="zzq_detai_txt" style="text-align:center;">
+                    <span>月销119</span>
+                </div>
+            </div>
+            <div class="aui-col-xs-4">
+                <div class="zzq_detai_txt" style="text-align:right;">
+                    <span>上海浦东区</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="aui-card-list-content">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-label-icon label-text aui-font-size-14" style="color:#999;">促销</div>
+                        <div class="aui-list-item-inner aui-padded-t-10 aui-padded-b-10">
+                            <div>
+                                <p class="aui-margin-b-10 aui-font-size-12 aui-ellipsis"><span class="aui-text-danger aui-margin-r-5">满赠</span>满99.00元即送热销商品,送完为止</p>
+                                <p class="aui-margin-b-10 aui-font-size-12 aui-ellipsis"><span class="aui-text-danger aui-margin-r-5">满赠</span>满19.00元即送热销商品,送完为止</p>
+                                <p class="aui-margin-b-10 aui-font-size-12 aui-ellipsis"><span class="aui-text-danger aui-margin-r-5">满额返券</span>订单完成后赠送80元电信上网卡话费</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-arrow">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-label-icon aui-font-size-12" style="width:2rem">
+                            <i class="aui-iconfont aui-icon-cert"></i>
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title aui-font-size-14">以旧换新<small class="aui-margin-l-10 text-light">最高抵5000</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-media-list">
+            <li class="aui-list-item">
+                <div class="aui-media-list-item-inner zzq_pc_guige">
+                    <div class="aui-list-item-label-icon label-text aui-font-size-14">已选</div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text text-dark aui-font-size-14">
+                            玫瑰金，公开版，128G，非合约机，1件，增值服务
+                        </div>
+                    </div>
+                    <div class="aui-list-item-label-icon aui-font-size-14">
+                        <i class="iconfont icon-menu"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="aui-content">
+        <div class="aui-tab aui-border-b" id="tab" style="padding:0 5rem;">
+            <div class="aui-tab-item aui-active" tapmode>详情</div>
+            <div class="aui-tab-item" tapmode>评价</div>
+        </div>
+    </section>
+    <section class="aui-content bg-white aui-padded-15 aui-font-size-14" id="goods-detail">
+        <img src="../image/list/wu.jpg"> 已激活的iPhone无质量问题不支持七天无理由退换货，请您确认需求后再激活使用。
+        <br/> 5.5 英寸（对角线）显示屏，1920 x 1080 分辨率<br/> 3D Touch<br/> 1200 万像素摄像头<br/> 4-LED True Tone 闪光灯<br/> 配备嵌入式 M10 运动协处理器的 A10 Fusion 芯片<br/> 4K 视频拍摄 (30 fps) 以及慢动作视频拍摄 (120 fps, 1080p)<br/> 配备 Retina 闪光灯的 700 万像素 FaceTime HD 摄像头<br/> 内置于主屏幕按钮的 Touch
+        ID 指纹识别传感器<br/> 具备 MIMO 技术的 802.11a/b/g/n/ac 无线网络<br/> 免责声明
+        <br/> 法律免责声明
+        <br/> 1 iPhone 7 和 iPhone 7 Plus 可防溅、抗水、防尘，在受控实验室条件下经测试，其效果在 IEC 60529 标准下达到 IP67 级别。防溅、抗水、防尘功能并非永久有效，防护性能可能会因日常磨损而下降。请勿为潮湿状态下的 iPhone 充电；请参阅使用手册了解清洁和干燥说明。由于浸入液体而导致的损坏不在保修范围之内。<br/> 2 亮黑色 iPhone 7 和 iPhone 7 Plus 高光泽度的外观，采用包含九道精密工序的阳极氧化与抛光工艺打造而成。其表面硬度与其他采用阳极氧化处理的
+        Apple 产品相同；但是，高光泽度表面可能随着日常使用而出现细微磨损。如果对此有所担心，建议你选择一款合适的保护壳来保护你的 iPhone。 3 Apple Pay 仅在部分市场提供。请到苹果官网查看 Apple Pay 适用的国家和地区列表。<br/> 4 所有电池性能信息取决于网络设置和许多其它因素，实际结果可能有所不同。电池充电周期次数有限，最终可能需由 Apple 服务提供商更换。 电池使用时间和充电周期次数依设置和使用情况的不同而可能有所差异。详情请参阅 www.apple.com/cn/batteries
+        和 www.apple.com/cn/iphone/battery.html。<br/> 5 需要使用数据计划。4G LTE Advanced 和 4G LTE 功能适用于特定国家或地区的特定运营商。速度依据理论上的数据吞吐量，并基于现场状况和不同运营商而可能有所差异。有关 4G LTE 支持的详情，请联系你的运营商并查看 www.apple.com/iphone/LTE。<br/> 6 亮黑色的 iPhone 7 和 iPhone 7 Plus 仅提供 128GB 和 256GB
+        机型。
+        <br/> 7 实际可供使用的空间小于总容量，并会因许多因素而可能有所差异。<br/> 8 某些功能仅适用于部分国家或地区。烦请到苹果官网查看详情<br/> 9 所有产品信息，以苹果官网为准（apple.com.cn)<br/><br/> 技术规格
+
+        <br/> 请前往 www.apple.com/cn/iphone-7/specs/ 查看完整内容。<br/>
+    </section>
+    <section class="aui-content aui-hide" id="comment-list">
+        <ul class="aui-list aui-media-list aui-list-noborder">
+            <li class="aui-list-item">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width:2.4rem">
+                        <img src="../image/demo3.png" class="aui-img-round" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title aui-text-info">匿名</div>
+                        </div>
+                        <div class="aui-list-item-text" style="color:#333;">
+                            红色版太漂亮了，物流也非常给力
+                        </div>
+                        <div class="aui-info aui-font-size-12 aui-padded-t-0 aui-padded-b-0">
+                            <div class="aui-info-item">1小时前</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-media" style="width:2.4rem">
+                        <img src="../image/demo3.png" class="aui-img-round" />
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title aui-text-info">匿名</div>
+                        </div>
+                        <div class="aui-list-item-text" style="color:#333;">
+                            红色版太漂亮了，物流也非常给力
+                        </div>
+                        <div class="aui-info aui-font-size-12 aui-padded-t-0 aui-padded-b-0">
+                            <div class="aui-info-item">1小时前</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 页面规格内容 -->
+    <section class="zzq_spec_detil">
+      <div class="zzq_detail_spec_rgba">
+
+      </div>
+      <!-- 规格头部 -->
+      <div class="zzq_spec_dte_main">
+
+        <div class="aui-row" style="overflow: inherit;line-height:2;">
+          <div class="aui-col-xs-5">
+              <div> &nbsp;</div>
+              <div class="zzq_detile_frm_shop">
+                <img src="../image/list/wu0.jpg" alt="">
+              </div>
+          </div>
+          <div class="aui-col-xs-7">
+              <div class="aui-row">
+                <div class="aui-col-xs-8" style="padding-top:5px;padding-left: 10px;">
+                  <p>
+                    <div class="aui-text-danger">
+                        <small><i class="iconfont icon-qian" style="font-size:10px;"></i></small><span class="zzq_p">188.3</span> - <small></small><span class="zzq_p"><i class="iconfont icon-qian" style="font-size:10px;"></i>1080.8</span>
+                    </div>
+                  </p>
+                  <p class="zzq_detail_mon_spec">库存291件</p>
+                  <p class="zzq_detail_mon_spec">选择 颜色分类</p>
+                </div>
+                  <div class="zzq_detail_danger_cuo">
+                    <i class="iconfont icon-cuo-copy" style="font-size:23px;"></i>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- 规格格式 -->
+        <div class="aui-row" style="padding:20px;border-bottom:1px solid #dbdbdb;">
+          <div class="zzq_det_color">
+              颜色分类
+          </div>
+            <div class="aui-col-xs-12">
+                <ul class="zzq_sear_lis_ul">
+                    <li>
+                        <a href="#" class="zzq_sear_lis_a">好好说</a>
+                    </li>
+                    <li>
+                        <a href="#" class="zzq_sear_lis_a">情侣春秋外套</a>
+                    </li>
+                    <li>
+                        <a href="#" class="zzq_sear_lis_a">VIVO X27</a>
+                    </li>
+                    <li>
+                        <a href="#" class="zzq_sear_lis_a">
+                      三只松鼠猪肉脯
+                    </a>
+                    </li>
+                    <li>
+                       <a href="javascript:;" class="zzq_sear_lis_a">
+                         龙珠超
+                       </a>
+                    </li>
+                    <li>
+                       <a href="javascript:;" class="zzq_sear_lis_a">
+                         超二(悟饭)
+                       </a>
+                    </li>
+                    <li>
+                       <a href="javascript:;" class="zzq_sear_lis_a">
+                         超三(卡卡罗特)
+                       </a>
+                    </li>
+                    <li>
+                       <a href="javascript:;" class="zzq_sear_lis_a">
+                         超蓝(卡卡罗特)
+                       </a>
+                    </li>
+                    <li>
+                       <a href="javascript:;" class="zzq_sear_lis_a">
+                         超赛神(卡卡罗特)
+                       </a>
+                    </li>
+                    <li>
+                       <a href="javascript:;" class="zzq_sear_lis_a">
+                         自在极意功孙悟空(送支架)
+                       </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="aui-row" style="padding:10px 20px;border-bottom:1px solid #dbdbdb;">
+          <div class="zzq_det_color">
+              大小
+          </div>
+            <div class="aui-col-xs-12">
+                <ul class="zzq_sear_lis_ul">
+                    <li>
+                        <a href="#" class="zzq_sear_lis_a zzq_sear_deta_size">万代原装 拼装龙珠(送海报)</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="aui-row" style="padding: 25px;">
+          <div class="aui-col-xs-6" style="line-height: 2;">
+            购买数量
+          </div>
+          <div class="aui-col-xs-6">
+              <div class="aui-bar aui-bar-btn" style="width:80%;" type="count">
+                <div class="aui-bar-btn-item aui-font-size-20 zzq_detail_num_btn">
+                    <i class="aui-iconfont aui-icon-minus"></i>
+                </div>
+                <div class="aui-bar-btn-item" style="border:none;">
+                    <input type="number" class="aui-input aui-text-center" value="1">
+                </div>
+                <div class="aui-bar-btn-item aui-font-size-20 zzq_detail_num_btnb">
+                    <i class="aui-iconfont aui-icon-plus"></i>
+                </div>
+             </div>
+          </div>
+        </div>
+     </div>
+
+      <!-- 规格底部 -->
+        <div class="zzq_dit_btn_foot"></div>
+    </section>
+
+    <footer class="aui-bar aui-bar-tab" style="display:none;">
+        <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
+            <i class="aui-iconfont aui-icon-comment aui-text-info"></i>
+            <div class="aui-bar-tab-label aui-text-info">咨询</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
+            <i class="aui-iconfont aui-icon-star aui-text-warning"></i>
+            <div class="aui-bar-tab-label aui-text-warning">收藏</div>
+        </div>
+        <div class="aui-bar-tab-item aui-bg-warning aui-text-white" tapmode style="width: auto;">加入购物车</div>
+        <div class="aui-bar-tab-item aui-bg-danger aui-text-white" tapmode style="width: auto;">立即购买</div>
+    </footer>
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript" src="../script/zzq_js/detil.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+    };
+
+    var slide = new auiSlide({
+        container: document.getElementById("aui-slide"),
+        // "width":300,
+        "height": 360,
+        "speed": 300,
+        "pageShow": true,
+        "pageStyle": 'dot',
+        "loop": true,
+        'dotPosition': 'center',
+        // currentPage:currentFun
+    })
+    var tab = new auiTab({
+        element: document.getElementById("tab"),
+    }, function(ret) {
+        if (ret.index == 1) {
+            document.getElementById("goods-detail").classList.remove("aui-hide");
+            document.getElementById("comment-list").classList.add("aui-hide");
+        } else {
+            document.getElementById("goods-detail").classList.add("aui-hide");
+            document.getElementById("comment-list").classList.remove("aui-hide");
+        }
+    });
+
+    $(".zzq_detail_a_btn").click(function() {
+        $(".zzq_detai_hea_nwe").toggle();
+    });
+
+
+
+    $(".zzq_detail_danger_cuo").click(function(){
+      $(".zzq_spec_detil").hide();
+    })
+
+    $(".zzq_pc_guige").click(function(){
+        $(".zzq_spec_detil").show();
+    });
+
+    function detclo() {
+        api.closeWin({
+            name: 'details_win'
+        });
+    }
+</script>
+
+</html>

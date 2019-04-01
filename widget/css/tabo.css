@@ -1,0 +1,167 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.zzq_hot {
+    width: 100%;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+}
+
+.zzq_hot_fo {
+    padding: 0 10px;
+    line-height: 1.7;
+}
+
+.zzq_hot_fo>span {
+    color: #fff;
+    font-size: 12px;
+    /*margin: 0 5px;*/
+}
+.zzq_hot_tx1{
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+}
+
+.zzq_hot_txt {
+    background-color: #FF5511;
+    /*padding: 3px;*/
+    box-shadow: #000 0px 1px 5px -4px;
+    border-radius: 9px;
+    margin-bottom: 5px;
+    padding: 3px 0;
+    width: 60px;
+    text-align: center;
+}
+.aui-container{
+  padding: 0 15px;
+}
+.zzq_lie{
+  width: 100%;
+}
+.zzq_lie_ul>li{
+  /*display: inline-block; */
+      width: 20%;
+      text-align: center;
+      padding: 5px;
+      /* margin-left: 0px; */
+      float: left;
+
+}
+.zzq_lie_p_t{
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+}
+.zzq_lie_ul>li>a>img{
+  border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 3px;
+    border-color: #000;
+    border: 1px solid #000;
+    padding: 7px 0;
+    background-color: #fff;
+}
+.zzq_news{
+  width: 100%;
+}
+.zzq_sear_lis_rig{
+  width: 100%;
+  text-align: right;
+  padding: 0 10px;
+}
+.zzq_sear_lis_ul{
+  width: 100%;
+}
+.zzq_sear_lis_ul>li{
+  display: inline-block;
+}
+.zzq_sear_lis_ul>li>a{
+  display: inline-block;
+  background-color: #f5f5f5;
+  color: #000;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 0.7rem;
+}
+.zzq_sear_fot{
+  /*line-height: 3;*/
+  height: 60px;
+  background-color: #f9f9f9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.zzq_sear_vioc{
+  width: 100%;
+  text-align: center;
+    padding: 10px 50px;
+
+}
+.zzq_sear_ioc{
+  line-height: 2.1;
+  border-radius: 20px;
+  background-color: #e5e5e5;
+}
+.icon-zuoshangjiao{
+  color: #b5b5b5;
+}
+.zzq_sec_his_txt{
+  font-size: 0.7rem;
+}
+.zzq_sec_sptxt{
+  color: #9d9d9d;
+}
+.zzq_sec_sp{
+  color: #000;
+}
+.zzq_histor{
+  display: none;
+}
+/*购物车页面样式*/
+.zzq_shop_head{
+  color: #fff;
+  font-size: 16px;
+}
+.zzq_shop_head>span{
+  color: #fff;
+  font-size: 14px;
+}
+.zzq_foot_list_shop{
+  position: fixed;
+  width: 100%;
+  bottom: 60px;
+}
+.zzq_shop_car_mon{
+  width: 100%;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+.zzq_sho_car_rig{
+  text-align: right;
+}
+.zzq_sho_fig_fix{
+  display: none;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #929292;
+}
+.zzq_sho_fig_txt{
+  color: #ff4600;
+  display: inline-block;
+}
+.zzq_sho_fig_fix_two{
+  padding: 0 5px;
+  font-size: 14px;
+}
+.zzq_shopp_head_dian>i{
+  padding: 0 5px;
+}
+.zzq_shop_mile_img>div{
+  float: left;
+}
