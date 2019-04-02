@@ -307,6 +307,19 @@
         }
     })
   };
+  //  跳转到分类页面
+  function classify(){
+    api.openWin({
+       name: 'shop',
+       url: './html/classify_frame_win.html',
+       pageParam: {
+          name:'test'
+       },
+       animation:{
+          type:"none"
+       }
+   })
+  }
 
 </script>
 
