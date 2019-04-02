@@ -483,18 +483,7 @@
         <div class="zzq_dit_btn_foot"></div>
     </section>
 
-    <footer class="aui-bar aui-bar-tab" style="display:none;">
-        <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
-            <i class="aui-iconfont aui-icon-comment aui-text-info"></i>
-            <div class="aui-bar-tab-label aui-text-info">咨询</div>
-        </div>
-        <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
-            <i class="aui-iconfont aui-icon-star aui-text-warning"></i>
-            <div class="aui-bar-tab-label aui-text-warning">收藏</div>
-        </div>
-        <div class="aui-bar-tab-item aui-bg-warning aui-text-white" tapmode style="width: auto;">加入购物车</div>
-        <div class="aui-bar-tab-item aui-bg-danger aui-text-white" tapmode style="width: auto;">立即购买</div>
-    </footer>
+
 </body>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -536,13 +525,11 @@
 
 
 
-    $(".zzq_detail_danger_cuo").click(function(){
+    $(".zzq_detail_danger_cuo,.zzq_detail_spec_rgba").click(function(){
       $(".zzq_spec_detil").hide();
     })
 
-    $(".zzq_pc_guige").click(function(){
-        $(".zzq_spec_detil").show();
-    });
+
 
     function detclo() {
         api.closeWin({

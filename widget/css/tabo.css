@@ -316,3 +316,34 @@
 .zzq_car_lov_bok,.zzq_car_lo_ic{
   background-color: #fff;
 }
+.zzq_clr_del_all{
+  width: 100%;
+  text-align: right;
+}
+.zzq_cle_fr_lov{
+  font-size: 14px;
+  border: 1px solid #fc9000;
+  color: #fc9000;
+  border-radius: 10px;
+  padding: 2px 10px;
+  margin: 0 5px;
+}
+.zzq_clr_del{
+  font-size: 14px;
+  border: 1px solid #df3236;
+  color: #df3236;
+  border-radius: 10px;
+  padding: 2px 15px;
+  margin: 0 5px;
+}
+.zzq_lab_qingli{
+  width: 100%;
+}
+.zzq_clr_list_ne,.zzq_shop_ok{
+  display: none;
+}
+.zzq_lab_qingli>i,.zzq_lab_qingli>span{
+  font-size: 14px;
+  color: #717171;
+  padding: 0 3px;
+}

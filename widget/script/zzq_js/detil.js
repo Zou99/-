@@ -1,11 +1,6 @@
 $(document).ready(function() { //在文档加载完毕后执行
-
     $(window).scroll(function() { //开始监听滚动条
-
-
         var topp = $(document).scrollTop();
-
-
         if (topp > 40) {
             // alert(123123);
             $("#aui-header").fadeIn();
@@ -17,8 +12,12 @@ $(document).ready(function() { //在文档加载完毕后执行
         }
 
     })
-
     $(".zzq_de_frm_head_cent").click(function () {
           $(".zzq_detai_hea_nwe").toggle();
     })
+
+    $(".zzq_pc_guige").click(function(){
+        $(".zzq_spec_detil").show();
+        $(".zzq_du_wi_fot").hide();
+    });
 })

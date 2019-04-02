@@ -3,6 +3,11 @@
  */
 $(function() {
 
+  $("#zzq_shop_guanli").click(function(){
+    $(".zzq_clr_list_ne").slideToggle(300);
+    $(".zzq_shop_guli,.zzq_shop_ok").toggle(300);
+  })
+
 
   $(".zzq_shop_lef").click(function() {
     $(".zzq_shp_car_check").toggleClass("zzq_sh_chek_col");
