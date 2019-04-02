@@ -6,17 +6,17 @@ $(document).ready(function() { //在文档加载完毕后执行
             $("#aui-header").fadeIn();
             $(".zzq_li_frm_he").hide();
 
-        }else {
-          $("#aui-header").fadeOut();
-          $(".zzq_li_frm_he").show();
+        } else {
+            $("#aui-header").fadeOut();
+            $(".zzq_li_frm_he").show();
         }
 
     })
-    $(".zzq_de_frm_head_cent").click(function () {
-          $(".zzq_detai_hea_nwe").toggle();
+    $(".zzq_de_frm_head_cent").click(function() {
+        $(".zzq_detai_hea_nwe").toggle();
     })
 
-    $(".zzq_pc_guige").click(function(){
+    $(".zzq_pc_guige").click(function() {
         $(".zzq_spec_detil").show();
         $(".zzq_du_wi_fot").hide();
     });

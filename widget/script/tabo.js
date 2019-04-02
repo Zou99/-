@@ -12,6 +12,7 @@ $(function() {
   $(".zzq_shop_lef").click(function() {
     $(".zzq_shp_car_check").toggleClass("zzq_sh_chek_col");
     $(".zzq_sho_fig_fix").toggle();
+
   })
 
   // 复选框的选择单独的框时候的点击事件
@@ -30,7 +31,7 @@ $(".zzq_car_checking").click(function(){
           $('.zzq_sec_lis_new').hide();
       }
   }).blur(function() {
-
+    
       $(".zzq_histor").hide();
       $('.zzq_sec_lis_new').show();
   })
