@@ -406,7 +406,7 @@
 
             </div>
 
-            <div class="aui-list-item-label">
+            <div class="aui-list-item-label" onclick="orde()">
                 <div class="zzq_shop_car_mon">
                     结算(<span>0</span>)
                 </div>
@@ -465,6 +465,15 @@
             name: 'shop'
         });
 
+    }
+    function orde(){
+      api.openWin({
+         name: 'order',
+         url: './order.html',
+         pageParam: {
+            name:'test'
+         }
+     })
     }
 </script>
 
