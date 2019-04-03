@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人中心</title>
+  <link rel="stylesheet" href="../css/dqf_css/personal.css">
+</head>
+<body>
+  <!-- 头部 -->
+  <div class="dqf_header" id="dqf_header">
+    <div class="dqf_header_one">
+      <!-- <div class="dqf_avatar_shadow"> -->
+        <div class="dqf_avatar">
+          <img src="../image/2.jpg" alt="">
+        </div>
+      <!-- </div> -->
+      <div class="dqf_nickname">
+        七月宵伽
+      </div>
+      <div class="dqf_setup">
+        <img src="../image/setup.png" alt="">
+      </div>
+    </div>
+    <!-- 头部第二部分，收藏关注足迹... -->
+    <div class="dqf_header_two clearfix">
+      <div class="dqf_box">
+        <span>2</span>
+        <span>收藏夹</span>
+      </div>
+      <div class="dqf_box">
+        <span>5</span>
+        <span>关注店铺</span>
+      </div>
+      <div class="dqf_box">
+        <span>40</span>
+        <span>足迹</span>
+      </div>
+      <div class="dqf_box">
+        <span>0</span>
+        <span>红包卡券</span>
+      </div>
+    </div>
+    <!-- 头部第三部分 -->
+    <div class="dqf_header_there">
+      <div class="dqf_box dqf_member_one">
+        <span>88会员</span>
+      </div>
+      <div class="dqf_box dqf_member_two">
+        <span>花小积分 兑大权益</span>
+        <span>进入我的会员中心</span>
+      </div>
+      <div class="dqf_box">
+        <img src="../image/member.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- center部分 -->
+  <div class="dqf_center">
+    <!-- center1 -->
+    <div class="dqf_cent1">
+      <!-- 我的订单 -->
+      <div class="dqf_order">
+        <div class="dqf_myorder">我的订单</div>
+        <div class="dqf_allorder">查看全部订单&gt;</div>
+      </div>
+      <!-- 待付款，待发货，待收货... -->
+      <div class="dqf_deal">
+        <div class="dqf_deal_box">
+          <div class="dqf_img_box">
+            <img src="../image/deal_01.png" alt="">
+          </div>
+          <span>待付款</span>
+        </div>
+        <div class="dqf_deal_box">
+          <div class="dqf_img_box">
+            <img src="../image/deal_02.png" alt="">
+          </div>
+          <span>待发货</span>
+        </div>
+        <div class="dqf_deal_box">
+          <div class="dqf_img_box">
+            <img src="../image/deal_03.png" alt="">
+          </div>
+          <span>待收货</span>
+        </div>
+        <div class="dqf_deal_box">
+          <div class="dqf_img_box">
+            <img src="../image/deal_04.png" alt="">
+          </div>
+          <span>待评价</span>
+        </div>
+        <div class="dqf_deal_box">
+          <div class="dqf_img_box">
+            <img src="../image/deal_05.png" alt="">
+          </div>
+          <span>退款/售后</span>
+        </div>
+      </div>
+      <!-- 物流信息 -->
+      <div class="dqf_deal_info clearfix">
+        <div class="dqf_new_info">
+          <span>最新物流</span>
+          <span>11:11</span>
+        </div>
+        <div class="dqf_info_box">
+          <div class="dqf_deal_img">
+            <img src="../image/f3.png" alt="" class="fl" width="40px" style="margin-right: 10px;">
+          </div>
+          <div class="dqf_deal_right">
+            <div class="dqf_hook">
+              <img src="../image/hook.png" alt="" class="fl" width="20px">
+              已签收
+            </div>
+            <div class="dqf_explicit">
+              [宿迁市] 快件已被 软件园小哥快递(合作代理点)接收
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- center1结束 -->
+    <!-- center2开始 -->
+    <div class="dqf_cent2">
+      <div class="dqf_tool">
+        <div class="dqf_must_tool">必备工具</div>
+        <div class="dqf_alltool">查看全部工具&gt;</div>
+      </div>
+      <div class="dqf_tool_list clearfix">
+        <div class="dqf_tool_box">
+          <div class="dqf_img_box">
+            <img src="../image/tool_01.png" alt="">
+          </div>
+          <span>我的评价</span>
+        </div>
+        <div class="dqf_tool_box">
+          <div class="dqf_img_box">
+            <img src="../image/tool_02.png" alt="">
+          </div>
+          <span>领券中心</span>
+        </div>
+        <div class="dqf_tool_box">
+          <div class="dqf_img_box">
+            <img src="../image/tool_03.png" alt="">
+          </div>
+          <span>闲置换钱</span>
+        </div>
+        <div class="dqf_tool_box">
+          <div class="dqf_img_box">
+            <img src="../image/tool_04.png" alt="">
+          </div>
+          <span>客服小蜜</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+apiready = function(){
+  var header = $api.byId("dqf_header");
+  $api.fixStatusBar(header);
+}
+var dealInfo = document.querySelector('.dqf_explicit');
+var dealTxt = dealInfo.innerText;
+if(dealTxt.length>22){
+  var str = dealTxt.substr(0,22);
+  dealInfo.innerText = str+"...";
+}
+</script>

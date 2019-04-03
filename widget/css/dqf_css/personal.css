@@ -1,0 +1,239 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+}
+.fl{
+  float: left!important;
+}
+.fr{
+  float: right!important;
+}
+.clearfix{
+  clear: both;
+}
+body{
+  background-color: #f2f2f2;
+}
+.dqf_header{
+  width: 100%;
+  height: 180px;
+  position: relative;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+  padding-top: 15px;
+}
+.dqf_header .dqf_avatar{
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-left: 15px;
+  float: left;
+  margin-right: 20px;
+  border: 0.125rem solid #fff;
+}
+.dqf_header .dqf_avatar img{
+  width: 50px;
+  height: 50px;
+}
+.dqf_header .dqf_nickname{
+  width: 200px;
+  margin-top: 15px;
+  float: left;
+  color: #fff;
+}
+.dqf_header .dqf_setup{
+  float: right;
+  margin-right: 10px;
+}
+.dqf_header .dqf_setup img{
+  float: right;
+  width: 20px;
+  height: 20px;
+}
+/*头部第二部分*/
+.dqf_header .dqf_header_two{
+  padding-top: 25px;
+}
+.dqf_header .dqf_header_two .dqf_box{
+  float: left;
+  width: 25%;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+.dqf_header .dqf_box >span:nth-child(1){
+  display: block;
+  margin-bottom: 10px;
+}
+/*头部第三部分*/
+.dqf_header .dqf_header_there{
+  background-color: #fff;
+  width: 94%;
+  height: 60px;
+  position: absolute;
+  bottom: -25px;
+  left: 3%;
+  border-radius: 10px;
+  font-size: 14px;
+  overflow: hidden;
+}
+.dqf_header .dqf_header_there .dqf_box{
+  float: left;
+  width: 38%;
+  margin-top: 10px;
+}
+.dqf_header .dqf_header_there .dqf_member_one{
+  text-align: left;
+  padding-left: 10px;
+  border-right: 1px solid #eee;
+  width: 24%;
+}
+.dqf_header .dqf_header_there .dqf_member_one >span{
+  display: block;
+  color: #d6a06d;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 30px;
+  margin: 0;
+  padding: 5px 0;
+}
+.dqf_header .dqf_header_there .dqf_member_two >span{
+  color: #757575;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.dqf_header .dqf_header_there .dqf_member_two >span:nth-child(1){
+  color: #666;
+  font-size: 14px;
+}
+.dqf_header .dqf_header_there .dqf_box img{
+  height: 40px;
+  float: right;
+  margin-right: 10px;
+}
+/*center部分*/
+/*center1订单与交易信息部分*/
+.dqf_center{
+  width: 100%;
+}
+.dqf_cent1{
+  background-color: #fff;
+  width: 94%;
+  height: 205px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 35px auto 10px auto;
+}
+.dqf_cent1 .dqf_order{
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid #eeeee7;
+}
+.dqf_cent1 .dqf_order .dqf_myorder{
+  float: left;
+  line-height: 30px;
+  color: #333;
+  font-weight: 800;
+  margin-left: 10px;
+}
+.dqf_cent1 .dqf_order .dqf_allorder{
+  float: right;
+  line-height: 30px;
+  color: #adadad;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.dqf_cent1 .dqf_deal{
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+.dqf_cent1 .dqf_deal .dqf_deal_box{
+  float: left;
+  font-size: 12px;
+  width: 20%;
+  color: #676767;
+  margin-bottom: 10px;
+}
+.dqf_cent1 .dqf_deal .dqf_deal_box .dqf_img_box{
+  width: 100%;
+}
+.dqf_cent1 .dqf_deal .dqf_deal_box img{
+  width: 30px;
+}
+/*center1物流信息*/
+.dqf_cent1 .dqf_deal_info{
+  background-color: #f7f7f7;
+  width: 94%;
+  height: 80px;
+  padding-left: 14px;
+  padding-top: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 0px auto 10px auto;
+}
+.dqf_cent1 .dqf_new_info{
+  width: 100%;
+  height: 20px;
+  color: #666;
+  font-size: 12px;
+}
+.dqf_cent1 .dqf_new_info >span:nth-child(2){
+  float: right;
+  margin-right: 10px;
+}
+.dqf_cent1 .dqf_info_box .dqf_explicit{
+  font-size: 12px;
+  color: #777;
+}
+.dqf_cent1 .dqf_deal_right .dqf_hook{
+  color: #558fb7;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+/*center2部分*/
+.dqf_cent2{
+  background-color: #fff;
+  width: 94%;
+  height: 115px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 0 auto 10px auto;
+}
+.dqf_cent2 .dqf_tool{
+  width: 100%;
+  height: 38px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.dqf_cent2 .dqf_tool .dqf_must_tool{
+  float: left;
+  margin: 10px 0 10px 10px;
+  color: #333;
+  font-weight: 800;
+}
+.dqf_cent2 .dqf_tool .dqf_alltool{
+  float: right;
+  margin: 10px 10px 10px 0;
+  color: #999;
+  font-size: 12px;
+}
+.dqf_cent2 .dqf_tool_list .dqf_tool_box{
+  margin-top: 14px;
+  width: 25%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+.dqf_cent2 .dqf_tool_list img{
+  width: 30px;
+}
