@@ -197,7 +197,7 @@
     padding: 5px 8px;
     font-size: 18px;
 }
-.zzq_spec_detil{
+.zzq_spec_detil,.zzq_spec_shop{
   width: 100%;
   z-index: 99999;
   top: 0;
@@ -208,7 +208,7 @@
   display: inline-block;
   font-size: 14px;
 }
-.zzq_detail_danger_cuo{
+.zzq_detail_danger_cuo,.zzq_detail_danger_cuo2{
   position: absolute;
 right: 10px;
 line-height: 1.8;
@@ -224,7 +224,7 @@ line-height: 1.8;
 .zzq_detile_frm_shop>img{
       border-radius: 10px;
 }
-.zzq_detail_spec_rgba{
+.zzq_detail_spec_rgba,.zzq_detail_spec_rgba2{
   background-color:rgba(0,0,0,0.5);
   width: 100%;
   /*opacity: 0;*/
@@ -241,10 +241,42 @@ line-height: 1.8;
 .zzq_dit_btn_foot{
   position: fixed;
   height: 60px;
-  background-color: red;
   bottom: 0;
   width: 100%;
+  background-color: #fff;
+  padding: 5px 10px;
 }
+.zzq_dit_btn_foot_left{
+  border-top-left-radius: 30px;
+  width: 50%;
+  border-bottom-left-radius: 30px;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#fbca00), to(#fc9d00));
+    /*height: 60px;*/
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+.zzq_dit_btn_foot_right{
+  border-top-right-radius: 30px;
+  width: 50%;
+  border-bottom-right-radius: 30px;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#fc7800),to(#fd4f00));
+    /*height: 60px;*/
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
 
 /*order页面样式*/
 .zzq_aorder_fot{
@@ -294,4 +326,13 @@ line-height: 1.8;
 .zzq_order_shop_ri>p{
   font-size: 12px;
   margin-bottom: 5px;
+}
+.zzq_order_foot_wid{
+  width: 100%;
+  background-color: #fed8ce;
+  padding: 10px;
+  text-align: right;
+}
+.zzq_order_foot_wid>span{
+  color: #ec570e;
 }
