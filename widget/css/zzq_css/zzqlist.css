@@ -327,3 +327,12 @@ line-height: 1.8;
   font-size: 12px;
   margin-bottom: 5px;
 }
+.zzq_order_foot_wid{
+  width: 100%;
+  background-color: #fed8ce;
+  padding: 10px;
+  text-align: right;
+}
+.zzq_order_foot_wid>span{
+  color: #ec570e;
+}
