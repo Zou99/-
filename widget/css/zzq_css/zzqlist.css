@@ -208,7 +208,7 @@
   display: inline-block;
   font-size: 14px;
 }
-.zzq_detail_danger_cuo{
+.zzq_detail_danger_cuo,.zzq_detail_danger_cuo2{
   position: absolute;
 right: 10px;
 line-height: 1.8;
@@ -224,7 +224,7 @@ line-height: 1.8;
 .zzq_detile_frm_shop>img{
       border-radius: 10px;
 }
-.zzq_detail_spec_rgba{
+.zzq_detail_spec_rgba,.zzq_detail_spec_rgba2{
   background-color:rgba(0,0,0,0.5);
   width: 100%;
   /*opacity: 0;*/
