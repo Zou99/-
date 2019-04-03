@@ -12,8 +12,14 @@ $(document).ready(function() { //在文档加载完毕后执行
         }
 
     })
+
     $(".zzq_de_frm_head_cent").click(function() {
         $(".zzq_detai_hea_nwe").toggle();
+    })
+
+    // 加入购物车
+    $(".aui-bg-danger").click(function(){
+      $(".zzq_spec_shop").show()
     })
 
 })
