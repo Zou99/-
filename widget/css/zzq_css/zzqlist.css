@@ -305,7 +305,7 @@
     width: 100%;
 }
 
-.zzq_order_peo, .zzq_order_first, .zzq_order_two_main,.zzq_sec_frm_lab {
+.zzq_order_peo, .zzq_order_first, .zzq_order_two_main,.zzq_sec_frm_lab,.zzq_addrec_details {
     width: 100%;
 }
 
@@ -379,4 +379,16 @@
 }
 .zzq_seic_frm_def_hea{
     margin-bottom: 0.75rem;
+}
+/*添加收货地址页面*/
+.zzq_addrec_ip,.zzq_addrec_ip>input{
+  width: 100%;
+}
+.zzq_addrec_leab>div{
+  width: 100%;
+  /*text-align: center;*/
+  padding-left: 10px;
+}
+.zzq_addrec_leab{
+  font-size: 0.7rem;
 }

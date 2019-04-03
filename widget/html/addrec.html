@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>addrec</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
+    <style media="screen">
+        html,
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .aui-bar-nav,
+        .aui-iconfont {
+            color: #000!important;
+        }
+
+        .zzq_rece_head {
+            color: #000;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header" style="background-color:#f9f9f9;">
+        <a class="aui-btn aui-pull-left" tapmode onclick="cloaddecr()">
+            <span class="aui-iconfont aui-icon-left"></span>
+            <span class="zzq_rece_head">添加新地址</span>
+        </a>
+        <div class="aui-title"></div>
+        <div class="aui-pull-right aui-btn">保存</div>
+    </header>
+
+    <section>
+
+    <!-- 收货人 -->
+    <div class="aui-list">
+      <div class="aui-list-item" style="background-image:none;">
+        <div class="aui-list-item-label zzq_addrec_leab">
+          <div>
+            收货人
+          </div>
+        </div>
+        <div class="aui-list-item-inner">
+          <div class="zzq_addrec_ip">
+            <input type="text" name="" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 联系电话 -->
+    <div class="aui-list">
+      <div class="aui-list-item" style="background-image:none;">
+        <div class="aui-list-item-label zzq_addrec_leab">
+          <div>
+            联系电话
+          </div>
+        </div>
+        <div class="aui-list-item-inner">
+          <div class="zzq_addrec_ip">
+            <input type="number" name="" value="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 三级联动地区 -->
+    <div class="aui-list">
+      <div class="aui-list-item" style="background-image:none;">
+        <div class="aui-list-item-inner zzq_addrec_leab">
+          <div>
+            所在地区
+          </div>
+        </div>
+        <div class="aui-list-item-label">
+          <div class="zzq_sec_frm_lab" style="text-align:right;padding-right:10px;font-size: 0.7rem;color:#a1a1a1;">
+            请选择
+              <img src="../image/lie/right.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 详细地址 -->
+    <div class="aui-list" style="margin-bottom:10px;">
+        <div class="aui-list-item" style="background-image:none;">
+          <div class="aui-list-item-inner" style="padding-left: 10px;">
+            <input type="text" name="" value="" placeholder="详细地址">
+          </div>
+          <div></div>
+        </div>
+    </div>
+    <!-- 是否设置成默认地址 -->
+    <div class="aui-list">
+      <div class="aui-list-item" style="background-image:none;">
+        <div class="aui-list-item-inner zzq_addrec_leab">
+          <div>
+            设置为默认地址
+          </div>
+        </div>
+        <div class="aui-list-item-label">
+          <div class="zzq_addrec_ip">
+            <input type="checkbox" name="..." value="..." checked />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+    };
+    function cloaddecr() {
+        api.closeWin({
+            name: 'adderec'
+        });
+    }
+
+</script>
+
+</html>

@@ -30,7 +30,7 @@
 
         .zzq_sec_input{
           text-align: center;
-    background-clip: padding-box;
+          background-clip: padding-box;
         }
         .zzq_sec_input::after {
             content: '';
@@ -81,7 +81,7 @@
             </div>
             <div class="aui-card-list-footer aui-border-t">
                 <div class="zzq_seic_input_he">
-                    <span class="aui-radio aui-margin-r-5 zzq_sec_input"></span>默认地址
+                    <span class="aui-radio aui-margin-r-5 zzq_sec_input zzq_rec_bg_nw"></span>默认地址
                 </div>
                 <div>
                     <i class="aui-iconfont aui-icon-edit aui-margin-r-5 aui-font-size-14"></i>编辑
@@ -154,9 +154,13 @@
     // 收货地址页面点击input框
     $(".zzq_seic_input_he").click(function() {
         // alert(123)
+        $(".zzq_rec_bg_nw").removeClass('zzq_rec_bg_nw');
         $(this).find('.zzq_sec_input').toggleClass('zzq_rec_bg_nw');
-        // 其他单选框的样式
-        $(this).parents('.aui-card-list').siblings().find('.zzq_sec_input').toggleClass('zzq_seic_input_hgb');
+        // 暂定点击地址后是否直接退出收货地址页面
+        // api.closeWin({
+        //     name: 'receiving'
+        // });
+
     })
 </script>
 
