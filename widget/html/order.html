@@ -14,7 +14,7 @@
     <style media="screen">
         html,
         body {
-            background-color: #f4f4f4;
+            background-color: #f5f5f5;
         }
 
         .zzq_order_ok {
@@ -35,6 +35,22 @@
         .icon-you3{
           color: #cbcbcb;
         }
+        .zzq_order_foot_right_d{
+         background: -webkit-gradient(linear, 0 0, 100% 0, from(#fc7800),to(#fd4f00));
+
+        }
+        .zzq_order_foot_right_sond{
+          text-align: center;
+          color: #fff;
+          width: 100%;
+        }
+        .zzq_order_v_ck,.zzq_order_v_pul{
+          width: 100%;
+          text-align: right;
+        }
+        .zzq_order_v_ck>span,.zzq_order_right_sond_git>span{
+            color:#ec570e;
+        }
     </style>
 </head>
 
@@ -51,7 +67,7 @@
     <section>
         <!-- 关于收货地址及收货人的 -->
         <div class="zzq_order_first">
-            <div class="aui-row" style="padding:10px 0;background-color:#fff;">
+            <div class="aui-row" style="padding:10px 0;background-color:#fff;" onclick="rece()">
                 <div class="aui-col-xs-2 zzq_order_xs2" style="width:15%;">
                     <i class="iconfont icon-dizhi"></i>
                 </div>
@@ -180,27 +196,44 @@
                   <div style="width:100%;" class="zzq_txt">
                     <input type="text" name="" value="" placeholder="选填:填写内容已和卖家协商确认">
                   </div>
-
                 </div>
               </div>
             </div>
 
+            <!-- 商品小计 -->
+            <div class="aui-list">
+                <div class="aui-list-item">
+                    <div class="aui-list-item-inner" style="padding-right:0px;">
+                      <div class="zzq_order_v_pul">
+                      共<span>1</span>件商品 小计:
+                      </div>
+                    </div>
+                    <div class="aui-list-item-label">
+                      <div class="zzq_order_right_sond_git">
+                        <i class="iconfont icon-qian" style="font-size:10px;color:#ec570e;padding:0 5px;"></i><span>45.00</span>
+                      </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-
-    </section>
+        <!-- 仅供占底部位置设 -->
+        <br><br><br><br>
+</section>
 
     <footer class="zzq_aorder_fot">
       <div class="zzq_order_foot_wid">
-        <span>已使用红包，以节省<span>1.09</span>元</span>
+        <span>已使用红包，以节省<span>1.19</span>元</span>
       </div>
         <div class="aui-list">
             <div class="aui-list-item">
                 <div class="aui-list-item-inner">
-                  合计:   <i class="iconfont icon-qian" style="font-size:10px;"></i>113.81
+                  <div class="zzq_order_v_ck">
+                  合计:   <i class="iconfont icon-qian" style="font-size:10px;color:#ec570e;padding:0 5px;"></i><span>43.81</span>
+                  </div>
                 </div>
                 <div class="aui-list-item-label zzq_order_foot_right_d">
-                  提交订单
+                  <div class="zzq_order_foot_right_sond">提交订单</div>
                 </div>
             </div>
         </div>
@@ -228,6 +261,17 @@
       api.closeWin({
           name: 'order'
       });
+    }
+
+    // 点击跳转收货地址管理页面
+    function rece(){
+      api.openWin({
+         name: 'receiving',
+         url: './receiving_win.html',
+         pageParam: {
+            name:'test'
+         }
+     })
     }
 </script>
 
