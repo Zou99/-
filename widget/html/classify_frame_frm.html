@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .aui-card-list {
+            margin-bottom: 0;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .title {
+            height: 2.5rem;
+            line-height: 2.3rem;
+            font-size: 0.75rem;
+            color: #4d4d4d;
+        }
+
+        .title-left {
+            float: left;
+        }
+
+        .title-right {
+            float: right;
+            font-size: 0.69rem;
+            color: #ee9125;
+        }
+
+        .content-main {
+            float: right;
+            background-color: #fff;
+            height: 100%;
+            width: 100%;
+            border-radius: 1rem;
+            padding: 1rem 1rem 0.8rem 0;
+        }
+
+        .aui-col-xs-4 {
+            padding-left: 1rem!important;
+            padding-bottom: 0.2rem!important;
+        }
+
+        .content-name {
+            color: #7f7f7f;
+            text-align: center;
+            line-height: 1.5rem;
+            font-size: 0.64rem;
+        }
+
+        .content2-img img {
+          border-radius: 50%;
+        }
+
+
+        .content3 {
+          background-color: #f2f2f2!important;
+          border-radius: 0!important;
+          border: 0px;
+          padding: 0rem 1rem 0 0!important;
+        }
+        .content3 .aui-col-xs-4 {
+          position: relative;
+          margin-bottom: 0.4rem;
+        }
+        .content3 .content3-img {
+          width: 4rem;
+        }
+        .content3-img img {
+          border-radius: 4px;
+        }
+        .content3 .aui-col-xs-4 .bg {
+          border-radius: 4px;
+          width: 4rem;
+          height: 5rem;
+          float: left;
+          position: absolute;;
+          bottom: 0.2rem;
+          text-align: center;
+          line-height: 8rem;
+          color: #fff;
+          font-size: 0.64rem;
+          overflow: hidden;
+          background: -webkit-gradient(linear,0 top,0 bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,.3)));
+      }
+      .content4 .aui-col-xs-4{
+        margin-bottom: 0.6rem;
+
+      }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="aui-content aui-padded-l-5 aui-padded-r-10 aui-padded-t-5">
+      <!-- 样式1 分类推荐 上面图片 下面文字-->
+        <div class="aui-row aui-row-padded">
+            <div class="aui-col-xs-12">
+                <div class="title">
+                    <div class="title-left">
+                        实施分类推荐
+                    </div>
+                    <div class="title-right">
+                        热销榜
+                        <i style="font-weight: 800;font-size:0.6rem;" class="aui-iconfont aui-icon-right"></i>
+                    </div>
+                </div>
+                <div style="background-color: #fff;" class="content-main content1">
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            DIY兼容机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            面条/挂面
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            鼠标垫
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            方便面
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            压缩饼干
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            T恤
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            卫衣
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            夹克
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- 样式2 个性一族 上面圆形图片 下面文字-->
+        <div class="aui-row aui-row-padded">
+            <div class="aui-col-xs-12">
+                <div class="title">
+                    <div class="title-left">
+                        个性一族
+                    </div>
+
+                </div>
+                <div  class="content-main content2">
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/f5.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/f5.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/f5.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content2-img">
+                            <img src="../image/f5.jpg" alt="">
+                        </div>
+                        <div class="content-name">
+                            手机
+                        </div>
+                    </div>  <div class="aui-col-xs-4">
+                          <div class="content2-img">
+                              <img src="../image/list/fan.jpg" alt="">
+                          </div>
+                          <div class="content-name">
+                              手机
+                          </div>
+                      </div>
+                      <div class="aui-col-xs-4">
+                          <div class="content2-img">
+                              <img src="../image/f5.jpg" alt="">
+                          </div>
+                          <div class="content-name">
+                              手机
+                          </div>
+                      </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- 样式3 字和图片在一起-->
+        <div class="aui-row aui-row-padded">
+            <div class="aui-col-xs-12">
+                <div class="title">
+                    <div class="title-left">
+                        为您推荐
+                    </div>
+                </div>
+                <div  class="content-main content3">
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content3-img">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="bg">
+                              手机
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- 样式4 食品品牌 上面图片 只有图片-->
+        <div class="aui-row aui-row-padded">
+            <div class="aui-col-xs-12">
+                <div class="title">
+                    <div class="title-left">
+                        食品品牌
+                    </div>
+                </div>
+                <div style="background-color: #fff;" class="content-main content4">
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/fan.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-4">
+                        <div class="content-img">
+                            <img src="../image/list/wu0.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+    };
+</script>
+
+</html>

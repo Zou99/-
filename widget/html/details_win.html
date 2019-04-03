@@ -16,11 +16,11 @@
         </a>
         <div class="aui-title" style="color:#000;">商品详情</div>
         <a class="aui-btn aui-pull-right" style="color:#000;">
-          <span class="iconfont icon-fenxiang1" style="padding-right: 15px;"></span><span class="iconfont icon-menu"></span>
+            <span class="iconfont icon-fenxiang1" style="padding-right: 15px;"></span><span class="iconfont icon-menu"></span>
         </a>
     </header>
 
-    <footer class="aui-bar aui-bar-tab" id="footer">
+    <footer class="aui-bar aui-bar-tab zzq_du_wi_fot" id="footer">
         <div class="aui-bar-tab-item" tapmode style="width: 3rem;">
             <i class="aui-iconfont aui-icon-comment aui-text-info"></i>
             <div class="aui-bar-tab-label aui-text-info">咨询</div>
@@ -35,31 +35,7 @@
 </body>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function() {
-        api.parseTapmode();
-        var header = $api.byId('aui-header');
-        $api.fixStatusBar(header);
-        var headerPos = $api.offset(header);
-        var body_h = $api.offset($api.dom('body')).h;
-        var footerH = $api.offset($api.byId('footer')).h;
-        api.openFrame({
-            name: 'details_frm',
-            url: 'details_frm.html',
-            bounces: true,
-            rect: {
-                x: 0,
-                y: headerPos.h,
-                w: 'auto',
-                h: api.winHeight - headerPos.h - footerH
-            }
-        })
-    };
+<script type="text/javascript" src="../script/zzq_js/detil.js"></script>
 
-    function closeWin() {
-        api.closeWin({});
-    }
-
-</script>
 
 </html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/aui-slide.css" />
+    <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_d4s4h4hylag.css">
+    <style media="screen">
+        html,
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .zzq_order_ok {
+            padding-left: 5px;
+            color: #000;
+            /*font-size: 14px;*/
+        }
+        .zzq_txt{
+          font-size: 14px;
+        }
+        .zzq_order_xs2 {
+            line-height: 5;
+            text-align: center;
+        }
+        .zzq_or_mon_le>i,.zzq_or_mon_le>span{
+          color: #ed520b;
+        }
+        .icon-you3{
+          color: #cbcbcb;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav aui-bar-light" style="background-color:#f9f9f9;">
+        <div class="aui-pull-left aui-btn" onclick="clord()">
+            <span class="aui-iconfont aui-icon-left zzq_order_up" style="color: #5d656a;"></span>
+            <span class="zzq_order_ok">确认订单</span>
+        </div>
+        <div class="aui-title"></div>
+    </header>
+
+    <!-- 中间正文部分 -->
+    <section>
+        <!-- 关于收货地址及收货人的 -->
+        <div class="zzq_order_first">
+            <div class="aui-row" style="padding:10px 0;background-color:#fff;">
+                <div class="aui-col-xs-2 zzq_order_xs2" style="width:15%;">
+                    <i class="iconfont icon-dizhi"></i>
+                </div>
+                <div class="aui-col-xs-8" style="width:70%;">
+                    <!-- 收货人信息 -->
+                    <div class="zzq_order_peo">
+                        <div class="zzq_order_peo_left"><span>收货人:</span><span>宋书航</span></div>
+                        <div class="zzq_order_peo_rig">
+                            <span>15705275403</span>
+                        </div>
+                    </div>
+                    <!-- 收货地址信息 -->
+                    <div class="zzq_order_area">
+                        <span class="zzq_order_area_xia">
+                收货地址:<span>河南省洛阳市开元区龙翔街144号抚顺石油小区3栋1602室</span>
+                        </span>
+                        <div class="zzq_order_are_news">
+                            (收货不便时，可选择免费代收货服务)
+                        </div>
+                    </div>
+
+                </div>
+                <div class="aui-col-xs-2 zzq_order_xs2" style="width:15%;">
+                    <i class="iconfont icon-you3"></i>
+                </div>
+            </div>
+            <!-- 装饰用的图片 -->
+            <div class style="width:100%">
+                <img src="../image/lie/img.png" alt="">
+            </div>
+        </div>
+
+        <!-- 订单的内容 -->
+        <div class="zzq_order_two_main">
+            <div class="zzq_order_two_son aui-list">
+                <div class="aui-list-item">
+                    <div class="zzq_order_tw_logo aui-list-item-label" style="width:15%;">
+                        <img src="../image/lie/shoplogo.jpg" alt="">
+                    </div>
+                    <div class="zzq_order_tw_logo aui-list-item-inner" style="font-size:14px;">康博玩具</div>
+                </div>
+            </div>
+            <div class="aui">
+              <div class="aui-row" style="padding:10px;">
+                  <div class="aui-col-xs-4">
+                    <img src="../image/list/wu0.jpg" alt="">
+                  </div>
+                  <div class="aui-col-xs-8">
+                    <div class="zzq_order_shop_ri">
+                      <p class="zzq_ord_p_1">
+                          包邮抖音同款七龙珠周边动漫底座悟空手办7颗神龙水晶龙球礼物
+                      </p>
+                      <p class="zzq_shop_rig_list">
+                          七颗全套（黄色）4.3CM;龙珠立牌+王者戒指+王者钱包+宁王
+                      </p>
+                      <p class="zzq_shop_ord_txt">
+                        发货时间: 卖家承诺7天
+                      </p>
+                      <div class="zzq_shop_or_mon">
+                        <div class="zzq_or_mon_le" style="float:left;">
+                          <i class="iconfont icon-qian" style="font-size:10px;"></i><span>45.00</span>
+                        </div>
+                        <div class="zzq_or_mon_ri" style="float:right;">x1</div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <!-- 运费险，配送方式等... -->
+            <div class="aui-list">
+              <div class="aui-list-item" style="background-image: none;">
+                <div class="aui-list-item-label zzq_txt">
+                  公益宝贝
+                </div>
+                <div class="aui-list-item-inner zzq_txt">
+                  <div style="float:left;" class="zzq_txt">
+                    成交后卖家将捐赠0.02元给公益宝贝计划
+                  </div>
+                  <div style="float:right;width:15%;text-align:center;">
+                    <i class="iconfont icon-you3"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aui-list">
+              <div class="aui-list-item" style="background-image: none;">
+                <div class="aui-list-item-label zzq_txt">
+                  配送方式
+                </div>
+                <div class="aui-list-item-inner zzq_txt">
+                  <div style="width:100%;text-align:right;" class="zzq_txt">
+                    快递 免邮
+                  </div>
+                  <div style="float:right;width:15%;text-align:center;">
+                    <i class="iconfont icon-you3"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="aui-list">
+              <div class="aui-list-item" style="background-image: none;">
+                <div class="aui-list-item-label zzq_txt">
+                  运费险
+                </div>
+                <div class="aui-list-item-inner zzq_txt">
+                  <div style="width:100%;text-align:right;" class="zzq_txt">
+                    卖家送，确认收货前退货可赔
+                  </div>
+                  <div style="float:right;width:15%;text-align:center;">
+                    <i class="iconfont icon-you3"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 买家留言 -->
+            <div class="aui-list">
+              <div class="aui-list-item" style="background-image: none;">
+                <div class="aui-list-item-label zzq_txt">
+                  买家留言
+                </div>
+                <div class="aui-list-item-inner zzq_txt">
+                  <div style="width:100%;" class="zzq_txt">
+                    <input type="text" name="" value="" placeholder="选填:填写内容已和卖家协商确认">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <footer class="zzq_aorder_fot">
+        <div class="aui-list">
+            <div class="aui-list-item">
+                <div class="aui-list-item-inner">1</div>
+                <div class="aui-list-item-label">1</div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/zzq_js/list.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var header = $api.dom('header'); // 获取 header 标签元素
+        var footer = $api.dom('footer'); // 获取 footer 标签元素
+        // 1.修复开启沉浸式效果带来的顶部Header与手机状态栏重合的问题，最新api.js方法已支持适配iPhoneX；
+        // 2.默认已开启了沉浸式效果 config.xml中 <preference name="statusBarAppearance" value="true"/>
+        // 3.沉浸式效果适配支持iOS7+，Android4.4+以上版本
+        var headerH = $api.fixStatusBar(header);
+        // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
+        var footerH = $api.fixTabBar(footer);
+    };
+    function clord() {
+      api.closeWin({
+          name: 'order'
+      });
+    }
+</script>
+
+</html>

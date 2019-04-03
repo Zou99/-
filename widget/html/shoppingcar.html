@@ -10,12 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <link rel="stylesheet" href="../css/aui-slide.css" />
     <link rel="stylesheet" href="../css/tabo.css">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_gd8po82zgzc.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_1f4csnucquv.css">
     <style media="screen">
-        html,
-        body {
-            height: 100%;
-        }
 
         .flex-1 {
             -webkit-box-flex: 1;
@@ -67,6 +63,25 @@
             display: inline-block;
             font-size: 14px;
         }
+        .zzq_car_checking::after {
+            content: '';
+            width: 0.5rem;
+            height: 0.3rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -0.25rem;
+            margin-top: -0.25rem;
+            background: transparent;
+            border: 1px solid #ffffff;
+            border-top: none;
+            border-right: none;
+            z-index: 2;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+            -webkit-transform: rotate(-45deg);
+            /* transform: rotate(-45deg); */
+        }
 
         .zzq_shp_car_check::after {
             content: '';
@@ -86,6 +101,28 @@
             border-radius: 0;
             -webkit-transform: rotate(-45deg);
             /* transform: rotate(-45deg); */
+        }
+
+        .zzq_car_checking{
+          border-radius: 50%;
+          width: 1.2rem;
+          height: 1.2rem;
+          background-color: #ffffff;
+          border: solid 1px #dddddd;
+          -webkit-border-radius: 0.6rem;
+          border-radius: 0.6rem;
+          font-size: 0.8rem;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          display: inline-block;
+          vertical-align: top;
+          cursor: default;
+          -webkit-appearance: none;
+          -webkit-user-select: none;
+          user-select: none;
+          -webkit-transition: background-color ease 0.1s;
+          transition: background-color ease 0.1s;
         }
 
         .zzq_shp_car_check {
@@ -125,6 +162,15 @@
             padding-right: 10px;
             font-size: 14px;
         }
+
+        .aui-bar-btn-item {
+            border-color: #e2e2e2;
+            color: #bbb;
+        }
+        .zzq_car_dsd{
+          color: #999999;
+          font-size: 12px;
+        }
     </style>
 </head>
 
@@ -138,51 +184,202 @@
                 购物车<span>(<span>2</span>)</span>
             </div>
         </div>
-        <div class="aui-pull-right aui-btn zzq_shop_head">
-            <span>管理</span>
+        <div class="aui-pull-right aui-btn zzq_shop_head" id="zzq_shop_guanli">
+            <span class="zzq_shop_guli">管理</span>
+            <span class="zzq_shop_ok">完成</span>
         </div>
     </header>
 
     <section class="flex-1">
-      <div class="zzq_shop_main">
-
-        <div class="aui-list">
-            <div class="aui-list-item">
+        <div class="zzq_shop_main">
+            <!-- 管理购物车 -->
+            <div class="aui-list zzq_clr_list_ne">
+              <div class="aui-list-item">
+                <div class="aui-list-item-label">
+                  <div class="zzq_lab_qingli">
+                  <i class="iconfont icon-qingli"></i><span class="zzq_clr_sp">清理</span>
+                  </div>
+                </div>
                 <div class="aui-list-item-inner">
-                    <div class="aui-row">
-                        <div class="aui-col-xs-2">
-                            <input class="zzq_shp_car_check" type="checkbox" name="demo1" checked="">
+                  <div class="zzq_clr_del_all">
+                      <span class="zzq_cle_fr_lov">移入收藏夹</span><span class="zzq_clr_del">删除</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="aui-list" style="background-image:none;">
+                <div class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-row">
+                            <div class="aui-col-xs-2">
+                                <input class="zzq_shp_car_check zzq_car_checking" type="checkbox" name="demo1" checked="">
+                            </div>
+                            <div class="aui-col-xs-10">
+                                <div class="zzq_shopp_head_dian">
+                                    <i class="iconfont icon-shangpu" style="color:#c9c9c9;"></i><span class="zzq_shopp_tras">天涯の动漫</span><i class="iconfont icon-icon-right"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="aui-col-xs-10">
-                            <div class="zzq_shopp_head_dian">
-                                <i class="iconfont icon-shangpu" style="color:#c9c9c9;"></i><span class="zzq_shopp_tras">天涯の动漫</span><i class="iconfont icon-icon-right"></i>
+                    </div>
+                    <div class="aui-list-item-label">
+                        <div class="zzq_shop_quan">
+                            领券
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 订单中的商品的样 -->
+            <div class="aui-list" style="background-image:none;">
+                <div class="aui-list-item">
+                    <div class="aui-list-item-label" style="width:10%;">
+                        <input class="zzq_shp_car_check zzq_car_checking" type="checkbox" name="demo1" checked="">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="zzq_shpo_img_left">
+                            <img src="../image/list/saya.jpg" alt="">
+                        </div>
+                        <div class="zzq_shop_left_list">
+                            <p>
+                                包邮抖音同款七龙珠周边动漫底座悟空手办7颗神龙水晶龙球礼物
+                            </p>
+                            <div class="zzq_shop_rig_list">
+                                七颗全套（黄色）4.3CM;龙珠立牌+王者戒指+王者钱包+明王
+                            </div>
+                            <div class="aui-row" style="padding-top:5px;">
+                                <div class="aui-col-xs-6 zzq_shop_xx">
+                                    <span>￥</span><span>68.82</span>
+                                </div>
+                                <div class="aui-col-xs-6" style="margin-top:5px;">
+                                    <div class="zzq_car_btn_l">
+                                        <i class="iconfont icon-jian"></i>
+                                    </div>
+                                    <div class="zzq_car_btn_c">
+                                      <span class="zzq_car_btn_num">1</span>
+                                    </div>
+                                    <div class="zzq_car_btn_r">
+                                      <i class="iconfont icon-jia"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="aui-list-item-label">
-                    <div class="zzq_shop_quan">
-                        领券
+            </div>
+
+        </div>
+
+        <!-- 第二个购物车中的商品 -->
+        <div class="zzq_shop_main">
+            <div class="aui-list" style="background-image:none;">
+                <div class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-row">
+                            <div class="aui-col-xs-2">
+                                <input class="zzq_shp_car_check zzq_car_checking" type="checkbox" name="demo1" checked="">
+                            </div>
+                            <div class="aui-col-xs-10">
+                                <div class="zzq_shopp_head_dian">
+                                    <i class="iconfont icon-shangpu" style="color:#c9c9c9;"></i><span class="zzq_shopp_tras">艾诗尼耶旗舰店</span><i class="iconfont icon-icon-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-list-item-label">
+                        <div class="zzq_shop_quan">
+                            领券
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- 订单中的商品的样 -->
-        <div class="aui-list">
-          <div class="aui-list-item">
-            <div class="aui-list-item-label">
-              <input class="zzq_shp_car_check" type="checkbox" name="demo1" checked="">
+            <!-- 订单中的商品的样 -->
+            <div class="aui-list" style="background-image:none;">
+                <div class="aui-list-item">
+                    <div class="aui-list-item-label" style="width:10%;">
+                        <input class="zzq_shp_car_check zzq_car_checking" type="checkbox" name="demo1" checked="">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="zzq_shpo_img_left">
+                            <img src="../image/list/wu.jpg" alt="">
+                        </div>
+                        <div class="zzq_shop_left_list">
+                            <p>
+                                包邮抖音同款七龙珠周边动漫底座悟空手办7颗神龙水晶龙球礼物
+                            </p>
+                            <div class="zzq_shop_rig_list">
+                                七颗全套（黄色）4.3CM;龙珠立牌+王者戒指+王者钱包+明王
+                            </div>
+                            <div class="aui-row" style="padding-top:5px;">
+                                <div class="aui-col-xs-6 zzq_shop_xx">
+                                    <span>￥</span><span>168.82</span>
+                                </div>
+                                <div class="aui-col-xs-6" style="margin-top:5px;">
+                                    <div class="zzq_car_btn_l">
+                                        <i class="iconfont icon-jian"></i>
+                                    </div>
+                                    <div class="zzq_car_btn_c">
+                                      <span>1</span>
+                                    </div>
+                                    <div class="zzq_car_btn_r">
+                                      <i class="iconfont icon-jia"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="aui-list-item-inner">
-              <div>
-                <img src="../image/list/saya.jpg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
 
-  </div>
+        </div>
     </section>
+
+<!-- 推荐 -->
+<section class="zzq_car_se_two">
+  <!-- <i class="iconfont icon-dot-line"></i> -->
+  <div class="zzq_car_lov">
+    <i class="iconfont icon-dot-line"></i>
+    你可能还喜欢
+    <i class="iconfont icon-dot-line" style=""></i>
+  </div>
+
+<div class="aui-row">
+  <div class="aui-col-xs-6 zzq_car_lov_lef">
+    <div class="zzq_car_fig" style="width:100%;">
+      <img src="../image/list/wu0.jpg" alt="">
+    </div>
+    <div class="zzq_car_lov_bok">
+      名芮居动漫其龙珠手办FZERO赛亚人孙悟空手办ZERO孙悟空超级赛亚人
+    </div>
+    <div class="zzq_car_lo_ic">
+      <span class="zzq_car_lo_fs">
+        <i class="iconfont icon-qian" style="font-size:10px;"></i><span>39.8</span>
+      </span>
+      <span class="zzq_car_dsd">83172人付款</span>
+      <span class="zzq_car_ds">找相似</span>
+    </div>
+  </div>
+  <div class="aui-col-xs-6 zzq_car_lov_rit">
+    <div class="zzq_car_fig" style="width:100%;">
+      <img src="../image/list/saya.jpg" alt="">
+    </div>
+    <div class="zzq_car_lov_bok">
+      名芮居动漫其龙珠手办FZERO赛亚人孙悟空手办ZERO孙悟空超级赛亚人
+    </div>
+    <div class="zzq_car_lo_ic">
+      <span class="zzq_car_lo_fs">
+        <i class="iconfont icon-qian" style="font-size:10px;"></i><span>39.8</span>
+      </span>
+      <span class="zzq_car_dsd">83172人付款</span>
+      <span class="zzq_car_ds">找相似</span>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
 
 
     <!-- 结算 -->
@@ -191,7 +388,7 @@
             <div class="aui-list-item-inner">
                 <div class="aui-row" style="width:100%;">
                     <div class="aui-col-xs-4 zzq_shop_lef">
-                        <input class="zzq_shp_car_check" type="checkbox" name="demo1" checked="">
+                        <input class="zzq_shp_car_check zzq_chenk_all" type="checkbox" name="demo1" checked="">
 
                         <div class="zzq_shopcar_all">
                             全选
@@ -209,7 +406,7 @@
 
             </div>
 
-            <div class="aui-list-item-label">
+            <div class="aui-list-item-label" onclick="orde()">
                 <div class="zzq_shop_car_mon">
                     结算(<span>0</span>)
                 </div>
@@ -268,6 +465,15 @@
             name: 'shop'
         });
 
+    }
+    function orde(){
+      api.openWin({
+         name: 'order',
+         url: './order.html',
+         pageParam: {
+            name:'test'
+         }
+     })
     }
 </script>
 

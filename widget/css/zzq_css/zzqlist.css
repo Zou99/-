@@ -239,9 +239,59 @@ line-height: 1.8;
   font-size: 14px;
 }
 .zzq_dit_btn_foot{
-  /*position: fixed;*/
+  position: fixed;
   height: 60px;
   background-color: red;
   bottom: 0;
   width: 100%;
+}
+
+/*order页面样式*/
+.zzq_aorder_fot{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.zzq_order_peo,.zzq_order_first,.zzq_order_two_main{
+  width: 100%;
+}
+.zzq_order_peo_left{
+  float: left;
+}
+.zzq_order_peo_rig{
+  float: right;
+}
+.zzq_order_area{
+  font-size: 14px;
+  width: 100%;
+}
+.zzq_order_area_xia,{
+  display: inline-block;
+}
+.zzq_order_area_xia>span{
+  display: inline;
+}
+.zzq_order_are_news{
+  font-size: 14px;
+  color: #e6ab56;
+}
+.zzq_order_two_son{
+  width: 100%;
+  background-color: #fff;
+}
+.zzq_order_tw_logo>img{
+  width: 30px;
+}
+.zzq_ord_p_1{
+  color: #000;
+}
+.zzq_order_shop_ri{
+  padding-left: 10px;
+}
+.zzq_shop_ord_txt{
+  color: #ffa400;
+}
+.zzq_order_shop_ri>p{
+  font-size: 12px;
+  margin-bottom: 5px;
 }
