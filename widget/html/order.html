@@ -40,7 +40,7 @@
 
 <body>
     <header class="aui-bar aui-bar-nav aui-bar-light" style="background-color:#f9f9f9;">
-        <div class="aui-pull-left aui-btn">
+        <div class="aui-pull-left aui-btn" onclick="clord()">
             <span class="aui-iconfont aui-icon-left zzq_order_up" style="color: #5d656a;"></span>
             <span class="zzq_order_ok">确认订单</span>
         </div>
@@ -123,7 +123,7 @@
 
             <!-- 运费险，配送方式等... -->
             <div class="aui-list">
-              <div class="aui-list-item">
+              <div class="aui-list-item" style="background-image: none;">
                 <div class="aui-list-item-label zzq_txt">
                   公益宝贝
                 </div>
@@ -139,7 +139,7 @@
             </div>
 
             <div class="aui-list">
-              <div class="aui-list-item">
+              <div class="aui-list-item" style="background-image: none;">
                 <div class="aui-list-item-label zzq_txt">
                   配送方式
                 </div>
@@ -155,7 +155,7 @@
             </div>
 
             <div class="aui-list">
-              <div class="aui-list-item">
+              <div class="aui-list-item" style="background-image: none;">
                 <div class="aui-list-item-label zzq_txt">
                   运费险
                 </div>
@@ -172,7 +172,7 @@
 
             <!-- 买家留言 -->
             <div class="aui-list">
-              <div class="aui-list-item">
+              <div class="aui-list-item" style="background-image: none;">
                 <div class="aui-list-item-label zzq_txt">
                   买家留言
                 </div>
@@ -219,6 +219,11 @@
         // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
         var footerH = $api.fixTabBar(footer);
     };
+    function clord() {
+      api.closeWin({
+          name: 'order'
+      });
+    }
 </script>
 
 </html>

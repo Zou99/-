@@ -239,7 +239,7 @@ line-height: 1.8;
   font-size: 14px;
 }
 .zzq_dit_btn_foot{
-  /*position: fixed;*/
+  position: fixed;
   height: 60px;
   background-color: red;
   bottom: 0;

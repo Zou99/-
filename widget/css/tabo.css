@@ -347,3 +347,11 @@
   color: #717171;
   padding: 0 3px;
 }
+.zzq_zzq_frm_g{
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  height: 305px;
+overflow-y: scroll;
+/*border: 1px solid red;*/
+}

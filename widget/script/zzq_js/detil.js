@@ -16,8 +16,4 @@ $(document).ready(function() { //在文档加载完毕后执行
         $(".zzq_detai_hea_nwe").toggle();
     })
 
-    $(".zzq_pc_guige").click(function() {
-        $(".zzq_spec_detil").show();
-        $(".zzq_du_wi_fot").hide();
-    });
 })
