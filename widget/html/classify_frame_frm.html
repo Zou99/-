@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <title>商品分类右侧</title>
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>Hello APP</title>
@@ -113,7 +114,7 @@
                 </div>
                 <div style="background-color: #fff;" class="content-main content1">
                     <div class="aui-col-xs-4">
-                        <div class="content-img">
+                        <div class="content-img" tapmode onclick="classify_details()">
                             <img src="../image/list/wu0.jpg" alt="">
                         </div>
                         <div class="content-name">
@@ -430,6 +431,16 @@
     apiready = function() {
         api.parseTapmode();
     };
+    function classify_details(){
+      api.openWin({
+          name: 'classify_details',
+          url: './classify_details.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
 </script>
 
 </html>
