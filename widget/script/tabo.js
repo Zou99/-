@@ -53,27 +53,39 @@ $(".zzq_car_checking").click(function(){
 
     // 购物车页面的按钮加减按钮
     $('.zzq_car_btn_r').click(function() {
-            $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) + 1);
-            if ($(".zzq_car_btn_num").html() > 1) {
-                $('.aui-icon-minus').show();
-            } else {
-                $('.aui-icon-minus').hide();
-            }
-            var i = $(".Price_tit").html();
-            var n = $(".zzq_car_btn_num").html();
-            $(".Price_foot").html(i * n);
-        });
-        $(".zzq_car_btn_l").click(function() {
-            $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) - 1);
-            if ($(".zzq_car_btn_num").html() == 1) {
-                $('.aui-icon-minus').hide();
-            } else {
-                $('.aui-icon-minus').show();
-            }
-            var i = $(".Price_tit").html();
-            var n = $(".add_num").html();
-            $(".Price_foot").html(i * n);
-        });
+        // 定义库存变量
+        var stock = 20;
+        var test = $(this.parentNode).find(".zzq_car_btn_num").get(0);
+        // console.log(test.get(0).innerText)
+        if(test.innerText<stock){
+          test.innerText = (test.innerText)*1+1;
+        }
+        // $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) + 1);
+        // if ($(".zzq_car_btn_num").html() > 1) {
+        //     $('.aui-icon-minus').show();
+        // } else {
+        //     $('.aui-icon-minus').hide();
+        // }
+        // var i = $(".Price_tit").html();
+        // var n = $(".zzq_car_btn_num").html();
+        // $(".Price_foot").html(i * n);
+    });
+    $(".zzq_car_btn_l").click(function() {
+        var test = $(this.parentNode).find(".zzq_car_btn_num").get(0);
+        // console.log(test.get(0).innerText)
+        if(test.innerText>1){
+          test.innerText = (test.innerText)*1-1;
+        }
+        // $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) - 1);
+        // if ($(".zzq_car_btn_num").html() == 1) {
+        //     $('.aui-icon-minus').hide();
+        // } else {
+        //     $('.aui-icon-minus').show();
+        // }
+        // var i = $(".Price_tit").html();
+        // var n = $(".add_num").html();
+        // $(".Price_foot").html(i * n);
+    });
 
 
 });
