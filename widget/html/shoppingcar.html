@@ -343,38 +343,38 @@
     <i class="iconfont icon-dot-line" style=""></i>
   </div>
 
-<div class="aui-row">
-  <div class="aui-col-xs-6 zzq_car_lov_lef">
-    <div class="zzq_car_fig" style="width:100%;">
-      <img src="../image/list/wu0.jpg" alt="">
+  <div class="aui-row">
+    <div class="aui-col-xs-6 zzq_car_lov_lef">
+      <div class="zzq_car_fig" style="width:100%;">
+        <img src="../image/list/wu0.jpg" alt="">
+      </div>
+      <div class="zzq_car_lov_bok">
+        名芮居动漫其龙珠手办FZERO赛亚人孙悟空手办ZERO孙悟空超级赛亚人
+      </div>
+      <div class="zzq_car_lo_ic">
+        <span class="zzq_car_lo_fs">
+          <i class="iconfont icon-qian" style="font-size:10px;"></i><span>39.8</span>
+        </span>
+        <span class="zzq_car_dsd">83172人付款</span>
+        <span class="zzq_car_ds">找相似</span>
+      </div>
     </div>
-    <div class="zzq_car_lov_bok">
-      名芮居动漫其龙珠手办FZERO赛亚人孙悟空手办ZERO孙悟空超级赛亚人
-    </div>
-    <div class="zzq_car_lo_ic">
-      <span class="zzq_car_lo_fs">
-        <i class="iconfont icon-qian" style="font-size:10px;"></i><span>39.8</span>
-      </span>
-      <span class="zzq_car_dsd">83172人付款</span>
-      <span class="zzq_car_ds">找相似</span>
+    <div class="aui-col-xs-6 zzq_car_lov_rit">
+      <div class="zzq_car_fig" style="width:100%;">
+        <img src="../image/list/saya.jpg" alt="">
+      </div>
+      <div class="zzq_car_lov_bok">
+        名芮居动漫其龙珠手办FZERO赛亚人孙悟空手办ZERO孙悟空超级赛亚人
+      </div>
+      <div class="zzq_car_lo_ic">
+        <span class="zzq_car_lo_fs">
+          <i class="iconfont icon-qian" style="font-size:10px;"></i><span>39.8</span>
+        </span>
+        <span class="zzq_car_dsd">83172人付款</span>
+        <span class="zzq_car_ds">找相似</span>
+      </div>
     </div>
   </div>
-  <div class="aui-col-xs-6 zzq_car_lov_rit">
-    <div class="zzq_car_fig" style="width:100%;">
-      <img src="../image/list/saya.jpg" alt="">
-    </div>
-    <div class="zzq_car_lov_bok">
-      名芮居动漫其龙珠手办FZERO赛亚人孙悟空手办ZERO孙悟空超级赛亚人
-    </div>
-    <div class="zzq_car_lo_ic">
-      <span class="zzq_car_lo_fs">
-        <i class="iconfont icon-qian" style="font-size:10px;"></i><span>39.8</span>
-      </span>
-      <span class="zzq_car_dsd">83172人付款</span>
-      <span class="zzq_car_ds">找相似</span>
-    </div>
-  </div>
-</div>
 
 </section>
 
@@ -419,7 +419,7 @@
             <i class="aui-iconfont aui-icon-home"></i>
             <div class="aui-bar-tab-label">首页</div>
         </div>
-        <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-bar-tab-item" tapmode onclick="classify()">
             <i class="aui-iconfont aui-icon-star"></i>
             <div class="aui-bar-tab-label">分类</div>
         </div>
@@ -432,7 +432,7 @@
             <i class="aui-iconfont aui-icon-cart"></i>
             <div class="aui-bar-tab-label">购物车</div>
         </div>
-        <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-bar-tab-item" tapmode onclick="personal()">
             <div class="aui-dot"></div>
             <i class="aui-iconfont aui-icon-my"></i>
             <div class="aui-bar-tab-label">个人中心</div>
@@ -470,6 +470,25 @@
       api.openWin({
          name: 'order',
          url: './order.html',
+         pageParam: {
+            name:'test'
+         }
+     })
+    }
+    function personal(){
+      api.openWin({
+         name: 'personal',
+         url: './personal.html',
+         pageParam: {
+            name:'test'
+         }
+     })
+    }
+    // 分类
+    function classify(){
+      api.openWin({
+         name: 'classify',
+         url: './classify_frame_win.html',
          pageParam: {
             name:'test'
          }

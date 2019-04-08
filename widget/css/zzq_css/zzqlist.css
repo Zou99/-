@@ -453,7 +453,7 @@
   -webkit-transition: background-color ease 0.1s;
   transition: background-color ease 0.1s;
 }
-/*广发写的分类页面的弹框样式*/
+/*广发写的分类页面,的弹框样式*/
 .zzq_funct_gf{
   position: fixed;
   top: 0;
@@ -461,4 +461,72 @@
   background-color: rgba(4, 3, 4, 0.5);
   height: 200px;
   z-index: 999;
+}
+/*订单详情页面样式*/
+.zzq_oeder_car_det{
+  width: 100%;
+  padding-top: 10px;
+  color: #fff;
+}
+.zzq_oeder_car_det>p{
+  color: #fff;
+}
+.zzq_order_det_yunshu,.zzq_det_o_footer{
+  width: 100%;
+}
+.zzq_order_det_width{
+  font-size: 14px;
+  width: 100%;
+  color: #3698de;
+  overflow: hidden;/*内容超出后隐藏*/
+  text-overflow: ellipsis;/* 超出内容显示为省略号*/
+  white-space: nowrap;/*文本不进行换行*/
+}
+.zzq_order_dte_ten{
+  padding: 10px 0;
+}
+.zzq_order_det_use_s{
+  color: #000;
+}
+.zzq_shop_ord_txt_next>span{
+  background-color: #fdf2eb;
+  color: #ff8446;
+  border-radius: 10px;
+}
+.zzq_order_dt_refund{
+  width: 100%;
+  text-align: right;
+      padding: 6% 3%;
+}
+.zzq_or_refund{
+  border:1px solid #e6e6e6;
+  border-radius: 20px;
+  padding: 3px 20px;
+  text-align: center;
+  color: #7f7f7f;
+  font-size: 12px;
+  display: inline-block;
+}
+.zzq_order_loction{
+  width: 100%;
+  margin-top: 10px;
+  background: #fff;
+}
+.zzq_height_order_l{
+  border: 1px solid #f95400;
+  height: 10px;
+}
+.zzq_impro_stor_order{
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  padding: 10px 0;
+}
+.zzq_det_o_footer>a{
+  color: #000;
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #cdcdcd;
+  border-radius: 20px;
+  font-size: 14px;
 }

@@ -31,7 +31,7 @@ $(".zzq_car_checking").click(function(){
           $('.zzq_sec_lis_new').hide();
       }
   }).blur(function() {
-    
+
       $(".zzq_histor").hide();
       $('.zzq_sec_lis_new').show();
   })
@@ -53,7 +53,8 @@ $(".zzq_car_checking").click(function(){
 
     // 购物车页面的按钮加减按钮
     $('.zzq_car_btn_r').click(function() {
-            $(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) + 1);
+      alert(123123156)
+            $(this).siblings().find(".zzq_car_btn_num").html(parseInt($(".zzq_car_btn_num").html()) + 1);
             if ($(".zzq_car_btn_num").html() > 1) {
                 $('.aui-icon-minus').show();
             } else {
