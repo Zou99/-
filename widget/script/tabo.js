@@ -31,7 +31,7 @@ $(".zzq_car_checking").click(function(){
           $('.zzq_sec_lis_new').hide();
       }
   }).blur(function() {
-    
+
       $(".zzq_histor").hide();
       $('.zzq_sec_lis_new').show();
   })
