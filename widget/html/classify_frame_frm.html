@@ -52,7 +52,11 @@
             color: #7f7f7f;
             text-align: center;
             line-height: 1.5rem;
-            font-size: 0.64rem;
+            font-size: 0.6rem;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .content2-img img {
@@ -64,11 +68,17 @@
           background-color: #f2f2f2!important;
           border-radius: 0!important;
           border: 0px;
-          padding: 0rem 1rem 0 0!important;
+          /* padding: 0rem 1rem 0 0!important; */
+          width: 100%;
+          float: left;
         }
         .content3 .aui-col-xs-4 {
           position: relative;
           margin-bottom: 0.4rem;
+          padding-left: 0.3rem!important;
+          /*padding-right: 0.6rem;*/
+          margin-right: 1%;
+          width: 32.333333%;
         }
         .content3 .content3-img {
           width: 4rem;
@@ -107,7 +117,7 @@
                     <div class="title-left">
                         实施分类推荐
                     </div>
-                    <div class="title-right">
+                    <div class="title-right" tapmode onclick="classify_hot()">
                         热销榜
                         <i style="font-weight: 800;font-size:0.6rem;" class="aui-iconfont aui-icon-right"></i>
                     </div>
@@ -134,7 +144,7 @@
                             <img src="../image/list/wu0.jpg" alt="">
                         </div>
                         <div class="content-name">
-                            面条/挂面
+                            面条挂面
                         </div>
                     </div>
                     <div class="aui-col-xs-4">
@@ -284,7 +294,7 @@
                         为您推荐
                     </div>
                 </div>
-                <div  class="content-main content3">
+                <div  class="content3">
                     <div class="aui-col-xs-4">
                         <div class="content3-img">
                             <img src="../image/list/saya.jpg" alt="">
@@ -440,6 +450,15 @@
           }
       });
 
+    }
+    function classify_hot(){
+      api.openWin({
+          name: 'classify_hot',
+          url: './classify_hot.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
     }
 </script>
 

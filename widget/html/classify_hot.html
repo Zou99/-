@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>实时推荐</title>
+    <title>商品分类热销榜</title>
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
@@ -70,10 +70,12 @@
 
         .nav {
             /*width: 100%;*/
-            height: 2rem;
+            /*height: 2rem;*/
+            height: 100%;
             background-color: #fff;
             overflow: auto;
             white-space: nowrap;
+            padding: 0px;
         }
 
         .menu {
@@ -84,11 +86,37 @@
             color: #404041;
             text-align: center;
             display: inline-block;
+            /*padding: 0.6rem 0 1rem 0;*/
         }
 
         .selected {
             border-bottom: 2px solid #ff4f05;
             color: #ff4f05;
+        }
+
+        .guding {
+            display: inline-block;
+            position: fixed;
+            width: 1.5rem;
+            height: 1.6rem;
+            top: 3.95rem;
+            right: 0px;
+            background-color: #fff;
+            z-index: 666;
+            border-left: 3px solid #f5f5f5;
+            text-align: center;
+            line-height: 1.6rem;
+            padding: 4px 0;
+        }
+
+        .menu:last-child {
+            margin-right: 1rem;
+        }
+
+        .ly-close1 {
+            transition: all 0.5s;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)!important;
         }
     </style>
 </head>
@@ -99,10 +127,10 @@
             <span class="iconfont icon-zuo1" tapmode onclick="api.closeWin()"></span>
         </div>
         <div class="aui-title" style="left:-3rem; right: 2rem;width:75%;color: #505050;">
-            商品分类
+            热销榜
         </div>
         <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
-            <i style="color:#000; right:1rem;" class="aui-iconfont aui-icon-share"></i>
+            <i style="color:#000; right:1rem;" class="aui-iconfont aui-icon-share" tapmode onclick="sharetext()"></i>
             <div class="zzq_list_rig">
                 <span></span>
                 <span></span>
@@ -111,12 +139,19 @@
         </div>
     </header>
     <nav class="nav" id="nav">
-        <div class="menu selected" tapmode="selected" onclick="fnSetNavMenuIndex(0)">全部</div>
-        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(1)">口味</div>
-        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(2)">品牌</div>
-        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(3)">特产品类</div>
+        <div class="menu selected" tapmode="selected" onclick="fnSetNavMenuIndex(0)">膨化食品</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(1)">巧克力制品</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(2)">豆腐干</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(3)">面条/挂面</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(4)">传统糕点</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(5)">花草茶</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(6)">压缩饼干</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(7)">酥性饼干</div>
+        <div class="menu" tapmode="selected" onclick="fnSetNavMenuIndex(8)">西式糕点</div>
     </nav>
-
+    <div class="guding" tapmode onclick="xiala()">
+        <img class="xia" src="../image/bottom.png" alt="">
+    </div>
 
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -142,14 +177,14 @@
         var frames = [];
         for (var i = 0; i < menus.length; i++) {
             frames.push({
-                name: 'classify_details_frame_' + i,
-                url: './classify_details_frame.html',
+                name: 'classify_hot_frame_' + i,
+                url: './classify_hot_frame.html',
             })
         }
 
 
         api.openFrameGroup({
-            name: 'classify_detailsGroup',
+            name: 'classify_hotGroup',
             background: '#f5f5f5',
             scrollEnabled: true,
             rect: {
@@ -163,8 +198,7 @@
         }, function(ret, err) {
             fnSetNavMenuSelected(ret.index);
         });
-
-
+        xiala();
     };
     var menus;
     // 状态栏css样式选中
@@ -188,6 +222,42 @@
             scroll: true
         });
     }
+    // 分享模块
+    function sharetext() {
+        var sharedModule = api.require('shareAction');
+        sharedModule.share({
+            text: '此处为推荐的消息！',
+            type: 'text'
+        });
+    };
+
+
+    function xiala() {
+        var header = $api.byId('aui-header');
+
+        var headerH = $api.offset(header).h;
+        // 打开下拉隐藏
+        api.openFrame({
+            name: 'classify_hot_xiala',
+            url: './classify_hot_xiala.html',
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bgColor: 'rgba(0,0,0,0.6)',
+            bounces: false
+        });
+    }
+</script>
+<script type="text/javascript">
+    // $(".guding").click(function(){
+    //   $(".xia").toggleClass("ly-close1");
+    // })
 </script>
 
 </html>

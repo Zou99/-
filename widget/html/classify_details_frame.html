@@ -1,248 +1,301 @@
 <!DOCTYPE html>
-  <html>
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-      <title>商品分类子页面_frame</title>
-      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
-      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
-      <style>
+<html>
 
-      body {
-        background-color: #f5f5f5;
-      }
-      .aui-media-list {
-        background-color: #f5f5f5;
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>实时推荐_frame</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
 
-      }
-      ul {
-        padding-right: 0.4rem;
-      }
-      .aui-media-list .aui-list-item-inner {
-        padding-right: 0!important;
-      }
-      .aui-media-list .aui-list-item {
-        padding-left: 0!important;
-      }
-        .aui-media-list li .aui-col-xs-6{
-          /*border-top-left-radius: 12%;
+        .aui-media-list {
+            background-color: #f5f5f5;
+        }
+
+        ul {
+            padding-right: 0.4rem;
+        }
+
+        .aui-media-list .aui-list-item-inner {
+            padding-right: 0!important;
+        }
+
+        .aui-media-list .aui-list-item {
+            padding-left: 0!important;
+        }
+
+        .aui-media-list li .aui-col-xs-6 {
+            /*border-top-left-radius: 12%;
           border-top-right-radius: 7%;*/
-          overflow: hidden;
-          padding-left: 0.5rem;
-          margin-bottom: 0.4rem;
+            overflow: hidden;
+            padding-left: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .li_footer {
-          background-color: #fff;
-          padding: 0.5rem 0.4rem 0.3rem 0.4rem;
-          border-bottom-left-radius: 7%;
-          border-bottom-right-radius: 7%;
+            background-color: #fff;
+            padding: 0.5rem 0.4rem 0.3rem 0.4rem;
+            border-bottom-left-radius: 7%;
+            border-bottom-right-radius: 7%;
+        }
 
-        }
         .li_footer .title {
-          overflow:hidden;
-          display:-webkit-box;
-          -webkit-box-orient:vertical;
-          -webkit-line-clamp:2;
-          font-size: 0.73rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            font-size: 0.73rem;
         }
+
         .jiage {
             margin-top: 0.4rem;
         }
+
         .jiage .jiage_left {
-          color: #ff4f05;
-          font-size: 0.9rem;
+            color: #ff4f05;
+            font-size: 0.9rem;
         }
+
         .jiage .jiage_left span {
-          font-size: 0.6rem;
-          /*float: left;*/
+            font-size: 0.6rem;
+            /*float: left;*/
         }
+
         .jiage p {
-          color: #9e9e9e;
-          font-size: 0.6rem;
-          float: right;
-          line-height: 1.5rem;
+            color: #9e9e9e;
+            font-size: 0.6rem;
+            float: right;
+            line-height: 1.5rem;
         }
-      .aui-media-list li .aui-col-xs-6 img {
-          border-top-left-radius: 4%;
-          border-top-right-radius: 4%;
+
+        .aui-media-list li .aui-col-xs-6 img {
+            border-top-left-radius: 4%;
+            border-top-right-radius: 4%;
         }
+
         .biaoqian {
-          /*margin-top: 1rem;*/
-          background-color: #f4f4f4;
-          padding-top: 0.6rem ;
+            /*margin-top: 1rem;*/
+            background-color: #f4f4f4;
+            padding-top: 0.6rem;
         }
+
         .biaoqian .aui-col-xs-3 {
-          width: 22%;
-          height: 1.8rem;
-          line-height: 1.6rem;
-          background-color: #fff;
-          font-size: 0.7rem;
-          margin-left: 2.4%;
-          text-align: center;
-          margin-bottom: 0.6rem;
-          border-radius: 5px;
+            width: 22%;
+            height: 1.8rem;
+            line-height: 1.6rem;
+            background-color: #fff;
+            font-size: 0.7rem;
+            margin-left: 2.4%;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            border-radius: 5px;
+            padding: 1px;
+            position: relative;
         }
+
         .aui-row {
-          margin: 0 auto;
+            margin: 0 auto;
         }
+
         .active {
-          border: 1px solid #ff4f05;
-          color: #ff4f05;
-          font-size: 0.7rem;
-
+            width: 22%;
+            height: 1.8rem;
+            line-height: 1rem;
+            border: 1px solid #ff4f05;
+            color: #ff4f05;
+            font-size: 0.7rem;
         }
+
         .active-div {
-
+            display: none;
         }
 
-        .zhiding {
-
+        .active .active-div {
+            display: block;
+            position: absolute;
+            bottom: 0%;
+            right: 0;
+            color: #fff;
+            line-height: 0.3rem;
+            width: 6px;
+            height: 6px;
+            border-width: 6px;
+            font-size: 0.1rem;
+            border-style: solid;
+            border-color: transparent #ff4f05 #ff4f05 transparent;
         }
 
-      </style>
-  </head>
-  <body>
+        .zhiding {}
+    </style>
+</head>
+
+<body>
     <!-- 有的有，有的没  -->
     <div class="biaoqian">
-      <div class="aui-row aui-row-padded">
-        <div class="aui-col-xs-3 active">香辣味
-          <div class="active-div">
-            x
-          </div>
+        <div class="aui-row aui-row-padded">
+            <div class="aui-col-xs-3">香辣味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">原味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">麻辣味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">五香味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">咖喱味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">烤肉味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">孜然味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
+            <div class="aui-col-xs-3">罗勒味
+                <div class="active-div">
+                    x
+                </div>
+            </div>
         </div>
-        <div class="aui-col-xs-3">原味</div>
-        <div class="aui-col-xs-3">麻辣味</div>
-        <div class="aui-col-xs-3">五香味</div>
-        <div class="aui-col-xs-3">咖喱味</div>
-        <div class="aui-col-xs-3">烤肉味</div>
-        <div class="aui-col-xs-3">孜然味</div>
-        <div class="aui-col-xs-3">罗勒味</div>
-      </div>
     </div>
 
-   <ul class="aui-media-list">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <!-- <div class="aui-list-item-title">多张图片列表一</div>
+    <ul class="aui-media-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <!-- <div class="aui-list-item-title">多张图片列表一</div>
                     <p>借助栅格来实现图片列表</p> -->
-                    <div class="aui-row aui-row-padded">
-                        <div class="aui-col-xs-6">
-                            <img src="../image/list/wu0.jpg"/>
-                            <div class="li_footer">
-                              <div class="title">
+                <div class="aui-row aui-row-padded">
+                    <div class="aui-col-xs-6">
+                        <img src="../image/list/wu0.jpg" />
+                        <div class="li_footer">
+                            <div class="title">
                                 口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
-                              </div>
-                              <div class="jiage">
+                            </div>
+                            <div class="jiage">
                                 <div class="jiage_left">
-                                  <span>￥</span>
-                                  39
-                                  <span>.9</span>
-                                  <p>12312312人付款</p>
+                                    <span>￥</span> 39
+                                    <span>.9</span>
+                                    <p>12312312人付款</p>
                                 </div>
-                              </div>
                             </div>
                         </div>
-                        <div class="aui-col-xs-6">
-                            <img src="../image/list/wu0.jpg"/>
-                            <div class="li_footer">
-                              <div class="title">
-                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
-                              </div>
-                              <div class="jiage">
-                                <div class="jiage_left">
-                                  <span>￥</span>
-                                  39
-                                  <span>.9</span>
-                                  <p>12312312人付款</p>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="aui-col-xs-6">
-                            <img src="../image/list/wu0.jpg"/>
-                            <div class="li_footer">
-                              <div class="title">
-                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
-                              </div>
-                              <div class="jiage">
-                                <div class="jiage_left">
-                                  <span>￥</span>
-                                  39
-                                  <span>.9</span>
-                                  <p>12312312人付款</p>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="aui-col-xs-6">
-                            <img src="../image/list/wu0.jpg"/>
-                            <div class="li_footer">
-                              <div class="title">
-                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
-                              </div>
-                              <div class="jiage">
-                                <div class="jiage_left">
-                                  <span>￥</span>
-                                  39
-                                  <span>.9</span>
-                                  <p>12312312人付款</p>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="aui-col-xs-6">
-                            <img src="../image/list/wu0.jpg"/>
-                            <div class="li_footer">
-                              <div class="title">
-                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
-                              </div>
-                              <div class="jiage">
-                                <div class="jiage_left">
-                                  <span>￥</span>
-                                  39
-                                  <span>.9</span>
-                                  <p>12312312人付款</p>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="aui-col-xs-6">
-                            <img src="../image/list/wu0.jpg"/>
-                            <div class="li_footer">
-                              <div class="title">
-                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
-                              </div>
-                              <div class="jiage">
-                                <div class="jiage_left">
-                                  <span>￥</span>
-                                  39
-                                  <span>.9</span>
-                                  <p>12312312人付款</p>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-
                     </div>
+                    <div class="aui-col-xs-6">
+                        <img src="../image/list/wu0.jpg" />
+                        <div class="li_footer">
+                            <div class="title">
+                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
+                            </div>
+                            <div class="jiage">
+                                <div class="jiage_left">
+                                    <span>￥</span> 39
+                                    <span>.9</span>
+                                    <p>12312312人付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-6">
+                        <img src="../image/list/wu0.jpg" />
+                        <div class="li_footer">
+                            <div class="title">
+                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
+                            </div>
+                            <div class="jiage">
+                                <div class="jiage_left">
+                                    <span>￥</span> 39
+                                    <span>.9</span>
+                                    <p>12312312人付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-6">
+                        <img src="../image/list/wu0.jpg" />
+                        <div class="li_footer">
+                            <div class="title">
+                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
+                            </div>
+                            <div class="jiage">
+                                <div class="jiage_left">
+                                    <span>￥</span> 39
+                                    <span>.9</span>
+                                    <p>12312312人付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-6">
+                        <img src="../image/list/wu0.jpg" />
+                        <div class="li_footer">
+                            <div class="title">
+                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
+                            </div>
+                            <div class="jiage">
+                                <div class="jiage_left">
+                                    <span>￥</span> 39
+                                    <span>.9</span>
+                                    <p>12312312人付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-6">
+                        <img src="../image/list/wu0.jpg" />
+                        <div class="li_footer">
+                            <div class="title">
+                                口水娃零食大礼包休闲小吃鱼豆腐豆干散装一整箱
+                            </div>
+                            <div class="jiage">
+                                <div class="jiage_left">
+                                    <span>￥</span> 39
+                                    <span>.9</span>
+                                    <p>12312312人付款</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </li>
-        </ul>
+            </div>
+        </li>
+    </ul>
 
-  </body>
-  <script type="text/javascript" src="../script/api.js"></script>
-  <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript">
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $(".aui-col-xs-3").click(function() {
+        $(this).toggleClass("active");
+    }).mouseout(function() {
+        $(this).removeClass("active");
+    })
+</script>
+<script type="text/javascript">
+    apiready = function() {
 
-  $(".aui-col-xs-3").click(function(){
-    $(this).toggleClass("active");
-  }).mouseout(function(){
-    $(this).removeClass("active");
-  })
-  </script>
-  <script type="text/javascript">
-      apiready = function(){
+    };
+</script>
 
-      };
-  </script>
-  </html>
+</html>

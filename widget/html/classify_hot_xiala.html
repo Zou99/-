@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>热销榜下拉菜单</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style type="text/css">
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #classify-list {
+            width: 5rem;
+            height: 100%;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #classify-list .aui-list {
+            overflow-y: scroll;
+        }
+
+        .aui-list .aui-list-item-title {
+            font-size: 0.7rem;
+        }
+
+        .aui-col-xs-4 {
+            text-align: center;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.75rem;
+            color: #404041;
+        }
+    </style>
+    <style>
+        html,
+        body {
+            height: 98%;
+            background: transparent;
+            -webkit-touch-callout: none;
+            font-family: Tahoma, Geneva, sans-serif;
+            font-style: normal;
+        }
+
+        .aui-bar-nav,
+        .aui-searchbar {
+            background-color: #f9f9f9;
+        }
+
+        .icon-zuo1 {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .aui-tab-item.aui-active {
+            color: #ff4a00;
+            border-bottom: 2px solid #ff4a00;
+        }
+
+        .zzq_list_mon {
+            padding-right: 0px;
+        }
+        /*@media only screen and (min-width: 350px) {
+        .aui-list-item {
+            padding-left: 9px!important;
+        }
+    }
+
+    @media only screen and (min-width: 320px) {
+        .aui-list-item {
+            padding-left: 3%!important;
+        }
+    }*/
+
+        .list-left {
+            font-size: 0.75rem;
+            padding: 0.1rem 0;
+            border-left: 3px solid #fff;
+        }
+
+        .nav {
+            /*width: 100%;*/
+            height: 2.5rem;
+            /*height: 100%;*/
+            background-color: #fff;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 0px;
+        }
+
+        .menu {
+            width: 4.5rem;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.8rem;
+            color: #404041;
+            text-align: center;
+            display: inline-block;
+            /*padding: 0.6rem 0 1rem 0;*/
+        }
+
+        .selected {
+            /*border-bottom: 2px solid #ff4f05;*/
+            color: #ff4f05;
+        }
+
+        .guding {
+            display: inline-block;
+            position: fixed;
+            width: 1.5rem;
+            height: 1.6rem;
+            top: 0.18rem;
+            right: 0px;
+            background-color: #fff;
+            z-index: 666;
+            border-left: 3px solid #f5f5f5;
+            text-align: center;
+            line-height: 1.6rem;
+            padding: 4px 0;
+        }
+
+        .ly-close1 {
+            transition: all 0.5s;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)!important;
+        }
+
+        img {
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        #dialog.in {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="menu">全部分类</div>
+    </nav>
+    <div class="guding" tapmode onclick="api.closeFrame()">
+        <img class="xia" src="../image/bottom.png" alt="">
+    </div>
+    <div class="aui-row" id="nav" style="background-color:#fff;margin-top:-10px;padding-bottom:0.7rem;">
+        <div class="aui-col-xs-4 selected" tapmode="selected" onclick="fnSetNavMenuIndex(0)">膨化食品</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(1)">巧克力制品</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(2)">豆腐干</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(3)">面条/挂面</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(4)">传统糕点</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(5)">花草茶</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(6)">压缩饼干</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(7)">酥性饼干</div>
+        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(8)">西式糕点</div>
+
+    </div>
+    <div id="dialog">
+
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+
+<script type="text/javascript">
+    $('#dialog').addClass('in');
+    apiready = function() {
+        var nav = $api.byId('nav');
+        menus = $api.domAll(nav, '.menu');
+        $(document.body).on('touchend', function(e) {
+            var dialog = $("#dialog")[0];
+            if (!$.contains(dialog, e.target)) {
+                $('#dialog').removeClass('in');
+                setTimeout(function() {
+                    api.closeFrame();
+                }, 200);
+            }
+        });
+    };
+    var menus;
+    // 状态栏css样式选中
+    function fnSetNavMenuSelected(index_) {
+        for (var i = 0; i < menus.length; i++) {
+            if (index_ == i) {
+                $api.addCls(menus[i], 'selected');
+            } else {
+                $api.removeCls(menus[i], 'selected');
+            }
+        }
+    }
+    //点击切换
+    function fnSetNavMenuIndex(index_) {
+        fnSetNavMenuSelected(index_);
+        api.setFrameGroupIndex({
+            name: 'classify_detailsGroup',
+            index: index_,
+            scroll: true
+        });
+    }
+</script>
+
+</html>
