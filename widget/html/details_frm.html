@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
     <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
     <link rel="stylesheet" href="../css/tabo.css">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_ekca9omct94.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_d4s4h4hylag.css">
     <style type="text/css">
         .text-light {
             color: #999;
@@ -127,7 +127,7 @@
     </style>
 </head>
 
-<body>
+<body style="padding-bottom:50px;">
     <header class="aui-bar aui-bar-nav aui-bar-light zzq_details_nav" id="aui-header">
         <a class="aui-btn aui-pull-left" tapmode onclick="detclo()">
             <span class="aui-iconfont aui-icon-left" style="color:#000!important;"></span>
@@ -150,31 +150,60 @@
         <div class="zzq_de_frm_head_cent">
             <i class="iconfont icon-menu"></i>
         </div>
-        <!-- 三个按钮点击后显示的框 -->
-        <div class="zzq_detai_hea_nwe">
-            <ul>
-                <li><i class="iconfont icon-xiasanjiao zzq_det_sanjiao"></i></li>
-                <li>
-                    <i class="iconfont icon-xiaoxi2"></i>
-                    <a>消息</a>
+    </div>
 
-                </li>
-                <li>
+    <!-- 三个按钮点击后显示的框 -->
+    <div class="zzq_detai_hea_news_fg">
+        <div class="aui-list" style="background-color: initial;padding-top:8%;background-image:none;">
+            <div class="aui-list-item" style="background-image:none;">
+                <div class="aui-list-item-inner">
+                    <div class="zzq_detail_news_icon">
+                        功能直达
+                    </div>
+                </div>
+                <div class="aui-list-item-label">
+                    <div class="zzq_detail_news_icon" style="padding-right:1rem;text-align:right;">
+                        <i class="iconfont icon-qingchu" style="font-size:14px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aui-row" style="padding:0.75rem;">
+            <div class="aui-col-xs-3" style="padding:5px;">
+                <div class="zzq_icon_new_alert">
+                    <i class="iconfont icon-xiaoxi"></i>
+                    <p>消息</p>
+                </div>
+            </div>
+            <div class="aui-col-xs-3" style="padding:5px;">
+                <div class="zzq_icon_new_alert">
                     <i class="iconfont icon-fangzi1"></i>
-                    <a>首页</a>
-                </li>
-                <li>
+                    <p>首页</p>
+                </div>
+            </div>
+            <div class="aui-col-xs-3" style="padding:5px;">
+                <div class="zzq_icon_new_alert">
                     <i class="iconfont icon-kefu1"></i>
-                    <a>客服小米</a>
-                </li>
-                <li>
+                    <p>客服小蜜</p>
+                </div>
+            </div>
+            <div class="aui-col-xs-3" style="padding:5px;">
+                <div class="zzq_icon_new_alert">
                     <i class="iconfont icon-fankui"></i>
-                    <a>我要反馈</a>
-                </li>
-                <li> <i class="iconfont icon-fenxiang3"></i> <a>分享</a></li>
-            </ul>
+                    <p>我要反馈</p>
+                </div>
+            </div>
+            <div class="aui-col-xs-3" style="padding:5px;">
+                <div class="zzq_icon_new_alert">
+                    <i class="iconfont icon-fenxiang3"></i>
+                    <p>分享</p>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
 
     <section class="aui-card-list">
         <div class="aui-card-list-content" id="aui-slide">
@@ -489,12 +518,12 @@
 
         <!-- 规格底部 -->
         <div class="zzq_dit_btn_foot" style="border-top: 1px solid #efefef;">
-          <div class="zzq_dit_btn_foot_left">
-            加入购物车
-          </div>
-          <div class="zzq_dit_btn_foot_right">
-            立即购买
-          </div>
+            <div class="zzq_dit_btn_foot_left">
+                加入购物车
+            </div>
+            <div class="zzq_dit_btn_foot_right">
+                立即购买
+            </div>
         </div>
     </section>
 
@@ -650,12 +679,12 @@
 
         <!-- 规格底部 -->
         <div class="zzq_dit_btn_foot" style="border-top: 1px solid #efefef;">
-          <!-- <div class="zzq_dit_btn_foot_left">
+            <!-- <div class="zzq_dit_btn_foot_left">
             加入购物车
           </div> -->
-          <div class="zzq_dit_btn_foot_right" style="width:100%;border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
-            确定
-          </div>
+            <div class="zzq_dit_btn_foot_right" style="width:100%;border-top-left-radius: 30px;border-bottom-left-radius: 30px;">
+                确定
+            </div>
         </div>
     </section>
 
@@ -684,7 +713,6 @@
         var header = $api.byId('aui-header');
         $api.fixStatusBar(header);
     };
-
     var slide = new auiSlide({
         container: document.getElementById("aui-slide"),
         // "width":300,
@@ -708,9 +736,6 @@
         }
     });
 
-    $(".zzq_detail_a_btn").click(function() {
-        $(".zzq_detai_hea_nwe").toggle();
-    });
 
     $(".zzq_detail_danger_cuo,.zzq_detail_spec_rgba").click(function() {
         $(".zzq_spec_detil").hide();

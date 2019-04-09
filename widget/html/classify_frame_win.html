@@ -50,17 +50,6 @@
         .zzq_list_mon {
             padding-right: 0px;
         }
-        /*@media only screen and (min-width: 350px) {
-        .aui-list-item {
-            padding-left: 9px!important;
-        }
-    }
-
-    @media only screen and (min-width: 320px) {
-        .aui-list-item {
-            padding-left: 3%!important;
-        }
-    }*/
 
         .list {
             background-color: #fff;
@@ -111,6 +100,13 @@
                 <span></span>
             </div>
         </div>
+
+        <!-- 点击按钮显示上弹框，功能直达 -->
+        <!-- <div class="zzq_funct_gf">
+
+        </div> -->
+
+
     </header>
 
     <section style="width:4rem;" class="aui-content" id="classify-list">
@@ -219,12 +215,11 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
-
-    $("li").click(function(){
-      $(".active").removeClass("active");
-      $(this).addClass("active");
-    }).mouseout(function(){
-      $(this).removeClass("active");
+    $("li").click(function() {
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+    }).mouseout(function() {
+        $(this).removeClass("active");
 
     })
 </script>
@@ -256,10 +251,10 @@
         })
     };
 
-    function cloify(){
-      api.closeWin({
-          name: 'shopify'
-      });
+    function cloify() {
+        api.closeWin({
+            name: 'shopify'
+        });
     }
 </script>
 

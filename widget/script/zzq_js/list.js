@@ -22,6 +22,15 @@ var tab = new auiTab({
     }
 });
 
+//留存导航栏三个点按钮点击后弹框的样子
+$(".zzq_list_rig").click(function() {
+    $(".zzq_detai_hea_news_fg").slideDown(300);
+});
+$(".zzq_list_hed_guanbi").click(function() {
+    $(".zzq_detai_hea_news_fg").slideUp(300);
+    $(".zzq_detai_hea_news_fg").find('.aui-list').css('background-color','#615c59');
+})
+
 // 列表页面点击正倒序变换
     $(".zzq_list_pos").click(function () {
         $(this).find('span').toggle();
