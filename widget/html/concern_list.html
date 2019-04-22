@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>关注列表</title>
+  <link rel="stylesheet" href="../css/dqf_css/concern_list.css">
+  <link rel="stylesheet" href="../css/aui.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body style="background-color: #fff;">
+  <header id="dqf_header" class="aui-bar aui-bar-nav aui-bar-light">
+    <div class="aui-pull-left aui-btn">
+      <span class="aui-iconfont aui-icon-left" style="color: #333;font-weight: 700;"></span>
+    </div>
+    <div class="aui-title">
+      <i class="icon ion-android-favorite"></i>
+      Title
+    </div>
+    <div class="aui-pull-right aui-btn aui-btn-outlined" style="border: none;">
+      <span class="aui-iconfont aui-icon-search" style="color: #333;font-weight: 700;"></span>
+    </div>
+  </header>
+
+  <!-- 导航栏 -->
+  <div class="dqf_nav">
+    <div class="dqf_nav_box">全部
+      <i class="icon ion-arrow-down-b" style="font-size: 14px;"></i>
+    </div>
+    <div class="dqf_nav_box">店铺</div>
+    <div class="dqf_nav_box">达人</div>
+    <div class="dqf_nav_box">其他</div>
+    <div class="dqf_nav_box" onclick="dqf_show_class()">分类
+      <i class="icon ion-android-apps"></i>
+    </div>
+  </div>
+
+  <!-- 店铺更新，新上架提示 -->
+  <div class="dqf_updata_info">
+    <div class="dqf_txt_info">
+      <span class="dqf_num_info">2</span>个关注店铺的宝贝上新
+    </div>
+    <div class="dqf_updata_img">
+      <img src="../image/f1.png" alt="" height="40px">
+    </div>
+    <div class="dqf_updata_img">
+      <img src="../image/f3.png" alt="" height="40px">
+    </div>
+    <div class="dqf_right_icon">
+      <i class="icon ion-chevron-right"></i>
+    </div>
+  </div>
+  <div class="dqf_concern_list">
+    <!-- 关注店铺/达人01 -->
+    <div class="dqf_list_hidn_box">
+      <div class="dqf_list_bg_box">
+        <div class="dqf_list_box">
+          <div class="dqf_list_box_left">
+            <!-- 店铺头像 -->
+            <div class="dqf_shop_logo">
+              <div class="dqf_img_box">
+                <img src="../image/2.jpg" alt="">
+                <!-- 店铺头像右下角的小图标 -->
+                <div class="dqf_shop_icon">
+                  <i class="icon ion-ios-filing"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dqf_list_box_right">
+            <!-- 店名 -->
+            <div class="dqf_shop_name">金币庄园小助手</div>
+            <!-- 点名后缀 -->
+            <div class="dqf_shop_suffix">官方账号</div>
+            <!-- 相对定位的按钮 -->
+            <div class="dqf_more_btn" onclick="btn_show(this)">
+              <i class="icon ion-more"></i>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="dqf_right_hidden_btn">
+          <div class="dqf_btn dqf_hid_btn1">屏蔽动态</div>
+          <div class="dqf_btn dqf_hid_btn2">特别关注</div>
+          <div class="dqf_btn dqf_hid_btn3">取消关注</div>
+        </div>
+      </div>
+    </div>
+    <!-- 关注店铺/达人02 -->
+    <div class="dqf_list_hidn_box">
+      <div class="dqf_list_bg_box">
+        <div class="dqf_list_box">
+          <div class="dqf_list_box_left">
+            <!-- 店铺头像 -->
+            <div class="dqf_shop_logo">
+              <div class="dqf_img_box">
+                <img src="../image/2.jpg" alt="">
+                <!-- 店铺头像右下角的小图标 -->
+                <div class="dqf_shop_icon">
+                  <i class="icon ion-ios-filing"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dqf_list_box_right">
+            <!-- 店名 -->
+            <div class="dqf_shop_name">逆流茶会</div>
+            <!-- 点名后缀 -->
+            <div class="dqf_shop_suffix">次元结界店</div>
+            <!-- 相对定位的按钮 -->
+            <div class="dqf_more_btn" onclick="btn_show(this)">
+              <i class="icon ion-more"></i>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="dqf_right_hidden_btn">
+          <div class="dqf_btn dqf_hid_btn1">屏蔽动态</div>
+          <div class="dqf_btn dqf_hid_btn2">特别关注</div>
+          <div class="dqf_btn dqf_hid_btn3">取消关注</div>
+        </div>
+      </div>
+    </div>
+    <!-- 关注店铺/达人03 -->
+    <div class="dqf_list_hidn_box">
+      <div class="dqf_list_bg_box">
+        <div class="dqf_list_box">
+          <div class="dqf_list_box_left">
+            <!-- 店铺头像 -->
+            <div class="dqf_shop_logo">
+              <div class="dqf_img_box">
+                <img src="../image/2.jpg" alt="">
+                <!-- 店铺头像右下角的小图标 -->
+                <div class="dqf_shop_icon">
+                  <i class="icon ion-ios-filing"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dqf_list_box_right">
+            <!-- 店名 -->
+            <div class="dqf_shop_name">miHoYo旗舰店</div>
+            <!-- 点名后缀 -->
+            <div class="dqf_shop_suffix">天猫</div>
+            <!-- 相对定位的按钮 -->
+            <div class="dqf_more_btn" onclick="btn_show(this)">
+              <i class="icon ion-more"></i>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="dqf_right_hidden_btn">
+          <div class="dqf_btn dqf_hid_btn1">屏蔽动态</div>
+          <div class="dqf_btn dqf_hid_btn2">特别关注</div>
+          <div class="dqf_btn dqf_hid_btn3">取消关注</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+  apiready = function () {
+    var header = $api.byId("dqf_header");
+    $api.fixStatusBar(header);
+  }
+  function btn_show(this_){
+    var hidBtn = this_.parentNode.parentNode.parentNode;
+    hidBtn.classList.toggle("dqf_show_btn");
+  }
+  var showClassState = 0;
+  function dqf_show_class(){
+    var headH = document.getElementById("dqf_header");
+    var navH = document.getElementsByClassName("dqf_nav");
+    var countH = headH.offsetHeight+navH[0].offsetHeight;
+    if(showClassState==0){
+      // alert(1);
+      // console.log(countH);
+      api.openFrame({
+          name: 'concern_class_frame',
+          url: './concern_class_frame.html',
+          rect: {
+              x: 0,
+              y: countH,
+              w: "auto",
+              h: 'auto'
+          },
+          pageParam: {
+              name: 'test'
+          },
+      });
+      showClassState=1;
+    }else{
+      // alert(1)
+      api.closeFrame({
+          name: 'concern_class_frame'
+      });
+      showClassState=0;
+    }
+  }
+</script>

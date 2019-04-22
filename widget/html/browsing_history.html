@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/dqf_css/browsing_history.css">
+  <link rel="stylesheet" href="../css/aui.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+  <title>足迹</title>
+</head>
+
+<body>
+  <div class="dqf_top_padding"></div>
+  <header class="aui-bar aui-bar-nav" id="dqf_header">
+    <div class="dqf_head_left">
+      <span class="icon ion-android-arrow-back"></span> &nbsp;&nbsp;&nbsp;我的足迹
+    </div>
+    <div class="dqf_head_right">
+      <i class="icon ion-android-more-vertical"></i>
+    </div>
+    <div class="dqf_head_delete">
+      <span class="icon ion-trash-a"></span>
+    </div>
+  </header>
+  <!-- 导航栏 -->
+  <div class="dqf_nav">
+    <div class="dqf_week">
+      <div class="dqf_week_box">日</div>
+      <div class="dqf_week_box">一</div>
+      <div class="dqf_week_box">二</div>
+      <div class="dqf_week_box">三</div>
+      <div class="dqf_week_box">四</div>
+      <div class="dqf_week_box">五</div>
+      <div class="dqf_week_box">六</div>
+    </div>
+    <div class="dqf_date">
+      <div class="dqf_date_box">
+        <div>14</div>
+        <span class="dqf_date_flag"></span>
+      </div>
+      <div class="dqf_date_box">
+        <div>15</div>
+        <span class="dqf_date_flag"></span>
+      </div>
+      <div class="dqf_date_box">
+        <div>16</div>
+        <span class="dqf_date_flag"></span>
+      </div>
+      <div class="dqf_date_box">
+        <div class="dqf_date_today">17</div>
+        <span class="dqf_date_flag"></span>
+      </div>
+      <div class="dqf_date_box">
+        <div>18</div>
+        <span class=""></span>
+      </div>
+      <div class="dqf_date_box">
+        <div>19</div>
+        <span class=""></span>
+      </div>
+      <div class="dqf_date_box">
+        <div>20</div>
+        <span class=""></span>
+      </div>
+    </div>
+    <div class="dqf_location_box">
+      <i class="icon ion-chevron-down"></i>
+    </div>
+  </div>
+  <div class="dqf_center">
+    <div class="dqf_browse_list">
+      <!-- 一天对应一个dqf_browse_box -->
+      <div class="dqf_browse_box">
+        <!-- 列表所属日期 -->
+        <div class="dqf_list_date">
+          <span class="dqf_parent_check_spn dqf_delete_hiden">
+            <input type="checkbox" class="dqf_all_check" name="all_check">
+            <div class="dqf_check_style_box"></div>
+          </span>
+          4月17日
+        </div>
+        <!-- 一个商品对应一个dqf_goods_box -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品二 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品三 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品四 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dqf_browse_box">
+        <!-- 列表所属日期 -->
+        <div class="dqf_list_date">
+          <span class="dqf_parent_check_spn dqf_delete_hiden">
+            <input type="checkbox" class="dqf_all_check" name="all_check">
+            <div class="dqf_check_style_box"></div>
+          </span>
+          4月16日
+        </div>
+        <!-- 一个商品对应一个dqf_goods_box -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品二 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品三 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 04月15日 -->
+      <div class="dqf_browse_box">
+        <!-- 列表所属日期 -->
+        <div class="dqf_list_date">
+          <span class="dqf_parent_check_spn dqf_delete_hiden">
+            <input type="checkbox" class="dqf_all_check" name="all_check">
+            <div class="dqf_check_style_box"></div>
+          </span>
+          4月15日
+        </div>
+        <!-- 一个商品对应一个dqf_goods_box -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品二 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+        <!-- 商品三 -->
+        <div class="dqf_goods_box">
+          <!-- 商品图片 -->
+          <div class="dqf_goods_img">
+            <img src="../image/f1.jpg" alt="">
+          </div>
+          <div class="dqf_goods_info">
+            <div class="dqf_price">
+              <span class="dqf_check_spn dqf_delete_hiden">
+                <input type="checkbox" class="dqf_checkbox" name="record_check">
+                <div class="dqf_check_style_box"></div>
+              </span>
+              <span class="dqf_price_spn">￥1538</span>
+            </div>
+            <div class="dqf_btn">
+              <i class="icon ion-more"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 4月15日结束 -->
+
+    </div>
+  </div>
+  <div class="dqf_tips_info">
+    没有更多了
+  </div>
+  <!-- 返回顶部的按钮 -->
+  <div class="dqf_to_top" onclick="toTop()">
+    <span>↑</span>
+    <span class="dqf_txt">顶部</span>
+  </div>
+
+  <!-- 删除按钮 -->
+  <div class="dqf_footer_location">
+    <div class="dqf_right_delete">
+      删除
+    </div>
+  </div>
+  <script src="../script/dqf_js/browsing_history.js"></script>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function () {
+      var headerObj = $api.byId("dqf_header");
+      $api.fixStatusBar(headerObj);
+    }
+    // 获取每天对应的全选按钮对象循环绑定事件
+    var parSpnObj = document.querySelectorAll(".dqf_parent_check_spn");
+    for (var i = 0; i < parSpnObj.length; i++) {
+      parSpnObj[i].onclick = function () {
+        let parBox = this.parentNode.parentNode.querySelectorAll(".dqf_check_spn")
+        let thisInput = this.querySelector("input");
+        if (thisInput.checked == false) {
+          thisInput.checked = true;
+          for(var j=0;j<parBox.length;j++){
+            parBox[j].checked = true;
+            parBox[j].querySelector("div").classList.add("dqf_check_box_bgc");
+          }
+        } else {
+          thisInput.checked = false;
+          for(var j=0;j<parBox.length;j++){
+            parBox[j].checked = false;
+            parBox[j].querySelector("div").classList.remove("dqf_check_box_bgc");
+          }
+        }
+        this.querySelector("div").classList.toggle("dqf_check_box_bgc");
+      }
+    }
+    // 获取按钮对象循环绑定事件
+    var spnObj = document.querySelectorAll(".dqf_check_spn");
+    for (var i=0;i<spnObj.length;i++) {
+      spnObj[i].onclick = function () {
+        let thisInput = this.querySelector("input");
+        if (thisInput.checked == false) {
+          thisInput.checked = true;
+        } else {
+          thisInput.checked = false;
+          // console.log(this.querySelector("input").checked)
+        }
+        this.querySelector("div").classList.toggle("dqf_check_box_bgc");
+        let parBox = this.parentNode.parentNode.parentNode.parentNode;
+        // 商品总数量
+        var sonNumber = parBox.querySelectorAll(".dqf_check_spn").length;
+        // 被选中的数量
+        var inputObj = parBox.querySelectorAll(".dqf_checkbox");
+        var checkedNumber = 0;
+        for (var j=0;j<inputObj.length;j++){
+          if(inputObj[j].checked==true){
+            checkedNumber++;
+          }
+        }
+        if(checkedNumber == sonNumber){
+          var nodeParent = parBox.querySelector(".dqf_parent_check_spn")
+          nodeParent.querySelector("input").checked = true;
+          nodeParent.querySelector("div").classList.add("dqf_check_box_bgc");
+        }else{
+          var nodeParent = parBox.querySelector(".dqf_parent_check_spn")
+          nodeParent.querySelector("input").checked = false;
+          nodeParent.querySelector("div").classList.remove("dqf_check_box_bgc");
+        }
+      }
+    }
+    // 为header的垃圾桶图标绑定点击事件显示/隐藏复选框
+    var deleteObj = document.querySelector(".dqf_head_delete");
+    deleteObj.onclick = function () {
+      var footerFixed = document.querySelector(".dqf_footer_location");
+      var deleteIcon = this.querySelector("span");
+      var delete_btn = document.querySelectorAll(".dqf_delete_hiden");
+      var hookBox = document.querySelectorAll(".dqf_check_style_box");
+      var tipsInfo = document.querySelector(".dqf_tips_info");
+      if(deleteIcon.getAttribute("class") == "icon ion-trash-a"){
+        for (var i = 0; i < delete_btn.length; i++) {
+          delete_btn[i].classList.add("dqf_delete_show");
+          hookBox[i].classList.add("dqf_delete_show");
+        }
+        deleteIcon.classList.remove("ion-trash-a");
+        deleteIcon.style.fontSize = 16+"px";
+        deleteIcon.innerText = "完成";
+        footerFixed.classList.add("dqf_block");
+        tipsInfo.style.padding=5+"px "+0+"px "+50+"px "+0+"px";
+      }else{
+        for (var i = 0; i < delete_btn.length; i++) {
+          delete_btn[i].classList.remove("dqf_delete_show");
+          hookBox[i].classList.remove("dqf_delete_show");
+        }
+        deleteIcon.style.fontSize = 24+"px";
+        deleteIcon.innerText = "";
+        deleteIcon.classList.add("ion-trash-a");
+        footerFixed.classList.remove("dqf_block");
+        tipsInfo.style.padding=3+"px "+0+"px "+3+"px "+0+"px";
+      }
+    }
+    var timer;
+    // 返回顶部的按钮
+    function toTop(){
+      timer = setInterval(function () {
+        var backtop = document.documentElement.scrollTop;
+          //速度操作  减速
+        var speedtop = backtop/5;
+        document.documentElement.scrollTop = backtop -speedtop;  //高度不断减少
+        if(backtop ==0){
+          //滑动到顶端
+          clearInterval(timer);  //清除计时器
+        }
+      }, 30);
+    }
+    var bodyObj = document.querySelector("body");
+    bodyObj.ontouchstart = function(){
+      clearInterval(timer);
+    }
+  </script>
+</body>
+
+</html>
