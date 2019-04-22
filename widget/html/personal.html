@@ -35,7 +35,7 @@
                 <span>5</span>
                 <span>关注店铺</span>
             </div>
-            <div class="dqf_box">
+            <div class="dqf_box" onclick="browseHistory()">
                 <span>40</span>
                 <span>足迹</span>
             </div>
@@ -181,6 +181,15 @@
       api.openWin({
          name: 'concern_list',
          url: './concern_list.html',
+         pageParam: {
+            name:'test'
+         }
+     })
+    }
+    function browseHistory() {
+      api.openWin({
+         name: 'browsing_history',
+         url: './browsing_history.html',
          pageParam: {
             name:'test'
          }

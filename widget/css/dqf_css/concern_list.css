@@ -40,6 +40,7 @@ header .aui-title i{
 }
 /* 更新信息 */
 .dqf_updata_info{
+  text-align: center;
   height: 50px;
   width: 320px;
   border-radius: 25px;
