@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+	<title>title</title>
+	<link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
+	<style>
+		body {
+			padding: 60px 10px;
+			padding-bottom: 100px;
+			/*overflow-y: scroll;*/
+			background-color: #e5e5e5!important;
+		}
+
+		button {
+			margin: 10px;
+			padding: 10px;
+		}
+
+		.aui-chat .aui-chat-media img {
+			width: 100%;
+			border-radius: 28% !important;
+		}
+
+		.aui-chat .aui-chat-left .aui-chat-content {
+			border-radius: 14px;
+		}
+
+		.aui-chat .aui-chat-right .aui-chat-content {
+			border-radius: 14px;
+		}
+
+		.aui-chat img.aui-chat-content {
+			background-color: #e5e5e5 !important;
+			border-radius: 26px !important;
+		}
+
+		.neirong {
+			height: 100%;
+		}
+		.aui-chat-item:last-child {
+			margin-bottom: 2rem;
+
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 聊天记录内容  -->
+	<div class="neirong">
+		<section class="aui-chat" id="chat01_content" style="padding-bottom:2rem">
+			<!-- <div class="aui-chat-header">2016年7月13日</div> -->
+			<div class="aui-chat-item aui-chat-left">
+				<div class="aui-chat-media">
+					<img src="../image/demo2.png" />
+				</div>
+				<div class="aui-chat-inner">
+					<div class="aui-chat-name">一条文艺男</div>
+					<div class="aui-chat-content">
+						Hello AUI 2.0!
+					</div>
+					<div class="aui-chat-status aui-chat-status-refresh">
+						<i class="aui-iconfont aui-icon-correct aui-text-success"></i>
+					</div>
+				</div>
+			</div>
+			<div class="aui-chat-item aui-chat-right">
+				<div class="aui-chat-media">
+					<img src="../image/liulangnan.png" />
+				</div>
+				<div class="aui-chat-inner">
+					<div class="aui-chat-name">流浪男</div>
+					<div class="aui-chat-content">
+						你好！
+					</div>
+					<div class="aui-chat-status">
+						<i class="aui-iconfont aui-icon-info aui-text-danger"></i>
+					</div>
+				</div>
+			</div>
+			<div class="aui-chat-item aui-chat-left">
+				<div class="aui-chat-media">
+					<img src="../image/demo2.png" />
+				</div>
+				<div class="aui-chat-inner">
+					<div class="aui-chat-name">一条文艺男</div>
+					<img class="aui-chat-content" src="../image/l1.png" />
+				</div>
+			</div>
+			<div class="aui-chat-item aui-chat-left">
+				<div class="aui-chat-media">
+					<img src="../image/demo2.png" />
+				</div>
+				<div class="aui-chat-inner">
+					<div class="aui-chat-name">一条文艺男</div>
+					<img class="aui-chat-content" src="../image/l1.png" />
+				</div>
+			</div>
+			<div style="clear:both" style="background-color:#e5e5e5"></div>
+		</section>
+
+
+	</div>
+	<div class="" style="padding:1.5rem;"></div>
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	var UIChatTools, fs, zip;
+	apiready = function() {
+		headerH = api.pageParam.key1;
+		UIChatTools = api.require('UIChatTools');
+		//fs = api.require("fs");
+		zip = api.require("zip");
+		fndownload();
+		// fnopen();
+		flopen();
+		fnchatBoxListener();
+
+	};
+
+	function flopen() {
+		UIChatTools.open({
+			chatBox: {
+				placeholder: '聊天内容',
+				autoFocus: false,
+				maxRows: 6
+			},
+			styles: {
+				bgColor: '#f2f2f2',
+				margin: 10,
+				// mask: {
+				// 	bgColor: 'rgba(0,0,0,0.5)'
+				// }
+			},
+			tools: {
+				h: 44,
+				iconSize: 30,
+				recorder: {
+					normal: 'fs://UIChatTolls/recorder.png',
+					selected: 'fs://UIChatTolls/recorder1.png'
+				},
+				image: {
+					normal: 'fs://UIChatTolls/image.png',
+					selected: 'fs://UIChatTolls/image1.png'
+				},
+				video: {
+					normal: 'fs://UIChatTolls/video.png',
+					selected: 'fs://UIChatTolls/video1.png'
+				},
+				packet: {
+					normal: 'fs://UIChatTolls/packet.png',
+					selected: 'fs://UIChatTolls/packet1.png'
+				},
+				face: {
+					normal: 'fs://UIChatTolls/face.png',
+					selected: 'fs://UIChatTolls/face1.png'
+				},
+				append: {
+					normal: 'fs://UIChatTolls/append.png',
+					selected: 'fs://UIChatTolls/append1.png'
+				}
+			},
+			emotions: ['widget://res/emotions/basic', 'widget://res/emotions/append1', 'widget://res/emotions/append2']
+		}, function(ret) {
+			if (ret.eventType == 'send') {
+				if (ret.msg == '' || ret.msg == undefined) {
+					api.toast({
+						msg: '不能发送空白消息',
+						duration: 1000,
+						location: 'center'
+					});
+
+				} else {
+					//创建时间对象
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth() + 1;
+					var day = d.getDate();
+					var hour = d.getHours();
+					var minutes = d.getMinutes();
+
+
+					//获取输入的内容
+					var content = ret.msg;
+					//获取显示区域
+					var chatObj = document.getElementById("chat01_content");
+
+					// btnObj.onclick = function() {
+					//追加内容到聊天显示区域
+					// chatObj.innerHTML += "黑山老妖" + year + "." + month + "." + day + "." + hour + ":" + minutes + "<br/><span>" + content.value + "</span><br>";
+					// chatObj.innerHTML += "黑山老妖" + year + "." + month + "." + day + "." + hour + ":" + minutes + "<br/><span>" + content.value + "</span><br>";
+					chatObj.innerHTML +=
+						`<div class='aui-chat-item aui-chat-right'>
+											<div class='aui-chat-media'>
+											<img src='../image/liulangnan.png' /></div><div class='aui-chat-inner'><div class='aui-chat-name'>流浪男</div><div class='aui-chat-content'>` +
+						content + `</div><div class='aui-chat-status'><i class='aui-iconfont aui-icon-correct aui-text-success'></i></div>
+											</div>
+										</div>`;
+
+					// }
+					// alert(content);
+					UIChatTools.value({
+						msg: ''
+					});
+
+				}
+
+
+
+
+			}
+			if (ret.eventType == 'show') {
+				fnfaceListener();
+				fnchatBoxListener();
+				fnimageListener();
+				fnrecorderListener();
+				fntoolsListener();
+				fnsetAppendButton();
+			}
+			console.log(JSON.stringify(ret))
+		});
+	};
+
+	function fnopen() {
+		UIChatTools.open({
+			chatBox: {
+				placeholder: '聊天内容',
+				autoFocuse: false,
+				maxRows: 6
+			},
+			styles: {
+				bgColor: '#f2f2f2',
+				margin: 30,
+				mask: {
+					bgColor: 'rgba(1,2,3,0)'
+				}
+			},
+
+			//	useFacePath:false,
+			tools: {
+				h: 44,
+				iconSize: 30,
+				recorder: {
+					normal: '',
+					selected: ''
+				},
+				image: {
+					normal: '',
+					selected: ''
+				},
+				video: {
+					normal: '',
+					selected: ''
+				},
+				packet: {
+					normal: '',
+					selected: ''
+				},
+				face: {
+					normal: '',
+					selected: ''
+				},
+				append: {
+					normal: '',
+					selected: ''
+				}
+			},
+			emotions: ['widget://image/chart/emoticonss/basic', 'widget://image/chart/emoticonss/append1', 'widget://image/chart/emoticonss/append2']
+		}, function(ret) {
+			if (ret.eventType == 'send') {
+				if (ret.msg == '' || ret.msg == undefined) {
+					api.toast({
+						msg: '不能发送空白消息',
+						duration: 1000,
+						location: 'center'
+					});
+
+				} else {
+					//创建时间对象
+					var d = new Date();
+					var year = d.getFullYear();
+					var month = d.getMonth() + 1;
+					var day = d.getDate();
+					var hour = d.getHours();
+					var minutes = d.getMinutes();
+
+
+					//获取输入的内容
+					var content = ret.msg;
+					//获取显示区域
+					var chatObj = document.getElementById("chat01_content");
+
+					// btnObj.onclick = function() {
+					//追加内容到聊天显示区域
+					// chatObj.innerHTML += "黑山老妖" + year + "." + month + "." + day + "." + hour + ":" + minutes + "<br/><span>" + content.value + "</span><br>";
+					// chatObj.innerHTML += "黑山老妖" + year + "." + month + "." + day + "." + hour + ":" + minutes + "<br/><span>" + content.value + "</span><br>";
+					chatObj.innerHTML +=
+						`<div class='aui-chat-item aui-chat-right'>
+											<div class='aui-chat-media'>
+											<img src='../image/liulangnan.png' /></div><div class='aui-chat-inner'><div class='aui-chat-name'>流浪男</div><div class='aui-chat-content'>` +
+						content + `</div><div class='aui-chat-status'><i class='aui-iconfont aui-icon-correct aui-text-success'></i></div>
+											</div>
+										</div>`;
+
+					// }
+					// alert(content);
+					UIChatTools.value({
+						msg: ''
+					});
+
+				}
+
+
+
+
+			}
+			if (ret.eventType == 'show') {
+				fnfaceListener();
+				fnchatBoxListener();
+				fnimageListener();
+				fnrecorderListener();
+				fntoolsListener();
+				fnsetAppendButton();
+			}
+			console.log(JSON.stringify(ret))
+		});
+	};
+
+
+
+
+
+
+
+
+	// 	//文字表情转换
+	// function transEmo(emoMsg) {
+	//     var emoPath, transMsg;
+	//     var reg = /\[(.*?)\]/gm;
+	//     transMsg = emoMsg.replace(reg, function(match) {
+	//         for (var i = 0, len = emoData.length; i < len; i++) {
+	//             if (emoData[i].text === match) {
+	//                 emoPath = '../image/chart/emoticonss/basic' + emoData[i].name + '.png';
+	//                 return '<img class="lt" style="width:26px;height:26px;margin: 2px;" src="' + emoPath + '" />'
+	//             }
+	//         }
+	//         return match;
+	//     });
+	//     return transMsg;
+	// }
+
+
+
+
+
+
+
+
+
+	var emoData = [{
+		"name": "Expression_1",
+		"text": "[微笑]"
+	}, {
+		"name": "Expression_2",
+		"text": "[撇嘴]"
+	}, {
+		"name": "Expression_3",
+		"text": "[色]"
+	}, {
+		"name": "Expression_4",
+		"text": "[发呆]"
+	}, {
+		"name": "Expression_5",
+		"text": "[得意]"
+	}, {
+		"name": "Expression_6",
+		"text": "[流泪]"
+	}, {
+		"name": "Expression_7",
+		"text": "[害羞]"
+	}, {
+		"name": "Expression_8",
+		"text": "[闭嘴]"
+	}, {
+		"name": "Expression_9",
+		"text": "[睡]"
+	}, {
+		"name": "Expression_10",
+		"text": "[大哭]"
+	}]
+
+	function transEmo(emoMsg) {
+		var emoPath, transMsg;
+		alert(emoPath, transMsg);
+		var reg = /\[(.*?)\]/gm;
+		transMsg = emoMsg.replace(reg, function(match) {
+			for (var i = 0, len = emoData.length; i < len; i++) {
+				if (emoData[i].text === match) {
+					emoPath = '../image/chart/emoticonss/basic/' + emoData[i].name + '.png';
+					return '<img width="20" height="20" src="' + emoPath + '" />'
+				}
+			}
+			return match;
+		});
+		return transMsg;
+	}
+	//下载表情包
+	function fndownload() {
+
+		api.download({
+			url: 'http://aebce73778c05c787c76.qiniucdn.apicloud-system.com/apicloud/59c39b48bb4d3da47e2ddea4247abb36.zip',
+			savePath: 'fs://newface/append3.zip',
+			report: false,
+			cache: false,
+			allowResume: true
+		}, function(ret, err) {
+			if (ret.state == 1) {
+				console.log('下载成功:' + ret.savePath);
+
+				zip.unarchive({
+					file: 'fs://newface/append3.zip'
+				}, function(ret, err) {
+					if (ret.status) {
+						alert(JSON.stringify(ret));
+					} else {
+						alert(JSON.stringify(err));
+					}
+				});
+
+			} else {
+
+			}
+		});
+	}
+
+
+
+
+	//设置附加功能按钮
+	function fnsetAppendButton() {
+		UIChatTools.setAppendButton({
+			styles: {
+				row: 2, //（可选项）数字类型；每页显示按钮行数；默认：2
+				column: 4, //（可选项）数字类型；每页显示按钮的列数；默认：4
+				iconSize: 40, //（可选项）数字类型；按钮图标大小；默认：30
+				titleSize: 14, //（可选项）数字类型；按钮下标题文字大小；默认：13
+				titleColor: '#000' //（可选项）字符串类型；按钮下标题文字颜色；默认：#000
+			},
+			buttons: [{
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '电话'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '收藏'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '发红包'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '收藏'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '发红包'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '收藏'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '发红包'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '收藏'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '发红包'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '收藏'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '发红包'
+			}, {
+				normal: 'widget://image/chart/append1.png',
+				highlight: 'widget://image/chart/append1.png',
+				title: '收藏'
+			}]
+		}, function(ret) {
+			api.alert({
+				msg: '点击了第' + ret.index + '个按钮'
+			});
+		});
+	}
+	//表情面板相关功能事件的监听
+	function fnfaceListener() {
+		UIChatTools.faceListener({
+			name: 'face'
+		}, function(ret) {
+			api.alert({
+				msg: JSON.stringify(ret)
+			});
+		});
+
+		UIChatTools.faceListener({
+			name: 'appendFace'
+		}, function(ret) {
+			console.log(JSON.stringify(ret));
+			//打开添加表情页面
+			// api.openWin({
+			// 	name: 'face',
+			// 	url: './face.html'
+			// });
+			//选择表情后调用addFace接口添加表情包
+			fnaddFace();
+		});
+	}
+
+
+
+
+
+	// 底部  聊天记录始终在最底部
+	function fnchatBoxListener() {
+		UIChatTools.chatBoxListener({
+			name: 'valueChanged'
+		}, function(ret, err) {
+			if (ret) {
+				console.log("valueChanged:" + JSON.stringify(ret));
+			}
+		});
+		UIChatTools.chatBoxListener({
+			name: 'change'
+		}, function(ret, err) {
+			if (ret) {
+				console.log("change:" + JSON.stringify(ret));
+			}
+
+		});
+
+		UIChatTools.chatBoxListener({
+			name: 'move'
+		}, function(ret, err) {
+			if (ret) {
+				 $("html,body").finish().animate({"scrollTop":api.winHeight},900);
+			}
+		});
+	}
+
+
+	//选择图片相关功能时间的监听
+	function fnimageListener() {
+		UIChatTools.imageListener(function(ret) {
+			// alert('imageListener:' + JSON.stringify(ret));
+			if (ret.eventType == 'send') {
+				// alert(ret.images);
+				var img = ret.images;
+				var d = new Date();
+				var year = d.getFullYear();
+				var month = d.getMonth() + 1;
+				var day = d.getDate();
+				var hour = d.getHours();
+				var minutes = d.getMinutes();
+				//获取显示区域
+				var chatObj = document.getElementById("chat01_content");
+				chatObj.innerHTML +=
+					`<div class='aui-chat-item aui-chat-right'>
+						<div class='aui-chat-media'>
+							<img src='../image/liulangnan.png' /></div><div class='aui-chat-inner'><div class='aui-chat-name'>流浪男</div>
+							<img class='aui-chat-content' src=` + img +
+					` />
+							<div class='aui-chat-status'><i class='aui-iconfont aui-icon-correct aui-text-success'></i></div>
+						</div>
+					</div>`;
+			}
+
+		});
+	}
+
+	function fnrecorderListener() {
+		//eventType: press, // 取值范围如下：
+		// press 对讲按钮按下触发
+		// audition 试听
+		// audition_cancel 取消试听
+		// send 发送
+		// cancel 取消
+		// shortTime 按下时间太短
+		// start 开始
+		// stop  停止
+		//target: talkback  // 取值范围如下：
+		// talkback 对讲按钮
+		// record 录音按钮
+
+		UIChatTools.recorderListener(function(ret) {
+			if (ret.eventType == 'press' && ret.target == 'talkback') {
+				UIChatTools.startTimer();
+				console.log('按下对讲按钮');
+				//alert('按下对讲按钮');
+			}
+			if (ret.eventType == 'audition') {
+				//alert('按下试听');
+				console.log('按下试听');
+			}
+			if (ret.eventType == 'auditionTouchOn') {
+				//alert('按下试听开始');
+				console.log('按下试听开始');
+			}
+			if (ret.eventType == 'send') {
+				alert('send');
+				console.log('发送');
+			}
+			if (ret.eventType == 'cancel') {
+				//	alert('取消');
+				console.log('取消');
+			}
+			if (ret.eventType == 'shortTime') {
+				console.log('shortTime');
+			}
+			if (ret.eventType == 'start' && ret.target == 'record') {
+				UIChatTools.startTimer();
+				//alert('开始录音');
+			}
+			if (ret.eventType == 'stop' && ret.target == 'record') {
+				alert('停止录音');
+			}
+		});
+	}
+
+	function fntoolsListener() {
+		//recorder：用户点击录音按钮事件
+		//image：用户点击选择图片按钮事件
+		//video：用户点击视频按钮事件
+		//packet：用户点击钱包按钮的事件
+		//face：用户点击表情按钮的事件
+		//append：用户点击附件功能按钮事件
+		UIChatTools.toolsListener(function(ret) {
+			if (ret.eventType == 'packet') {
+				console.log('打开钱包页面')
+			}
+			if (ret.eventType == 'video') {
+				var FNPhotograph = api.require('FNPhotograph');
+				FNPhotograph.open({
+					path: 'fs://savePath',
+					album: false,
+					qualityValue: '100'
+				}, function(ret) {
+					alert(JSON.stringify(ret));
+				});
+			}
+		});
+	}
+
+	function fncloseKeyboard() {
+		UIChatTools.closeKeyboard();
+	}
+
+	function fncloseBoard() {
+		UIChatTools.closeBoard();
+	}
+
+	function fnpopupKeyboard() {
+		UIChatTools.popupKeyboard();
+	}
+
+	function fnpopupBoard() {
+		UIChatTools.popupBoard({
+			//target : 'extras'
+			target: 'emotion'
+		});
+	}
+
+	function fnaddFace() {
+		UIChatTools.addFace({
+			path: 'fs://newface/append3'
+		}, function(ret) {
+			api.alert({
+				msg: JSON.stringify(ret)
+			});
+		});
+	}
+
+	function fnclearText() {
+		UIChatTools.clearText();
+	}
+
+
+	//表情配置信息
+	// var emoData = [
+	//     {"name": "Expression_1","text": "[微笑]"},
+	//     {"name": "Expression_2","text": "[撇嘴]"},
+	//     {"name": "Expression_3","text": "[色]"},
+	//     {"name": "Expression_4","text": "[发呆]"},
+	//     {"name": "Expression_5","text": "[得意]"},
+	//     {"name": "Expression_6","text": "[流泪]"},
+	//     {"name": "Expression_7","text": "[害羞]"},
+	//     {"name": "Expression_8","text": "[闭嘴]"},
+	//     {"name": "Expression_9","text": "[睡]"},
+	//     {"name": "Expression_10","text": "[大哭]"},
+	//     {"name": "Expression_11","text": "[尴尬]"},
+	//     {"name": "Expression_12","text": "[发怒]"},
+	//     {"name": "Expression_13","text": "[调皮]"},
+	//     {"name": "Expression_14","text": "[呲牙]"},
+	//     {"name": "Expression_15","text": "[惊讶]"},
+	//     {"name": "Expression_16","text": "[难过]"},
+	//     {"name": "Expression_17","text": "[酷]"},
+	//     {"name": "Expression_18","text": "[冷汗]"},
+	//     {"name": "Expression_19","text": "[抓狂]"},
+	//     {"name": "Expression_20","text": "[吐]"},
+	//     {"name": "Expression_21","text": "[偷笑]"},
+	//     {"name": "Expression_22","text": "[愉快]"},
+	//     {"name": "Expression_23","text": "[白眼]"},
+	//     {"name": "Expression_24","text": "[傲慢]"},
+	//     {"name": "Expression_25","text": "[饥饿]"},
+	//     {"name": "Expression_26","text": "[困]"},
+	//     {"name": "Expression_27","text": "[恐惧]"},
+	//     {"name": "Expression_28","text": "[流汗]"},
+	//     {"name": "Expression_29","text": "[憨笑]"},
+	//     {"name": "Expression_30","text": "[悠闲]"},
+	//     {"name": "Expression_31","text": "[奋斗]"},
+	//     {"name": "Expression_32","text": "[咒骂]"},
+	//     {"name": "Expression_33","text": "[疑问]"},
+	//     {"name": "Expression_34","text": "[嘘]"},
+	//     {"name": "Expression_35","text": "[晕]"},
+	//     {"name": "Expression_36","text": "[疯了]"},
+	//     {"name": "Expression_37","text": "[衰]"},
+	//     {"name": "Expression_38","text": "[骷髅]"},
+	//     {"name": "Expression_39","text": "[敲打]"},
+	//     {"name": "Expression_40","text": "[再见]"},
+	//     {"name": "Expression_41","text": "[擦汗]"},
+	//     {"name": "Expression_42","text": "[抠鼻]"},
+	//     {"name": "Expression_43","text": "[鼓掌]"},
+	//     {"name": "Expression_44","text": "[糗大了]"},
+	//     {"name": "Expression_45","text": "[坏笑]"},
+	//     {"name": "Expression_46","text": "[左哼哼]"},
+	//     {"name": "Expression_47","text": "[右哼哼]"},
+	//     {"name": "Expression_48","text": "[哈欠]"},
+	//     {"name": "Expression_49","text": "[鄙视]"},
+	//     {"name": "Expression_50","text": "[委屈]"},
+	//     {"name": "Expression_51","text": "[快哭了]"},
+	//     {"name": "Expression_52","text": "[阴险]"},
+	//     {"name": "Expression_53","text": "[亲亲]"},
+	//     {"name": "Expression_54","text": "[吓]"},
+	//     {"name": "Expression_55","text": "[可怜]"},
+	//     {"name": "Expression_56","text": "[菜刀]"},
+	//     {"name": "Expression_57","text": "[西瓜]"},
+	//     {"name": "Expression_58","text": "[啤酒]"},
+	//     {"name": "Expression_59","text": "[篮球]"},
+	//     {"name": "Expression_60","text": "[乒乓]"},
+	//     {"name": "Expression_61","text": "[咖啡]"},
+	//     {"name": "Expression_62","text": "[饭]"},
+	//     {"name": "Expression_63","text": "[猪头]"},
+	//     {"name": "Expression_64","text": "[玫瑰]"},
+	//     {"name": "Expression_65","text": "[凋谢]"},
+	//     {"name": "Expression_66","text": "[嘴唇]"},
+	//     {"name": "Expression_67","text": "[爱心]"},
+	//     {"name": "Expression_68","text": "[心碎]"},
+	//     {"name": "Expression_69","text": "[蛋糕]"},
+	//     {"name": "Expression_70","text": "[闪电]"},
+	//     {"name": "Expression_71","text": "[炸弹]"},
+	//     {"name": "Expression_72","text": "[刀]"},
+	//     {"name": "Expression_73","text": "[足球]"},
+	//     {"name": "Expression_74","text": "[瓢虫]"},
+	//     {"name": "Expression_75","text": "[便便]"},
+	//     {"name": "Expression_76","text": "[月亮]"},
+	//     {"name": "Expression_77","text": "[太阳]"},
+	//     {"name": "Expression_78","text": "[礼物]"},
+	//     {"name": "Expression_79","text": "[拥抱]"},
+	//     {"name": "Expression_80","text": "[强]"},
+	//     {"name": "Expression_81","text": "[弱]"},
+	//     {"name": "Expression_82","text": "[握手]"},
+	//     {"name": "Expression_83","text": "[胜利]"},
+	//     {"name": "Expression_84","text": "[抱拳]"},
+	//     {"name": "Expression_85","text": "[勾引]"},
+	//     {"name": "Expression_86","text": "[拳头]"},
+	//     {"name": "Expression_87","text": "[差劲]"},
+	//     {"name": "Expression_88","text": "[爱你]"},
+	//     {"name": "Expression_89","text": "[NO]"},
+	//     {"name": "Expression_90","text": "[OK]"},
+	//     {"name": "Expression_91","text": "[爱情]"},
+	//     {"name": "Expression_92","text": "[飞吻]"},
+	//     {"name": "Expression_93","text": "[跳跳]"},
+	//     {"name": "Expression_94","text": "[发抖]"},
+	//     {"name": "Expression_95","text": "[怄火]"},
+	//     {"name": "Expression_96","text": "[转圈]"},
+	//     {"name": "Expression_97","text": "[磕头]"},
+	//     {"name": "Expression_98","text": "[回头]"},
+	//     {"name": "Expression_99","text": "[跳绳]"},
+	//     {"name": "Expression_100","text": "[投降]"},
+	//     {"name": "Expression_101","text": "[激动]"},
+	//     {"name": "Expression_102","text": "[街舞]"},
+	//     {"name": "Expression_103","text": "[献吻]"},
+	//     {"name": "Expression_104","text": "[左太极]"},
+	//     {"name": "Expression_105","text": "[右太极]"}
+	// ];
+	//
+	//
+	//
+	// function transEmo(emoMsg){
+	//     var emoPath, transMsg;
+	//                 var reg = /\[(.*?)\]/gm;
+	//                 transMsg = emoMsg.replace(reg, function(match) {
+	//                         for (var i = 0, len = emoData.length; i < len; i++) {
+	//                                 if (emoData[i].text === match) {
+	//                                         emoPath = '../../image/chart/emotionss/basic/' + emoData[i].name + '.png';
+	//                                         return '<img width="20" height="20" src="' + emoPath + '" />'
+	//                                 }
+	//                         }
+	//                         return match;
+	//                 });
+	//                 return transMsg;
+	// }
+</script>
+
+
+
+</html>

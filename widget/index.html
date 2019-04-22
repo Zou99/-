@@ -232,7 +232,7 @@
             <i class="aui-iconfont aui-icon-star"></i>
             <div class="aui-bar-tab-label">分类</div>
         </div>
-        <div class="aui-bar-tab-item" tapmode>
+        <div class="aui-bar-tab-item" tapmode onclick="notice()">
             <i class="aui-iconfont aui-icon-comment"></i>
             <div class="aui-bar-tab-label">通知</div>
         </div>
@@ -270,8 +270,8 @@
         var headerH = $api.fixStatusBar(header);
         // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
         var footerH = $api.fixTabBar(footer);
-    };
 
+}
     // 点击搜索框跳转
     function opn() {
       api.openWin({
@@ -295,6 +295,25 @@
           type:"none"
        }
    })
+  }
+  // 点击打开通知页面
+  function notice(){
+    var footerH = $api.dom('footer').offsetHeight;
+    api.openFrame({
+        name: 'notice',
+        url: './html/notice.html',
+        rect: {
+            x: 0,
+            y: 0,
+            w: 'auto',
+            h: 'auto',
+            marginBottom:footerH,
+        },
+        pageParam: {
+            name: 'test'
+        }
+    });
+
   }
 
    // 点击logo跳转商品列表
@@ -328,7 +347,7 @@
        pageParam: {
           name:'test'
        }
-   })
+   });
   }
 
 </script>

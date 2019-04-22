@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>通知</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+    .aui-list {
+      background-image:none;
+    }
+    img.aui-img-round {
+    border-radius: 22%;
+}
+        body {}
+
+        header {
+            height: 100%;
+            background: -webkit-linear-gradient(left, #fd8200, #ff5c01);
+            /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, #fd8200, #fd5200);
+            /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, #fd8200, #fd5200);
+            /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, #fd8200, #fd5200);
+            /* 标准的语法 */
+            padding: 0 14px;
+        }
+
+        .line1 {
+            height: 3rem;
+        }
+
+        .line1 .left {
+            float: left;
+            /*font-weight: 610;*/
+            color: #fff;
+            font-size: 1.1rem;
+            line-height: 3rem;
+            letter-spacing: 2;
+        }
+
+        .line1 .right {
+            float: right;
+        }
+        .line1 .right span {
+          font-size: 0.9rem;
+          color: #fff;
+          line-height: 3rem;
+        }
+        .line2 {
+          height: 1rem;
+          line-height: 1rem;
+          color: #fff;
+          font-size: 0.73rem;
+        }
+        .line2 .span {
+          background-color: #f2a35e;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          display: flex;
+          text-align: center;
+          line-height: 1rem;
+          display: inline-block;
+        }
+        .line3 {
+          background-color: #fff;
+          height: 5rem;
+          border-radius: 12px;
+          position: relative;
+          top: 1.5rem;
+          box-shadow:0px 5px 18px 0px #ccc;
+          position: relative;
+          z-index: 222;
+        }
+        .line3 .aui-col-xs-4 {
+          height: 5rem;
+          text-align: center;
+
+        }
+        .line3 .yuan {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 50%;
+          position: absolute;
+          left: 50%;
+          top: 10%;
+          margin-left: -1.25rem;
+          text-align: center;
+          line-height: 2.5rem;
+        }
+        .line3 .yuan span {
+          font-size: 1rem;
+          color: #fff;
+        }
+        .line3 .zi {
+          text-align: center;
+          line-height: 8rem;
+          font-size: 0.6rem;
+          color: #a9a9a9;
+        }
+        .biao {
+          height: 1.7rem;
+          background-color: #fff;
+          padding: 0 14px;
+          display: inline-block;
+          position: relative;
+
+        }
+        .biao i {
+          width: 0.8rem;
+          height:  0.8rem;
+          float: left;
+          position: relative;
+          top: 50%;
+          /*margin-top: -0.2rem;*/
+          vertical-align: middle;
+          color: #fff;
+          border-radius: 50%;
+          background-color: #e9cf3c;
+          text-align: center;
+          line-height: 0.9rem;
+          font-size: 0.8rem;
+        }
+        .biao h3 {
+          float: left;
+          line-height: 2.5rem;
+          font-weight: bold;
+          padding-left: 2px;
+        }
+        .yinc_header {
+          display: none;
+          transition: all 2s;
+
+
+        }
+        .fixednav {
+           display: block;
+           position: fixed;
+           top: 0px;
+           left: 0px;
+           width: 100%;
+           height: 4rem;
+           z-index: 999;
+           transition: all 2s ;
+       }
+
+
+    </style>
+</head>
+
+<body>
+    <!--显示的  -->
+    <header>
+        <div class="line1">
+            <div class="left">
+                <span>消息</span>
+            </div>
+            <div class="right">
+
+                <span class="aui-iconfont aui-icon-my" style="padding-right:20px;" tapmode onclick="lianximen()"> </span>
+
+
+                <span class="aui-iconfont aui-icon-plus" tapmode onclick="fnOpneDemo()"> </span>
+            </div>
+
+        </div>
+        <div class="line2">
+            <span>没有未读消息</span>
+            <div class="span">
+                <span class="aui-iconfont aui-icon-trash"></span>
+            </div>
+        </div>
+        <div class="line3">
+          <div class="aui-row">
+            <div class="aui-col-xs-4" tapmode onclick="fnOpenLogistics()">
+              <div class="yuan" style="background: -webkit-linear-gradient(left, #32bdfe, #32abfc);">
+                <span class="aui-iconfont aui-icon-comment"></span>
+              </div>
+              <span class="zi">交易物流</span>
+            </div>
+            <div class="aui-col-xs-4" tapmode onclick="fnOpenNews()">
+              <div class="yuan" style="background: -webkit-linear-gradient(left, #f7d551, #fdbf0a);">
+                <span class="aui-iconfont aui-icon-comment"></span>
+              </div>
+              <span class="zi">通知消息</span>
+            </div>
+            <div class="aui-col-xs-4" tapmode onclick="fnOpenInteraction()">
+              <div class="yuan" style="background: -webkit-linear-gradient(left, #96e125, #5fd515);">
+                <span class="aui-iconfont aui-icon-comment"></span>
+              </div>
+              <span class="zi">互动消息</span>
+            </div>
+          </div>
+
+        </div>
+    </header>
+
+
+    <!-- 滑动到一定程度显示 -->
+    <!-- <div style="margin-top:5rem;"></div> -->
+
+    <header class="yinc_header" id="yinc_header">
+        <div class="line1">
+            <div class="left" style="    width: 3rem;position: absolute;left: 50%;margin-left: -1.5rem;">
+                <span>消息</span>
+            </div>
+            <div class="right">
+                <span class="aui-iconfont aui-icon-my" style="padding-right:20px;"> </span>
+
+                <span class="aui-iconfont aui-icon-plus"> </span>
+            </div>
+
+        </div>
+    </header>
+
+
+    <div class="aui-card-list">
+      <div style="padding-top:2rem;"></div>
+      <!-- 最近的消息  -->
+            <div class="aui-card-list-content">
+                <ul class="aui-list aui-media-list">
+                    <li class="aui-list-item aui-list-item-middle" tapmode onclick="fnOpenchat()">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo5.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">soinku潮典专卖店</div>
+                                    <div class="aui-list-item-right">星期二</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    好的
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo1.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">soinku潮典专卖店</div>
+                                    <div class="aui-list-item-right">10:30</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    好的
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo2.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">飞猪旅游官方</div>
+                                    <div class="aui-list-item-right">星期日</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    来了！悬赏10万，清空出境购物车！
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo3.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">我的小蜜</div>
+                                    <div class="aui-list-item-right">08:36</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    亲，欢迎下次再来调侃小蜜哦~
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo4.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">萌萌阿姨</div>
+                                    <div class="aui-list-item-right">09:20</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    背景也变了哎
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- 空隙  -->
+            <div style="background-color:#fafafa;height:0.6rem;"></div>
+            <!-- 两周前的消息 -->
+            <div class="aui-card-list-content">
+              <!-- 两周前的最顶部标志 -->
+              <div class="biao">
+                <i class="aui-iconfont aui-icon-date"></i>
+                <h3>两周前的消息</h3>
+              </div>
+                <ul class="aui-list aui-media-list">
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo5.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">soinku潮典专卖店</div>
+                                    <div class="aui-list-item-right">星期二</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    好的
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo1.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">soinku潮典专卖店</div>
+                                    <div class="aui-list-item-right">10:30</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    好的
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo2.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">飞猪旅游官方</div>
+                                    <div class="aui-list-item-right">星期日</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    来了！悬赏10万，清空出境购物车！
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo3.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">我的小蜜</div>
+                                    <div class="aui-list-item-right">08:36</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    亲，欢迎下次再来调侃小蜜哦~
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-list-item aui-list-item-middle">
+                        <div class="aui-media-list-item-inner">
+                            <div class="aui-list-item-media" style="width: 3rem;">
+                                <img src="../image/demo4.png" class="aui-img-round" >
+                            </div>
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title aui-font-size-16">萌萌阿姨</div>
+                                    <div class="aui-list-item-right">09:20</div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    背景也变了哎
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="aui-card-list-footer aui-text-center">
+                查看更多
+            </div>
+        </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+      $api.fixStatusBar($api.dom('header'));
+        $api.fixStatusBar($api.byId('yinc_header'));
+        api.setStatusBarStyle({
+            style: 'light',
+            color: 'transparent'
+        });
+        demo = api.require('MNPopups');
+        api.addEventListener({
+            name: 'shake'
+        }, function(ret, err) {
+            fnInsertItem();
+        });
+    };
+    //打开加号弹框
+    function fnOpneDemo(){
+      demo.open({
+            rect: {
+                w: 180,
+                h: 200
+            },
+            position: {
+                x: api.winWidth-10,
+                y: 70
+            },
+            styles: {
+                mask: 'rgba(0,0,0,0.1)',
+                bg: '#fff',
+                cell: {
+                    bg: {
+                        normal: '',
+                        highlight: ''
+                    },
+                    h: 46,
+                    title: {
+                        marginL: 55,
+                        color: '#000',
+                        size: 16,
+                    },
+
+                    icon: {
+                        marginL: 10,
+                        w: 20,
+                        h: 20,
+                        corner: 2
+                    },
+                    separateLine: {              //（可选项）JSON 类型；分割线的样式设置
+            width: 0,                //（可选项）数字类型；分割线的粗细，默认为1
+            marginLR: 0,              //（可选项）数字类型；分割线距离左右的间距，默认为0
+            bg: '#C0C0C0',           //（可选项）字符类型；分割线的背景颜色，支持rgb、rgba、#；默认：#C0C0C0
+            hideLastSeparateLine: false, //(可选项)布尔类型；是否隐藏最后一条分割线，默认false
+        }
+                },
+
+                pointer: {
+                    size: 0,
+                    xPercent: 0,
+                    yPercent: 0,
+                    orientation: 'downward'
+                },
+                badge:{                          // （可选项）JSON类型；配置badge
+    size:10,                     // （可选项）数字类型；badge大大小
+    color:'red'                   // （可选项）字符串类型；badge的背景色
+    }
+            },
+            datas: [{
+                title: '开启小黑群',
+                   icon: '../image/qun.png'
+            }, {
+                title: '发起聊天',
+                   icon: '../image/chart.png'
+            }, {
+                title: '添加淘友',
+                   icon: '../image/lianximen.png'
+            },{
+                title: '扫一扫',
+                icon: '../image/sao.png'
+            }],
+            animation: true
+        }, function(ret) {
+            if (ret) {
+                alert(JSON.stringify(ret));
+                // setTimeout(("fnReloadData()"), 5000)
+            }
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 打开联系人窗口
+    function lianximen(){
+      api.openWin({
+          name: 'lianximen',
+          url: './notice_lianximen.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+    // 打开新的chart 聊天页面
+    function fnOpenchat(){
+      api.openWin({
+        name: 'chart',
+        url: './notice_chart.html',
+        pageParam: {
+            name: 'test'
+        }
+      })
+    }
+    //打开交易物流的页面吧
+    function fnOpenLogistics(){
+      api.openWin({
+        name: 'logistics',
+        url: './notice_logistics.html',
+        pageParam: {
+            name: 'test'
+        }
+      })
+    }
+    //打开通知消息的页面吧
+    function fnOpenNews(){
+      api.openWin({
+        name: 'news',
+        url: './notice_news.html',
+        pageParam: {
+            name: 'test'
+        }
+      })
+    }
+    //打开互动消息的页面吧
+    function fnOpenInteraction(){
+      api.openWin({
+        name: 'interaction',
+        url: './notice_interaction.html',
+        pageParam: {
+            name: 'test'
+        }
+      })
+    }
+</script>
+<script type="text/javascript">
+$(function () {
+          var nav = $(".yinc_header"); //得到导航对象
+          var win = $(window); //得到窗口对象
+          var sc = $(document);//得到document文档对象。
+          win.scroll(function () {
+              if (sc.scrollTop() >= 100) {
+                  nav.removeClass("yinc_header");
+                  nav.addClass("fixednav");
+              } else {
+                  nav.removeClass("fixednav");
+                  nav.addClass("yinc_header");
+              }
+          });
+      });
+</script>
+
+</html>

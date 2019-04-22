@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .aui-list {
+            background-image: none;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #classify-list {
+            width: 5rem;
+            height: 100%;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #classify-list .aui-list {
+            overflow-y: scroll;
+        }
+
+        .aui-list .aui-list-item-title {
+            font-size: 0.7rem;
+        }
+
+        .aui-bar-nav,
+        .aui-searchbar {
+            background-color: #f3f3f3;
+        }
+
+        .icon-zuo1 {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .aui-tab-item.aui-active {
+            color: #ff4a00;
+            border-bottom: 2px solid #ff4a00;
+        }
+
+        .zzq_list_mon {
+            padding-right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aui-card-list" style="background-color:#fff;overflow:auto;">
+
+        <div class="aui-card-list-content">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle" style="min-height:3.2rem;">
+                    <div class="aui-media-list-item-inner" style="min-height:3.2rem;">
+                        <div class="aui-list-item-media" style="width: 2rem;height:2rem;border-radius:50%;background: -webkit-linear-gradient(left, #f7ba21, #f99f25);line-height:1.5rem;">
+                            <i class="aui-iconfont aui-icon-my" style="color:#fff;font-size:1rem;position: relative;left: 38%;font-weight:800;"></i>
+                        </div>
+                        <div class="aui-list-item-inner" style="min-height:3.2rem;margin-left: 0.5rem">
+                            <div class="aui-list-item-text" style="line-height:2.2rem;">
+                                <div class="aui-list-item-title aui-font-size-16">新的好友</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle" style="min-height:3.2rem;">
+                    <div class="aui-media-list-item-inner" style="min-height:3.2rem;">
+                        <div class="aui-list-item-media" style="width: 2rem;height:2rem;border-radius:50%;background: -webkit-linear-gradient(left, #f7ba21, #f99f25);line-height:1.5rem;">
+                            <i class="aui-iconfont aui-icon-like" style="color:#fff;font-size:1rem;position: relative;left: 38%;font-weight:800;"></i>
+                        </div>
+                        <div class="aui-list-item-inner" style="min-height:3.2rem;margin-left: 0.5rem">
+                            <div class="aui-list-item-text" style="line-height:2.2rem;">
+                                <div class="aui-list-item-title aui-font-size-16">我的关注</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle" style="min-height:3.2rem;">
+                    <div class="aui-media-list-item-inner" style="min-height:3.2rem;">
+                        <div class="aui-list-item-media" style="width: 2rem;height:2rem;border-radius:50%;background: -webkit-linear-gradient(left, #2caaf7, #2d98e6);line-height:1.5rem;">
+                            <i class="aui-iconfont aui-icon-home" style="color:#fff;font-size:1rem;position: relative;left: 38%;font-weight:800;"></i>
+                        </div>
+                        <div class="aui-list-item-inner" style="min-height:3.2rem;margin-left: 0.5rem">
+                            <div class="aui-list-item-text" style="line-height:2.2rem;">
+                                <div class="aui-list-item-title aui-font-size-16">手机联系人</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle" style="min-height:3.2rem;">
+                    <div class="aui-media-list-item-inner" style="min-height:3.2rem;">
+                        <div class="aui-list-item-media" style="width: 2rem;height:2rem;border-radius:50%;background: -webkit-linear-gradient(left, #48e261, #3ac454);line-height:1.5rem;">
+                            <i class="aui-iconfont aui-icon-comment" style="color:#fff;font-size:1rem;position: relative;left: 38%;font-weight:800;"></i>
+                        </div>
+                        <div class="aui-list-item-inner" style="min-height:3.2rem;margin-left: 0.5rem">
+                            <div class="aui-list-item-text" style="line-height:2.2rem;">
+                                <div class="aui-list-item-title aui-font-size-16">群聊</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle" style="min-height:3.2rem;">
+                    <div class="aui-media-list-item-inner" style="min-height:3.2rem;">
+                        <div class="aui-list-item-media" style="width: 2rem;height:2rem;border-radius:50%;background: -webkit-linear-gradient(left, #f7bb1b, #fa9c28);line-height:1.5rem;">
+                            <i class="aui-iconfont aui-icon-mail" style="color:#fff;font-size:1rem;position: relative;left: 38%;font-weight:800;"></i>
+                        </div>
+                        <div class="aui-list-item-inner" style="min-height:3.2rem;margin-left: 0.5rem">
+                            <div class="aui-list-item-text" style="line-height:2.2rem;">
+                                <div class="aui-list-item-title aui-font-size-16">消息号</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    var listContact;
+    apiready = function() {
+        var headerH = api.pageParam.key1;
+
+        var footerH = $api.dom('.aui-card-list').offsetHeight;
+        // alert(footerH);
+        // alert(headerH + footerH);
+        var minH = Number(footerH) + Number(headerH);
+        // alert(minH);
+        listContact = api.require('listContact');
+        listContact.open({
+            y: minH,
+            bgColor: '#f0f0f6',
+            borderColor: '#fff',
+            cellBgColor: '#ffffff',
+            cellSelectColor: '#f4f4f4',
+            imgHeight: 50,
+            cellHeight: 65,
+            indicator: {
+                color: '#a3a3a3'
+            },
+            groupTitle: {
+                color: '#383838',
+                size: 16,
+                bgColor: '#f2f2f2'
+            },
+
+            // borderColor：'#fff',
+            data: {
+
+                A: [{
+                    placeholderImg: '../image/1.jpg',
+                    img: '../image/1.jpg',
+                    title: '阿姨',
+                    color: '#3f3f3f',
+                    titleSize: '17',
+                }],
+                B: [{
+                    placeholderImg: '../image/1.jpg',
+                    img: '../image/1.jpg',
+                    title: 'bilibili',
+                    color: '#3f3f3f',
+                    titleSize: '17',
+                }],
+                C: [{
+                    placeholderImg: '../image/1.jpg',
+                    img: '../image/1.jpg',
+                    title: 'bilibili',
+                    color: '#3f3f3f',
+                    titleSize: '17',
+                }],
+                D: [{
+                    placeholderImg: '../image/1.jpg',
+                    img: '../image/1.jpg',
+                    title: 'bilibili',
+                    color: '#3f3f3f',
+                    titleSize: '17',
+                }],
+
+            }
+        }, function(ret, err) {
+            if (ret) {
+                alert(JSON.stringify(ret));
+            } else {
+                alert(JSON.stringify(err));
+            }
+        });
+
+    };
+</script>
+
+</html>

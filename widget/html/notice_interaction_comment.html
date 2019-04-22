@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>互动消息——评论详情</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+      <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
+      <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_3j8aptsnexk.css">
+      <style type="text/css">
+          body {
+              background-color: #f2f2f2;
+          }
+
+          #classify-list {
+              width: 5rem;
+              height: 100%;
+              background-color: #ffffff;
+              overflow-x: hidden;
+          }
+
+          #classify-list .aui-list {
+              overflow-y: scroll;
+          }
+
+          .aui-list .aui-list-item-title {
+              font-size: 0.7rem;
+          }
+      </style>
+      <style media="screen">
+          .aui-bar-nav,
+          .aui-searchbar {
+              background-color: #f9f9f9;
+          }
+
+          .icon-zuo1 {
+              color: #000;
+              font-size: 14px;
+          }
+
+          .aui-tab-item.aui-active {
+              color: #ff4a00;
+              border-bottom: 2px solid #ff4a00;
+          }
+
+          .zzq_list_mon {
+              padding-right: 0px;
+          }
+
+          .list {
+              background-color: #fff;
+              text-align: center;
+              padding: 0.7rem 0;
+              width: 4rem;
+          }
+
+          .active {
+              background-color: #f2f2f2;
+              color: #ff946b;
+          }
+
+          .active .list-left {
+              font-size: 0.75rem;
+              padding: 0.1rem 0;
+              border-left: 3px solid;
+              border-left: -webkit-linear-gradient(#fff, #ff946b);
+              /*for safari5.1-6.0*/
+              border-left: -o-linear-gradient(#fff, #ff946b);
+              /*Opera 11.1-12.0*/
+              border-left: -moz-linear-gradient(#fff, #ff946b);
+              /*firefox 3.6-15*/
+              border-left: linear-gradient(#fff, #ff946b);
+              /*标准语法，必须放在最后*/
+          }
+
+          .list-left {
+              font-size: 0.75rem;
+              padding: 0.1rem 0;
+              border-left: 3px solid #fff;
+          }
+      </style>
+  </head>
+  <body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <div class="aui-pull-left aui-btn" style="padding:0 1rem;">
+            <span class="iconfont icon-zuo1" onclick="api.closeWin()"></span>
+        </div>
+        <div class="aui-title" style="left:-3rem; right: 2rem;width:75%;color: #505050;">
+            评论详情
+        </div>
+        <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
+            <div class="zzq_list_rig">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- 点击按钮显示上弹框，功能直达 -->
+        <!-- <div class="zzq_funct_gf">
+
+        </div> -->
+
+
+    </header>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+        api.setStatusBarStyle({
+            // style: 'dark',
+            // color:'transparent'
+            style: 'light',
+            color: '#cbcbcb'
+        });
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerH = header.offsetHeight;
+        api.openFrame({
+            name: 'notice_interaction_comment_frame',
+            url: './notice_interaction_comment_frame.html',
+            rect: {
+                x: 0,
+                y: headerH,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bounces: true,
+            bgColor: '#f4f4f4',
+        });
+
+
+
+
+      };
+  </script>
+  </html>

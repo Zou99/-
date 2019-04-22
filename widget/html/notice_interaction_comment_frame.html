@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>互动消息——评论详情 frame</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        html {
+            background-color: #f4f4f4;
+        }
+
+        .first {
+            height: 8.5rem;
+            /*padding: 1rem 0px;*/
+            background-color: #fff;
+        }
+
+        .ci {
+            height: 5.5rem;
+            background-color: #fafafa;
+        }
+
+        .info_first {
+            padding-top: 1rem;
+        }
+
+        .info_two {
+            padding-top: 1rem;
+        }
+
+        .title {
+            font-weight: bolder;
+            height: 1rem;
+        }
+
+        .header_img img {
+            margin: 0 auto;
+        }
+
+        .hui {
+            color: #adadad;
+            font-size: 0.6rem;
+            /*float: left;*/
+        }
+
+        .time {
+            display: inline-block;
+            font-size: 0.6rem;
+        }
+
+        .time a {
+            font-size: 0.6rem;
+            /*float: left;*/
+        }
+
+        .comment {
+            padding-top: 0.6rem;
+            font-size: 0.73rem;
+            letter-spacing: 1px;
+        }
+
+        .info_three {
+            position: relative;
+            height: 8.5rem;
+        }
+
+        .ci_info_three {
+            position: relative;
+            height: 5.5rem;
+        }
+
+        .info_three .zan {
+            position: relative;
+            padding-left: 0.4rem;
+            top: 70%;
+        }
+
+        .ci_info_three .zan {
+            position: relative;
+            padding-left: 0.4rem;
+            top: 17%;
+        }
+
+        .zan img {
+            width: 0.83rem;
+            float: left;
+        }
+
+        .zan span {
+            color: #c6c6c6;
+            float: left;
+            font-size: 0.69rem;
+            padding-left: 0.4rem;
+        }
+
+        .ci:last-child {
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="neirong" id="neirong">
+        <!-- 主楼层 -->
+        <div class="first">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo3.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>那灬只猫</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-23 评论于 </span>
+                        <a>这条评论很有意思，快来看看吧!</a>
+                    </div>
+                    <div class="comment">
+                        请问你多高
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 次楼层 -->
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo2.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>那灬只猫</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">4小时前</span>
+                        <a>删除!</a>
+                    </div>
+                    <div class="comment">
+                        回复 <a href="">蓝**Z: </a>谢谢
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 次楼层 -->
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo1.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>蓝**Z</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-25</span>
+                    </div>
+                    <div class="comment">
+                        178
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo1.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>蓝**Z</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-25</span>
+                    </div>
+                    <div class="comment">
+                        178
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo1.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>蓝**Z</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-25</span>
+                    </div>
+                    <div class="comment">
+                        178
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo1.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>蓝**Z</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-25</span>
+                    </div>
+                    <div class="comment">
+                        178
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo1.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>蓝**Z</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-25</span>
+                    </div>
+                    <div class="comment">
+                        178
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ci">
+            <div class="aui-row">
+                <div class="aui-col-xs-2 info_first">
+                    <div class="header_img">
+                        <img style="width:1.7rem" class="aui-img-round" src="../image/demo1.png" alt="">
+                    </div>
+                </div>
+                <div class="aui-col-xs-8 info_two">
+                    <div class="title">
+                        <span>蓝**Z</span>
+                    </div>
+                    <div class="time">
+                        <span class="hui">03-25</span>
+                    </div>
+                    <div class="comment">
+                        178
+                    </div>
+                </div>
+                <div class="aui-col-xs-2 ci_info_three">
+                    <div class="zan">
+
+                        <img src="../image/zan.png" alt="">
+                        <span>赞</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.setRefreshHeaderInfo({
+            loadingImg: 'widget://image/refresh.png',
+            bgColor: '#ccc',
+            textColor: '#fff',
+            textDown: '下拉刷新...',
+            textUp: '松开刷新...'
+        }, function(ret, err) {
+            //在这里从服务器加载数据，加载完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+            api.refreshHeaderLoadDone()
+
+        });
+        UIChatTools = api.require('UIChatTools');
+        UIChatTools.open({
+            chatBox: {
+                placeholder: '回复楼主',
+                autoFocus: false,
+                maxRows: 6
+            },
+            styles: {
+                bgColor: '#fcfcfc',
+                margin: 10,
+            },
+            tools: {
+                h: 0,
+            },
+            emotions: ['widget://res/emotions/basic', 'widget://res/emotions/append1', 'widget://res/emotions/append2']
+        }, function(ret) {
+
+            if (ret.eventType == 'send') {
+                if (ret.msg == '' || ret.msg == undefined) {
+                    api.toast({
+                        msg: '不能发送空白消息',
+                        duration: 1000,
+                        location: 'center'
+                    });
+
+                } else {
+                    //创建时间对象
+                    var d = new Date();
+                    var year = d.getFullYear();
+                    var month = d.getMonth() + 1;
+                    var day = d.getDate();
+                    var hour = d.getHours();
+                    var minutes = d.getMinutes();
+
+
+                    //获取输入的内容
+                    var content = ret.msg;
+                    //获取显示区域
+                    var chatObj = document.getElementById("neirong");
+
+
+                    chatObj.innerHTML +=
+                        `<div class="ci">
+                                    <div class="aui-row">
+                                        <div class="aui-col-xs-2 info_first">
+                                            <div class="header_img">
+                                                <img style="width:1.7rem" class="aui-img-round" src="../image/demo2.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="aui-col-xs-8 info_two">
+                                            <div class="title">
+                                                <span>那灬只猫</span>
+                                            </div>
+                                            <div class="time">
+                                                <span class="hui">刚刚</span>
+                                            </div>
+                                            <div class="comment">
+                                                ` +
+                        content +
+                        `
+                                            </div>
+                                        </div>
+                                        <div class="aui-col-xs-2 ci_info_three">
+                                            <div class="zan">
+
+                                                <img src="../image/zan.png" alt="">
+                                                <span>赞</span>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`;
+
+                    UIChatTools.value({
+                        msg: ''
+                    });
+                    api.toast({
+                        msg: '发送成功',
+                        duration: 1000,
+                        location: 'center'
+                    });
+
+                }
+
+            }
+
+            console.log(JSON.stringify(ret))
+        });
+    };
+</script>
+
+</html>
