@@ -9,10 +9,16 @@
 	<link rel="stylesheet" type="text/css" href="../css/api.css" />
 	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
 	<style>
+
 		body {
 			padding: 60px 10px;
-			padding-bottom: 100px;
-			/*overflow-y: scroll;*/
+
+			overflow-y: scroll!important;
+			background-color: #e5e5e5!important;
+		}
+		html {
+			overflow-y: scroll!important;
+
 			background-color: #e5e5e5!important;
 		}
 
@@ -42,8 +48,8 @@
 		.neirong {
 			height: 100%;
 		}
-		.aui-chat-item:last-child {
-			margin-bottom: 2rem;
+.aui-chat-right:last-child {
+			margin-bottom: 6rem;
 
 		}
 	</style>
@@ -118,113 +124,9 @@
 		//fs = api.require("fs");
 		zip = api.require("zip");
 		fndownload();
-		// fnopen();
-		flopen();
+		fnopen();
 		fnchatBoxListener();
 
-	};
-
-	function flopen() {
-		UIChatTools.open({
-			chatBox: {
-				placeholder: '聊天内容',
-				autoFocus: false,
-				maxRows: 6
-			},
-			styles: {
-				bgColor: '#f2f2f2',
-				margin: 10,
-				// mask: {
-				// 	bgColor: 'rgba(0,0,0,0.5)'
-				// }
-			},
-			tools: {
-				h: 44,
-				iconSize: 30,
-				recorder: {
-					normal: 'fs://UIChatTolls/recorder.png',
-					selected: 'fs://UIChatTolls/recorder1.png'
-				},
-				image: {
-					normal: 'fs://UIChatTolls/image.png',
-					selected: 'fs://UIChatTolls/image1.png'
-				},
-				video: {
-					normal: 'fs://UIChatTolls/video.png',
-					selected: 'fs://UIChatTolls/video1.png'
-				},
-				packet: {
-					normal: 'fs://UIChatTolls/packet.png',
-					selected: 'fs://UIChatTolls/packet1.png'
-				},
-				face: {
-					normal: 'fs://UIChatTolls/face.png',
-					selected: 'fs://UIChatTolls/face1.png'
-				},
-				append: {
-					normal: 'fs://UIChatTolls/append.png',
-					selected: 'fs://UIChatTolls/append1.png'
-				}
-			},
-			emotions: ['widget://res/emotions/basic', 'widget://res/emotions/append1', 'widget://res/emotions/append2']
-		}, function(ret) {
-			if (ret.eventType == 'send') {
-				if (ret.msg == '' || ret.msg == undefined) {
-					api.toast({
-						msg: '不能发送空白消息',
-						duration: 1000,
-						location: 'center'
-					});
-
-				} else {
-					//创建时间对象
-					var d = new Date();
-					var year = d.getFullYear();
-					var month = d.getMonth() + 1;
-					var day = d.getDate();
-					var hour = d.getHours();
-					var minutes = d.getMinutes();
-
-
-					//获取输入的内容
-					var content = ret.msg;
-					//获取显示区域
-					var chatObj = document.getElementById("chat01_content");
-
-					// btnObj.onclick = function() {
-					//追加内容到聊天显示区域
-					// chatObj.innerHTML += "黑山老妖" + year + "." + month + "." + day + "." + hour + ":" + minutes + "<br/><span>" + content.value + "</span><br>";
-					// chatObj.innerHTML += "黑山老妖" + year + "." + month + "." + day + "." + hour + ":" + minutes + "<br/><span>" + content.value + "</span><br>";
-					chatObj.innerHTML +=
-						`<div class='aui-chat-item aui-chat-right'>
-											<div class='aui-chat-media'>
-											<img src='../image/liulangnan.png' /></div><div class='aui-chat-inner'><div class='aui-chat-name'>流浪男</div><div class='aui-chat-content'>` +
-						content + `</div><div class='aui-chat-status'><i class='aui-iconfont aui-icon-correct aui-text-success'></i></div>
-											</div>
-										</div>`;
-
-					// }
-					// alert(content);
-					UIChatTools.value({
-						msg: ''
-					});
-
-				}
-
-
-
-
-			}
-			if (ret.eventType == 'show') {
-				fnfaceListener();
-				fnchatBoxListener();
-				fnimageListener();
-				fnrecorderListener();
-				fntoolsListener();
-				fnsetAppendButton();
-			}
-			console.log(JSON.stringify(ret))
-		});
 	};
 
 	function fnopen() {
@@ -236,10 +138,10 @@
 			},
 			styles: {
 				bgColor: '#f2f2f2',
-				margin: 30,
-				mask: {
-					bgColor: 'rgba(1,2,3,0)'
-				}
+				margin: 10,
+				// mask: {
+				// 	bgColor: 'rgba(1,2,3,0)'
+				// }
 			},
 
 			//	useFacePath:false,
@@ -313,6 +215,8 @@
 					UIChatTools.value({
 						msg: ''
 					});
+					$("html,body").finish().animate({"scrollTop":api.winHeight},900);
+
 
 				}
 
@@ -397,7 +301,7 @@
 
 	function transEmo(emoMsg) {
 		var emoPath, transMsg;
-		alert(emoPath, transMsg);
+		// alert(emoPath, transMsg);
 		var reg = /\[(.*?)\]/gm;
 		transMsg = emoMsg.replace(reg, function(match) {
 			for (var i = 0, len = emoData.length; i < len; i++) {
@@ -427,7 +331,7 @@
 					file: 'fs://newface/append3.zip'
 				}, function(ret, err) {
 					if (ret.status) {
-						alert(JSON.stringify(ret));
+						// alert(JSON.stringify(ret));
 					} else {
 						alert(JSON.stringify(err));
 					}
@@ -541,14 +445,15 @@
 			name: 'valueChanged'
 		}, function(ret, err) {
 			if (ret) {
-				console.log("valueChanged:" + JSON.stringify(ret));
+				// console.log("valueChanged:" + JSON.stringify(ret));
+				// $("html,body").finish().animate({"scrollTop":Number(api.winHeight)+100},900);
 			}
 		});
 		UIChatTools.chatBoxListener({
 			name: 'change'
 		}, function(ret, err) {
 			if (ret) {
-				console.log("change:" + JSON.stringify(ret));
+				// console.log("change:" + JSON.stringify(ret));
 			}
 
 		});
@@ -562,7 +467,7 @@
 		});
 	}
 
-
+// 发送图片
 	//选择图片相关功能时间的监听
 	function fnimageListener() {
 		UIChatTools.imageListener(function(ret) {
@@ -570,6 +475,8 @@
 			if (ret.eventType == 'send') {
 				// alert(ret.images);
 				var img = ret.images;
+				alert(img);
+				
 				var d = new Date();
 				var year = d.getFullYear();
 				var month = d.getMonth() + 1;
@@ -583,15 +490,19 @@
 						<div class='aui-chat-media'>
 							<img src='../image/liulangnan.png' /></div><div class='aui-chat-inner'><div class='aui-chat-name'>流浪男</div>
 							<img class='aui-chat-content' src=` + img +
-					` />
+					` tapmode onclick='fnOpenImg()' />
 							<div class='aui-chat-status'><i class='aui-iconfont aui-icon-correct aui-text-success'></i></div>
 						</div>
 					</div>`;
+					$("html,body").finish().animate({"scrollTop":700},900);
+
 			}
 
 		});
 	}
-
+	// 点击查看大屏的图片，
+	function fnOpenImg(){
+	}
 	function fnrecorderListener() {
 		//eventType: press, // 取值范围如下：
 		// press 对讲按钮按下触发

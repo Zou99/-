@@ -111,6 +111,36 @@
 <body>
     <div class="neirong">
       <div style="padding:0.2rem;"></div>
+        <div class="list" tapmode onclick="fnOpenNewsSafety()">
+            <div class="aui-row">
+                <div class="title">
+                    <div class="aui-col-xs-6 left_title">
+                        <span>账号违规处罚通知</span>
+                    </div>
+                    <div class="aui-col-xs-6 right_title">
+                        <span>19/03/22</span>
+                    </div>
+
+                </div>
+            </div>
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                            <img src="../image/demo2.png">
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-title">
+                                您的账号存才发送无意评价的行为，淘宝将对无意义评价进行折叠，点击查看详情
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
         <div class="list">
             <div class="aui-row">
                 <div class="title">
@@ -134,36 +164,6 @@
                                 今日签到可领15淘金币，购物时可抵扣，点击领取>>
                             </div>
                             <div class="aui-list-item-text">来自淘金币</div>
-
-                        </div>
-
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="list">
-            <div class="aui-row">
-                <div class="title">
-                    <div class="aui-col-xs-6 left_title">
-                        <span>账号违规处罚通知</span>
-                    </div>
-                    <div class="aui-col-xs-6 right_title">
-                        <span>19/03/22</span>
-                    </div>
-
-                </div>
-            </div>
-            <ul class="aui-list aui-media-list">
-                <li class="aui-list-item">
-                    <div class="aui-media-list-item-inner">
-                        <div class="aui-list-item-media">
-                            <img src="../image/demo2.png">
-                        </div>
-                        <div class="aui-list-item-inner">
-                            <div class="aui-list-item-title">
-                                您的账号存才发送无意评价的行为，淘宝将对无意义评价进行折叠，点击查看详情
-                            </div>
-
 
                         </div>
 
@@ -302,6 +302,16 @@
     apiready = function() {
 
     };
+    function fnOpenNewsSafety(){
+      api.openWin({
+          name: 'notice_news_safety',
+          url: './notice_news_safety.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
 </script>
 
 </html>

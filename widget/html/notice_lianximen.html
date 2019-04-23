@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
-    <title>联系人</title>
+    <title>通讯录</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_3j8aptsnexk.css">
     <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
@@ -62,7 +62,7 @@
         <div class="aui-title" style="left:-3rem; right: 2rem;width:75%;color: #505050;">
             通讯录
         </div>
-        <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
+        <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;" tapmode onclick="fnOpenTaoyou()">
             <div class="zzq_list_rig">
                 <i class="aui-iconfont aui-icon-my" style="color:#000;font-size:1.1rem;"></i>
             </div>
@@ -101,6 +101,15 @@
 
 
     };
+    function fnOpenTaoyou(){
+      api.openWin({
+          name: 'notice_add-friends',
+          url: './notice_add-friends.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
 </script>
 
 

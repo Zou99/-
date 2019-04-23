@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>个人资料</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        /*.aui-list {
+            background-image: none;
+        }*/
+
+        html {
+          background-color: #f2f2f2;
+        }
+
+        header {
+            background: -webkit-linear-gradient(left, #fd8200, #ff5c01);
+            /* Safari 5.1 - 6.0 */
+            background: -o-linear-gradient(right, #fd8200, #fd5200);
+            /* Opera 11.1 - 12.0 */
+            background: -moz-linear-gradient(right, #fd8200, #fd5200);
+            /* Firefox 3.6 - 15 */
+            background: linear-gradient(to right, #fd8200, #fd5200);
+            /* 标准的语法 */
+            padding: 0 14px;
+        }
+
+        .line1 {
+            height: 3rem;
+        }
+
+        .line1 .left {
+            float: left;
+            color: #fff;
+            font-size: 1rem;
+            line-height: 3rem;
+            letter-spacing: 2;
+        }
+
+        .line1 .right {
+            float: right;
+        }
+
+        .line1 .right span {
+            font-size: 1.1rem;
+            color: #fff;
+            line-height: 3rem;
+        }
+
+        .aui-card-list {
+            border-bottom-left-radius: 12px!important;
+            border-bottom-right-radius: 12px;
+        }
+
+        .line3 {
+            background-color: #fff;
+            border-radius: 12px;
+            position: relative;
+            top: 0.5rem;
+            box-shadow: 0px 5px 18px 0px #ccc;
+            z-index: 222;
+            padding: 10px;
+            padding-bottom: 0px;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .left i {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 0.7rem;
+        }
+
+        .text {
+            line-height: 3rem;
+            font-size: 1rem;
+        }
+
+        .aui-list {
+            border-bottom-left-radius: 12px!important;
+            border-bottom-right-radius: 12px;
+        }
+
+        .aui-list .aui-list-item {
+            background-image: none;
+        }
+
+        .aui-row {
+            /*height: 4rem;*/
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        .qmd {
+          height: 2.3rem;
+          background-color: #fff;
+          margin: 0 20px;
+          margin-top: 1.7rem;
+          border-radius: 20px;
+
+        }
+        .q_left {
+          float: left;
+          padding-left: 10px;
+          line-height: 2.3rem;
+          font-size: 0.9rem;
+        }
+        .q_right {
+          float: right;
+          padding-right: 10px;
+          font-size: 0.7rem;
+          line-height: 2.3rem;
+          color: #c4c4c4;
+        }
+        .tianjia {
+          margin: 0 30px;
+          margin-top: 0.7rem;
+          background: linear-gradient(to right, #f99130, #f85d03);
+          height: 2.3rem;
+          border-radius: 20px;
+          color: #fff;
+          text-align: center;
+          line-height: 2.3rem;
+          font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--显示的  -->
+    <header>
+        <div class="line1">
+            <div class="left">
+                <i class="aui-iconfont aui-icon-left" tapmode onclick="api.closeWin()"></i>
+                <span>个人资料</span>
+            </div>
+            <div class="right">
+
+                <span class="aui-iconfont aui-icon-more" style="padding-right:10px;"> </span>
+
+            </div>
+
+        </div>
+        <div class="line3">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">
+                    <img src="../image/demo2.png" alt="" class="aui-img-round" style="width:3rem;">
+                </div>
+                <div class="aui-col-xs-3 text">
+                    似情浓
+                </div>
+            </div>
+            <div class="aui-card-list">
+                <div class="aui-card-list-content">
+                    <ul class="aui-list aui-media-list">
+                        <li class="aui-list-item aui-list-item-middle">
+                            <div class="aui-media-list-item-inner">
+
+                                <div class="aui-list-item-inner">
+
+                                    <div class="aui-list-item-text">
+                                        淘龄一年
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+  <!-- 亲密度 -->
+  <div class="qmd">
+    <div class="q_left">亲密度</div>
+    <div class="q_right">可能认识的人</div>
+  </div>
+
+  <!-- 添加好友 -->
+  <div class="tianjia">
+添 加 好 友
+  </div>
+
+
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        $api.fixStatusBar($api.dom('header'));
+        api.setStatusBarStyle({
+            style: 'light',
+            color: '#cbcbcb'
+        });
+
+    };
+</script>
+
+
+</html>

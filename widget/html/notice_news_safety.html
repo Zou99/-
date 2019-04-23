@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>安全中心提醒</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_3j8aptsnexk.css">
+    <link rel="stylesheet" href="../css/zzq_css/zzqlist.css">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        .aui-list {
+            background-image: none;
+        }
+
+      html {
+        background-color: #eee;
+      }
+
+        #classify-list {
+            width: 5rem;
+            height: 100%;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #classify-list .aui-list {
+            overflow-y: scroll;
+        }
+
+        .aui-list .aui-list-item-title {
+            font-size: 0.7rem;
+        }
+
+        .aui-bar-nav,
+        .aui-searchbar {
+            background-color: #f3f3f3;
+        }
+
+        .icon-zuo1 {
+            color: #000;
+            font-size: 14px;
+        }
+
+        .zzq_list_mon {
+            padding-right: 0px;
+        }
+
+        .zzq_list_rig i {
+            padding: 0 10px!important;
+        }
+
+        header {
+            background-color: #f9f9f9!important;
+        }
+
+        .aui-bar-nav .aui-btn .aui-iconfont {
+            line-height: 2.25rem;
+        }
+        .title {
+          height: 4rem;
+          background-color: #ff7626;
+          color: #fff;
+          /*display: inline-block;*/
+          font-size: 0.9rem;
+        }
+        .title img {
+          position: relative;
+          top: 45%;
+          left: 30%;
+          transform: translateY(-50%);
+          width: 1.2rem;
+        }
+        .title span {
+          position: relative;
+          left: 50%;
+          transform: translateX(-40%);
+          top: 50%;
+        }
+        .content {
+          padding: 20px 10px 20px 15px;
+          background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <div class="aui-pull-left aui-btn" style="padding:0 1rem;">
+            <span class="iconfont icon-zuo1" onclick="api.closeWin()"></span>
+        </div>
+        <div class="aui-title" style="left:-2rem; right: 2rem;width:75%;color: #505050;">
+            安全中心提醒
+        </div>
+        <div class="aui-pull-right aui-btn" style="line-height:2.1;">
+            <div class="zzq_list_rig">
+                <i class="aui-iconfont aui-icon-recovery" style="color:#000;font-size:1.1rem;"></i>
+                <i class="aui-iconfont aui-icon-share" style="color:#000;font-size:1.1rem;"></i>
+
+            </div>
+            <div class="aui-pull-right aui-btn" style="padding:0 20px 0 20px;line-height:2.1;">
+                <div class="zzq_list_rig">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="title">
+      <img src="../image/warning.png" alt=""><span>异常评价通知</span>
+
+    </div>
+    <div class="content">
+      <span style="font-size:0.75rem;">核实到您的评价无实际购物参考意义，为了维护良好的购物环境，现对相关评价做折叠展示，请您保持良好的评价习惯。</span>
+      <span style="padding:5px 0;font-size:0.75rem;">请您自行核对您的评价是否包含以下场景:</span>
+      <span style="padding:5px 0;font-size:0.75rem;">1、评论内容为【随机中文、乱码、符号、图片等】与商品、服务、物流无关的内容</span>
+      <span style="padding:5px 0;font-size:0.75rem;">2、评论内容为【段子、歌词、诗歌、新闻等】与商品、服务、物流无关的内容</span>
+      <span style="padding:5px 0;font-size:0.75rem;">3、评论内容为【买A评B】，如用户购买的是A商品，但是评价内容与A商品完全无关，纯粹在描述B商品内容。</span>
+      <span style="padding:5px 0;font-size:0.75rem;">4、评论内容为【蹭淘气值】，如按照某种格式，凑字数增长淘气值。</span>
+      <span style="padding:40px 0 10px 0;color:#c0c0c0;font-size:0.7rem;">请点此查看《淘宝网评价规范》:</span>
+
+      <div class="aui-btn aui-btn-block aui-btn-outlined" style="color:#4ba2f2;">查看规则详情</div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.setStatusBarStyle({
+            // style: 'dark',
+            // color:'transparent'
+            style: 'light',
+            color: '#a5a5a5'
+        });
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+    }
+</script>
+
+
+</html>
