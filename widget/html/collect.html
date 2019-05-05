@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/dqf_css/collection.css">
+  <link rel="stylesheet" href="../css/aui.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+  <title>我的收藏</title>
+</head>
+<body>
+  <div id="dqf_top_padding"></div>
+  <header id="dqf_header">
+    <div class="dqf_head_left" tapmode onclick="api.closeWin()">
+      <i class="icon ion-chevron-left"></i>
+    </div>
+    <div class="dqf_head_center">
+      <div class="dqf_head_title dqf_active_underline" tapmode onclick="closeShopFrame(this)">宝贝</div>
+      <div class="dqf_head_title" tapmode onclick="setFrameGroup(0,this)">店铺</div>
+      <div class="dqf_head_title" tapmode onclick="setFrameGroup(1,this)">内容</div>
+    </div>
+    <div class="dqf_head_right">
+      <div class="dqf_head_admin" tapmode onclick="openGoodsAdmin(this)">管理</div>
+      <div class="dqf_head_search">
+          <i class="icon ion-ios-search-strong"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- center部分，白色背景 -->
+  <div class="dqf_center">
+    <!-- banner心愿单 -->
+    <div class="dqf_banner">
+      <div class="dqf_bann_left_txt">
+        <div class="dqf_bann_title"><span class="dqf_title">创建心愿单</span>（0个）</div>
+        <div class="dqf_bann_sub_title">
+          小小心愿单，承载大梦想
+        </div>
+      </div>
+      <div class="dqf_bann_right">
+        <div class="dqf_btn_txt">
+          创建 <i class="icon ion-ios-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+    <!-- 收藏列表导航栏 -->
+    <div class="dqf_nav">
+      <div class="dqf_nav_left">
+        <div class="dqf_left_title" tapmode onclick="setCateStateFrameGroup(this,0)">全部类目<i class="icon ion-arrow-down-b"></i></div>
+        <div class="dqf_left_title" tapmode onclick="setCateStateFrameGroup(this,1)">全部状态<i class="icon ion-arrow-down-b"></i></div>
+      </div>
+      <div class="dqf_nva_right">
+        <div class="dqf_right_txt">
+          心愿单
+        </div>
+        <div class="dqf_right_icon" tapmode onclick="listStyleToggle(this)">
+          <i class="icon ion-android-menu"></i>
+          <i class="icon ion-ios-keypad-outline" style="display: none;"></i>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!-- 收藏列表 -->
+    <div class="dqf_collect_list">
+      <!-- 收藏物品一 -->
+      <div class="dqf_list_box">
+        <span class="dqf_check_spn">
+          <input type="checkbox" name="" id="">
+          <div class="dqf_check_style_box"></div>
+        </span>
+        <div class="dqf_goods_img">
+          <img src="../image/mihoyo01.jpg" alt="">
+        </div>
+        <div class="dqf_list_txt">
+          <div class="dqf_goods_describe">【崩坏3/米哈游】八重樱布洛妮娅琪亚娜芽衣精美CG文件夹套装</div>
+          <div class="dqf_collect_num">4627人收藏</div>
+          <div class="dqf_goods_txt_footer">
+            <div class="dqf_left_price">￥68.00</div>
+            <div class="dqf_same">找相似</div>
+          </div>
+        </div>
+      </div>
+      <!-- 收藏物品二 -->
+      <div class="dqf_list_box">
+        <span class="dqf_check_spn">
+          <input type="checkbox" name="" id="">
+          <div class="dqf_check_style_box"></div>
+        </span>
+        <div class="dqf_goods_img">
+          <img src="../image/mihoyo02.jpg" alt="">
+        </div>
+        <div class="dqf_list_txt">
+          <div class="dqf_goods_describe">【崩坏3/米哈游】琪亚娜芽衣布洛妮娅夏日泳装主题清凉降温冰垫</div>
+          <div class="dqf_collect_num">2508人收藏</div>
+          <div class="dqf_goods_txt_footer">
+            <div class="dqf_left_price">￥55.00</div>
+            <div class="dqf_same">找相似</div>
+          </div>
+        </div>
+      </div>
+      <!-- 收藏物品三 -->
+      <div class="dqf_list_box">
+        <span class="dqf_check_spn">
+          <input type="checkbox" name="" id="">
+          <div class="dqf_check_style_box"></div>
+        </span>
+        <div class="dqf_goods_img">
+          <img src="../image/mihoyo03.jpg" alt="">
+        </div>
+        <div class="dqf_list_txt">
+          <div class="dqf_goods_describe">【崩坏3/米哈游】八重樱卡莲符华琪亚娜芽衣德丽莎CG文件夹6件套</div>
+          <div class="dqf_collect_num">2777人收藏</div>
+          <div class="dqf_goods_txt_footer">
+            <div class="dqf_left_price">￥48.00</div>
+            <div class="dqf_same">找相似</div>
+          </div>
+        </div>
+      </div>
+      <!-- 收藏物品 四-->
+      <div class="dqf_list_box">
+        <span class="dqf_check_spn">
+          <input type="checkbox" name="" id="">
+          <div class="dqf_check_style_box"></div>
+        </span>
+        <div class="dqf_goods_img">
+          <img src="../image/mihoyo04.jpg" alt="">
+        </div>
+        <div class="dqf_list_txt">
+          <div class="dqf_goods_describe">【崩坏3/米哈游】八重樱卡莲符华琪亚娜芽衣德丽莎CG文件夹6件套</div>
+          <div class="dqf_collect_num">2777人收藏</div>
+          <div class="dqf_goods_txt_footer">
+            <div class="dqf_left_price">￥48.00</div>
+            <div class="dqf_same">找相似</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 固定定位的删除按钮 -->
+  <div class="dqf_footer_delete">
+    <div class="dqf_all_btn" tapmode onclick="allChecked(this)">
+      <span class="dqf_allcheck_spn">
+        <input type="checkbox" name="" id="">
+        <div class="dqf_allcheck_style_box"></div>
+      </span>
+      全选
+    </div>
+    <div class="dqf_right_box">
+      <div class="dqf_btn_delete">删除</div>
+      <div class="dqf_btn_clear">智能清理</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function (){
+      var header = $api.byId("dqf_header");
+      var topBox = $api.byId("dqf_top_padding");
+      $api.fixStatusBar(header);
+      $api.fixStatusBar(topBox);
+    }
+
+    // 调用frame组并切换
+    function setFrameGroup(dex,this_){
+      let active = document.querySelector(".dqf_active_underline");
+      active.classList.remove("dqf_active_underline");
+      this_.classList.add("dqf_active_underline");
+      // setNavState(dex);
+      frameGroupFn();
+      api.setFrameGroupIndex({
+        name:"collectFrameGroup1",
+        index:dex,
+        scroll:true
+      })
+    }
+    // frame组
+    function frameGroupFn(){
+      let headerH = $api.byId("dqf_header").offsetHeight;
+      api.openFrameGroup ({
+          name: 'collectFrameGroup1',
+          background: '#fff',
+          scrollEnabled: false,
+          rect: {
+               x: 0,
+               y: headerH,
+               w: 'auto',
+               h: 'auto'
+          },
+          index: 1,
+          frames: [{
+              name: 'collect_shop_frame',
+              url: 'collect_shop_frame.html',
+              bgColor: '#fff'
+          },{
+              name: 'collect_content_frame',
+              url: 'collect_content_frame.html',
+              bgColor: '#fff'
+          }]
+      }, function(ret, err){
+          if( ret ){
+              //  alert( JSON.stringify( ret ) );
+          }else{
+              //  alert( JSON.stringify( err ) );
+          }
+      });
+
+    }
+    function truncateStr(strLength){
+      let describe = document.querySelectorAll(".dqf_goods_describe");
+      for(let i=0;i<describe.length;i++){
+        let describeTxt = describe[i].innerText;
+        if (describeTxt.length > strLength) {
+            let str = describeTxt.substr(0, strLength);
+            describe[i].innerText = str + "...";
+        }
+      }
+    }
+    truncateStr(28);
+    // 关闭商铺frame
+    function closeShopFrame(this_){
+      let active = document.querySelector(".dqf_active_underline");
+      active.classList.remove("dqf_active_underline");
+      this_.classList.add("dqf_active_underline");
+      // api.closeToWin({
+      //     name: 'collect'
+      // });
+      api.closeFrameGroup({
+          name: 'collectFrameGroup1'
+      });
+    }
+    // 打开商铺frame
+    function openShopFrame(this_){
+      let active = document.querySelector(".dqf_active_underline");
+      active.classList.remove("dqf_active_underline");
+      this_.classList.add("dqf_active_underline");
+      let headerH = $api.byId("dqf_header").offsetHeight;
+      api.openFrame({
+          name: 'collect_shop_frame',
+          url: './collect_shop_frame.html',
+          rect: {
+              x: 0,
+              y: headerH,
+              w: "auto",
+              h: "auto"
+          },
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    // 切换列表显示方式的函数
+    function listStyleToggle(this_){
+      let listBox = document.querySelector(".dqf_collect_list");
+      let menuIconObj = this_.querySelector(".ion-android-menu");
+      let outlineIconObj = this_.querySelector(".ion-ios-keypad-outline");
+      if(listBox!=null){
+        menuIconObj.style.display = "none";
+        outlineIconObj.style.display = "block";
+        listBox.classList.remove("dqf_collect_list");
+        listBox.classList.add("dqf_switch_list");
+      }else{
+        outlineIconObj.style.display = "none";
+        menuIconObj.style.display = "block";
+        listBox = document.querySelector(".dqf_switch_list");
+        listBox.classList.remove("dqf_switch_list");
+        listBox.classList.add("dqf_collect_list");
+      }
+      // this_.classList.remove("dqf_collect_list");
+      // this_.
+    }
+    function bindClick(status_){
+      if(status_==true){
+        // 获取商品盒子
+        let goodsBox = document.querySelectorAll(".dqf_list_box");
+        // 循环绑定事件
+        for (let i=0;i<goodsBox.length;i++) {
+          goodsBox[i].onclick = function () {
+            let checkBox = this.querySelector(".dqf_check_spn");
+            let checkObj = checkBox.querySelector("input");
+            let checkDiv = checkBox.querySelector(".dqf_check_style_box");
+            if(checkObj.checked){
+              // 复选框被选中时
+              checkObj.checked = false;
+              checkDiv.classList.remove("dqf_check_box_bgc");
+            }else{
+              // 复选框未选中时
+              checkObj.checked = true;
+              checkDiv.classList.add("dqf_check_box_bgc");
+            }
+            isAll();
+          }
+        }
+      }else{
+        // 获取商品盒子
+        let goodsBox = document.querySelectorAll(".dqf_list_box");
+        // 循环解除绑定事件
+        for (let i=0;i<goodsBox.length;i++) {
+          goodsBox[i].onclick = null;
+        }
+      }
+    }
+    // 点击管理触发函数
+    function openGoodsAdmin(thisObj){
+      // “找相似”盒子
+      let similarBox = document.querySelectorAll(".dqf_same");
+      // 一件商品对应一个listBox
+      let listBox = document.querySelectorAll(".dqf_list_box");
+      // 商品图片盒子
+      let imgBox = document.querySelectorAll(".dqf_goods_img");
+      // 右侧商品描述文本盒子
+      let rightTxt = document.querySelectorAll(".dqf_list_txt");
+      // 复选框外的span
+      let checkBox = document.querySelectorAll(".dqf_check_spn");
+      // 下方固定定位的盒子
+      let footerBox = document.querySelector(".dqf_footer_delete");
+
+      let judge = document.querySelector(".dqf_collect_list");
+      if(judge == null){
+          // console.log(1);
+        if(thisObj.innerText == "管理"){
+          bindClick(true);
+          thisObj.innerText = "完成";
+          for(let i=0;i<listBox.length;i++){
+            similarBox[i].style.display = "none";
+            checkBox[i].style.display = "block";
+          }
+          footerBox.style.display = "block";
+        }else{
+          bindClick(false);
+          thisObj.innerText = "管理";
+          for(let i=0;i<listBox.length;i++){
+            similarBox[i].style.display = "block";
+            checkBox[i].style.display = "none";
+          }
+          footerBox.style.display = "none";
+        }
+      }else{
+        if(thisObj.innerText == "管理"){
+          bindClick(true);
+          thisObj.innerText = "完成";
+          for(let i=0;i<listBox.length;i++){
+            similarBox[i].style.display = "none";
+            rightTxt[i].style.width = 60+"%";
+            imgBox[i].style.marginLeft = 6+"%";
+            checkBox[i].style.display = "block";
+          }
+          footerBox.style.display = "block";
+        }else{
+          bindClick(false);
+          thisObj.innerText = "管理";
+          for(let i=0;i<listBox.length;i++){
+            similarBox[i].style.display = "block";
+            imgBox[i].style.marginLeft = "0";
+            rightTxt[i].style.width = 66+"%";
+            checkBox[i].style.display = "none";
+          }
+          footerBox.style.display = "none";
+        }
+      }
+    }
+
+    // 全选按钮最外面的盒子点击事件
+    function allChecked(this_){
+      let allCheckObj = this_.querySelector("input");
+      let allCheckDiv = this_.querySelector(".dqf_allcheck_style_box");
+      let isAllChecked = isAll();
+      let checkBoxs = document.querySelectorAll(".dqf_check_spn");
+      if(isAllChecked){
+        // 按钮全选时，全选按钮处于选中状态时
+        for(let i=0;i<checkBoxs.length;i++){
+          let checkObj = checkBoxs[i].querySelector("input");
+          let checkDiv = checkBoxs[i].querySelector(".dqf_check_style_box");
+          checkObj.checked = false;
+          checkDiv.classList.remove("dqf_check_box_bgc");
+        }
+        allCheckObj.checked = false;
+        allCheckDiv.classList.remove("dqf_check_box_bgc");
+      }else{
+        for(let i=0;i<checkBoxs.length;i++){
+          let checkObj = checkBoxs[i].querySelector("input");
+          let checkDiv = checkBoxs[i].querySelector(".dqf_check_style_box");
+          checkObj.checked = true;
+          checkDiv.classList.add("dqf_check_box_bgc");
+        }
+        allCheckObj.checked = true;
+        allCheckDiv.classList.add("dqf_check_box_bgc");
+      }
+    }
+    // 判断是否让全选按钮选中
+    function isAll(){
+      let judge = document.querySelector(".dqf_collect_list");
+      if(judge!=null){
+        var goodsBox = judge.querySelectorAll("input");
+      }else{
+        var goodsBox = document.querySelector(".dqf_switch_list").querySelectorAll("input");
+      }
+      let checkedCount = 0;
+      let allBtn = document.querySelector(".dqf_all_btn");
+      let checkObj = allBtn.querySelector('input');
+      let checkDiv = allBtn.querySelector('.dqf_allcheck_style_box');
+      let allCheckedState = false;
+      for(let i=0;i<goodsBox.length;i++){
+        if(goodsBox[i].checked == true){
+          checkedCount++;
+        }
+      }
+      if(checkedCount == goodsBox.length){
+        allCheckedState = true;
+        checkObj.checked = true;
+        checkDiv.classList.add("dqf_check_box_bgc");
+      }else{
+        checkObj.checked = false;
+        checkDiv.classList.remove("dqf_check_box_bgc");
+      }
+      return allCheckedState;
+    }
+
+    function setCateStateFrameGroup(this_,dex){
+      openCateStateFrameGroup(this_);
+      api.setFrameGroupIndex({
+        name:"collectFrameGroup2",
+        index:dex,
+        scroll:false
+      })
+    }
+    var cateStateFrameGroupState = 0;
+    function openCateStateFrameGroup(this_){
+      if(cateStateFrameGroupState == 0){
+        let header = document.querySelector("#dqf_header");
+        let banner = document.querySelector(".dqf_banner");
+        let topH = header.offsetHeight+banner.offsetHeight+this_.parentNode.parentNode.offsetHeight+10;
+        api.openFrameGroup ({
+            name: 'collectFrameGroup2',
+            background: '#fff',
+            scrollEnabled: false,
+            rect: {
+                x: 0,
+                y: topH,
+                w: 'auto',
+                h: 'auto'
+            },
+            index: 1,
+            frames: [{
+                name: 'collect_cate_frame',
+                url: 'collect_cate_frame.html',
+                bgColor: '#fff'
+            },{
+                name: 'collect_state_frame',
+                url: 'collect_state_frame.html',
+                bgColor: '#fff'
+            }]
+        }, function(ret, err){
+            if( ret ){
+                //  alert( JSON.stringify( ret ) );
+            }else{
+                //  alert( JSON.stringify( err ) );
+            }
+        });
+        cateStateFrameGroupState = 1;
+      }else{
+        api.closeFrameGroup({
+          name: "collectFrameGroup2"
+        });
+        cateStateFrameGroupState = 0;
+      }
+    }
+    // 判断状态决定关闭还是打开frame
+    var cateState = 0;
+    // 点击全部类目触发此函数
+    function openCate(this_){
+      if(stateState == 0){
+        let header = document.querySelector("#dqf_header");
+        let banner = document.querySelector(".dqf_banner");
+        let topH = header.offsetHeight+banner.offsetHeight+this_.parentNode.parentNode.offsetHeight+10;
+        // alert(this_.offsetHeight);
+        api.openFrame({
+            name: 'collect_cate_frame',
+            url: './collect_cate_frame.html',
+            rect: {
+                x: 0,
+                y: topH,
+                w: "auto",
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+        });
+        cateState = 1;
+      }else{
+        api.closeFrame({
+            name: 'collect_cate_frame'
+        });
+        cateState = 0;
+      }
+    }
+    // 判断状态决定关闭还是打开frame
+    var stateState = 0;
+    // 点击全部状态触发此函数
+    function openState(this_){
+      if(stateState == 0){
+        let header = document.querySelector("#dqf_header");
+        let banner = document.querySelector(".dqf_banner");
+        let topH = header.offsetHeight+banner.offsetHeight+this_.parentNode.parentNode.offsetHeight+10;
+        // alert(this_.offsetHeight);
+        api.openFrame({
+            name: 'collect_state_frame',
+            url: './collect_state_frame.html',
+            rect: {
+                x: 0,
+                y: topH,
+                w: "auto",
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+        });
+        stateState = 1;
+      }else{
+        api.closeFrame({
+            name: 'collect_state_frame'
+        });
+        stateState = 0;
+      }
+    }
+  </script>
+</body>
+</html>

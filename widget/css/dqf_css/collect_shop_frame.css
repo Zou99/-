@@ -1,0 +1,38 @@
+.dqf_nav{
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.dqf_nav .dqf_nav_box{
+  font-size: 12px;
+  color: #333;
+}
+.ion-arrow-down-b::before{
+  transform:scale(0.7);
+}
+.dqf_list_box{
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+.dqf_list_box .dqf_shop_box{
+  margin-bottom: 30px;
+}
+.dqf_list_box .dqf_shop_box .dqf_shop_avatar{
+  width: 45px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+.dqf_list_box .dqf_shop_box .dqf_shop_avatar img{
+  border-radius: 50%;
+}
+.dqf_list_box .dqf_shop_box .dqf_shop_name{
+  line-height: 45px;
+}
+
+
+
