@@ -1,0 +1,101 @@
+#dqf_header{
+  width: 100%;
+  background-color: #f9f9f9;
+}
+#dqf_header .aui-pull-left{
+  color: #666;
+}
+#dqf_header .aui-title{
+  color: #333;
+}
+#dqf_header .aui-pull-right{
+  color: #ff4400;
+}
+/* 头像部分 */
+.dqf_avtar_box{
+  width: 100%;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.dqf_avtar_box .dqf_cent_box{
+  width: 100px;
+  margin: 0 auto;
+}
+.dqf_avtar_box .dqf_cent_box .dqf_avtar{
+  border-radius: 50%;
+  overflow: hidden;
+}
+.dqf_avtar_box .dqf_cent_box .dqf_replace_avtar{
+  text-align: center;
+  color: #ff4a08;
+  margin-top: 10px;
+}
+/* 昵称设置 */
+.dqf_box1{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #f4f4f4;
+  position: relative;
+}
+.dqf_box1 .dqf_txt{
+  float: left;
+  width: 35%;
+  color: #3d4245;
+}
+.dqf_box1 .dqf_nickname{
+  float: left;
+  width: 65%;
+  color: #3d4245;
+  position: relative;
+}
+.dqf_box1 .ion-close-circled{
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  font-size: 20px;
+  color: #999;
+  display: none;
+  z-index: 99;
+}
+.dqf_box1 .dqf_nickname input{
+  display: none;
+  font-size: 14px;
+  width: 160px;
+}
+.dqf_box1 .dqf_nickname #dqf_name{
+  display: inline;
+}
+.dqf_box1::after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+.dqf_box1 .ion-chevron-right{
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: #aaa;
+}
+.dqf_footer_info{
+  box-sizing: border-box;
+  padding-top: 13px;
+  padding-left: 13px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.2rem;
+}
+#nickname_input{
+  height: 24px;
+}
+.dqf_input_toggle #dqf_name{
+  display: none!important;
+}
+.dqf_input_toggle #nickname_input{
+  display: block;
+}
+.dqf_input_toggle .ion-close-circled{
+  display: inline!important;
+}

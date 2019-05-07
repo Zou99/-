@@ -19,9 +19,9 @@
             </div>
             <!-- </div> -->
             <div class="dqf_nickname">
-                七月宵伽
+                ロリコン
             </div>
-            <div class="dqf_setup">
+            <div class="dqf_setup" onclick="openMySet()">
                 <img src="../image/setup.png" alt="">
             </div>
         </div>
@@ -165,6 +165,15 @@
     apiready = function() {
         var header = $api.byId("dqf_header");
         $api.fixStatusBar(header);
+    }
+    function openMySet(){
+      api.openWin({
+          name: 'personal_my_set',
+          url: './personal_my_set.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
     }
     var dealInfo = document.querySelector('.dqf_explicit');
     var dealTxt = dealInfo.innerText;
