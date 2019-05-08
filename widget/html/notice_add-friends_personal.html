@@ -183,7 +183,7 @@
   </div>
 
   <!-- 添加好友 -->
-  <div class="tianjia">
+  <div class="tianjia" tapmode onclick="fnOpenToast()">
 添 加 好 友
   </div>
 
@@ -201,6 +201,13 @@
         });
 
     };
+    function fnOpenToast(){
+      api.toast({
+    msg: '消息已发送',
+    duration: 2000,
+    location: 'bottom'
+});
+    }
 </script>
 
 

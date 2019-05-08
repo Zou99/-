@@ -39,7 +39,7 @@
                 <span>40</span>
                 <span>足迹</span>
             </div>
-            <div class="dqf_box">
+            <div class="dqf_box" tapmode onclick="fnOpenRenCard()">
                 <span>0</span>
                 <span>红包卡券</span>
             </div>
@@ -70,25 +70,25 @@
             </div>
             <!-- 待付款，待发货，待收货... -->
             <div class="dqf_deal">
-                <div class="dqf_deal_box">
+                <div class="dqf_deal_box" tapmode onclick="fnOpenOrder(1)">
                     <div class="dqf_img_box">
                         <img src="../image/deal_01.png" alt="">
                     </div>
                     <span>待付款</span>
                 </div>
-                <div class="dqf_deal_box">
+                <div class="dqf_deal_box" tapmode onclick="fnOpenOrder(2)">
                     <div class="dqf_img_box">
                         <img src="../image/deal_02.png" alt="">
                     </div>
                     <span>待发货</span>
                 </div>
-                <div class="dqf_deal_box">
+                <div class="dqf_deal_box" tapmode onclick="fnOpenOrder(3)">
                     <div class="dqf_img_box">
                         <img src="../image/deal_03.png" alt="">
                     </div>
                     <span>待收货</span>
                 </div>
-                <div class="dqf_deal_box">
+                <div class="dqf_deal_box" tapmode onclick="fnOpenOrder(4)">
                     <div class="dqf_img_box">
                         <img src="../image/deal_04.png" alt="">
                     </div>
@@ -194,5 +194,26 @@
             name:'test'
          }
      })
+    }
+    // 打开红包卡券
+    function fnOpenRenCard(){
+      api.openWin({
+          name: 'red_card',
+          url: './red_card.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+    // 打开我的订单
+    function fnOpenOrder(index_){
+      api.openWin({
+          name: 'my_order',
+          url: './my_order.html',
+          pageParam: {
+              key1: index_
+          }
+      });
     }
 </script>

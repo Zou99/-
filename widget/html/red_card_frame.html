@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>红包卡券_frame</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        body,
+        html {
+            background-color: #f3f3f3;
+        }
+
+        .list1,
+        .list2 {
+            padding: 10px;
+        }
+
+        .list1 .ren {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .list1 .aui-row .aui-col-xs-4 {
+            height: 4.5rem;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+        .yuan {
+            width: 1.5rem;
+            height: 1.5rem;
+            position: relative;
+            margin: 0 auto;
+            top: 13%;
+            /*transform: translateY(-50%);*/
+            border-radius: 50%;
+        }
+
+        .yuan img {
+            width: 1rem;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .down {
+            /*height: 1rem;
+          line-height: 1rem;*/
+            text-align: center;
+            color: #999;
+            font-size: 0.67rem;
+            padding-top: 15px;
+        }
+
+        .aui-list {
+            background-color: transparent;
+        }
+
+        .list_l {
+            float: left;
+            padding-left: 15px;
+        }
+
+        .list_r {
+            padding-right: 15px;
+            float: right;
+            color: #999;
+            font-size: 0.67rem;
+        }
+
+        .cont2 {
+            height: 2.4rem;
+            line-height: 2.4rem;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        .frame2 {
+            display: -webkit-inline-box;
+            padding: 0 10px;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            font-size: 0.77rem;
+        }
+
+        .selected {
+            color: #ff5500;
+            font-size: 0.77rem;
+            border-bottom: 2px solid #ff5500;
+        }
+
+        .frame3 {
+            display: -webkit-box;
+            padding: 0 10px;
+            height: 2rem;
+            line-height: 2rem;
+            font-size: 0.74rem;
+        }
+
+        .frame3 .frame3-div {
+            /*width: 3rem;*/
+            text-align: center;
+            padding: 0 9px;
+        }
+
+        .color {
+            color: #ff5500;
+        }
+
+        .list_cont {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 0 10px;
+            padding-bottom: 10px;
+        }
+
+        .content {
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        .list_title {
+            height: 3rem;
+            font-size: 0.73rem;
+            /*display: inline-flex;*/
+        }
+
+        .list_cont .aui-col-xs-9 {
+            background-color: #fff6f2;
+            height: 5rem;
+            border-radius: 10px;
+            padding: 0 10px;
+            display: inline-flex;
+        }
+
+        .list_cont .aui-col-xs-3 {
+            border-radius: 10px;
+            background-color: #fff6f2;
+            height: 5rem;
+        }
+
+        .left {
+            float: left;
+            height: 5rem;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .left img {
+            width: 6rem;
+            position: relative;
+            top: 50%;
+            margin-top: -50%;
+        }
+
+        .ju {
+            color: #ff5500;
+        }
+
+        .text-overflow {
+            overflow: hidden;
+            /* 内容超出宽度时隐藏超出部分的内容 */
+            text-overflow: ellipsis;
+            /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+        }
+
+        .left2 {
+            padding-top: 0.5rem;
+        }
+
+        .chakan {
+            background: linear-gradient(to right, #ffa21c, #ff5801);
+            /* 标准的语法 */
+            border-radius: 20px;
+            width: 2.6rem;
+            height: 1.2rem;
+            color: #fff;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            font-size: 0.7rem;
+            line-height: 1.2rem;
+            left: 30%;
+        }
+
+        .xuxian {
+            width: 5px;
+            border-left: 1px dashed #ffc3a8;
+            height: 4.3rem;
+            position: absolute;
+            left: -1px;
+            top: 7%;
+        }
+
+        .list_title div>img {
+            width: 1.5rem;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 2px;
+            margin-right: 10px;
+        }
+
+        .jindian {
+            border: 1px solid #999999;
+            height: 1.2rem;
+            width: 2.6rem;
+            height: 1.2rem;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            border-radius: 20px;
+            right: 17px;
+            color: #999;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="list1">
+        <div class="ren">
+            <div class="aui-row">
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #ffc512 , #ff9600);">
+                        <img src="../image/red_card/1.png" alt="">
+                    </div>
+                    <span style="font-size:1rem;color:#ff5000;">16</span> <span style="font-size:0.7rem;color:#ff5000;">张</span>
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #fd647d , #ff2324);">
+                        <img src="../image/red_card/2.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#ff5000;">￥</span><span style="font-size:1rem;color:#ff5000;">0</span>
+
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #fd647d , #ff2324);">
+                        <img src="../image/red_card/3.png" alt="">
+
+                    </div>
+                    <span style="font-size:1rem;color:#ff5000;">1503</span>
+
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #ac79fd , #8065fd);">
+                        <img src="../image/red_card/4.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#000;">流量钱包</span>
+
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #fd647d , #ff2324);">
+                        <img src="../image/red_card/5.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#000;">电影票</span>
+
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #fd647d , #ff2324);">
+                        <img src="../image/red_card/6.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#000;">彩票</span>
+                </div>
+            </div>
+            <div class="aui-row" id="lastlist" style="display:none;">
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #ac79fd , #8065fd);">
+                        <img src="../image/red_card/7.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#000;">流量钱包</span>
+
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #fd647d , #ff2324);">
+                        <img src="../image/red_card/8.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#000;">电影票</span>
+
+                </div>
+                <div class="aui-col-xs-4">
+                    <div class="yuan" style="background: linear-gradient(to right, #fd647d , #ff2324);">
+                        <img src="../image/red_card/9.png" alt="">
+
+                    </div>
+                    <span style="font-size:0.7rem;color:#000;">彩票</span>
+                </div>
+
+            </div>
+            <div class="down aui-list" id="gengduo">
+                更多
+                <i class="aui-iconfont aui-icon-down " style="font-weight: 800;font-size:0.67rem;"></i>
+            </div>
+            <div class="down aui-list" id="shouqi" style="display:none;">
+                收起
+                <i class="aui-iconfont aui-icon-top " style="font-weight: 800;font-size:0.67rem;"></i>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="list2">
+        <div class="cont2">
+            <div class="list_l">门店优惠</div>
+            <div class="list_r">全部<i class="aui-iconfont aui-icon-right"></i></div>
+        </div>
+
+    </div>
+
+
+    <!-- 最近领取和即将失效 -->
+    <div class="frame2" id="frame2">
+        <div class="menu selected" style="margin-right:30px;">最近领取</div>
+        <div class="menu">即将失效</div>
+    </div>
+    <div class="frame3">
+        <div class="frame3-div color">全部</div>
+        <div class="frame3-div">优惠券</div>
+        <div class="frame3-div">红包</div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="content">
+        <!-- 列表 -->
+        <div class="list_cont">
+            <div class="list_title">
+                <span style="line-height:3rem;">实体店花呗红包</span>
+            </div>
+            <!-- 第一个 -->
+            <div class="aui-row">
+                <div class="aui-col-xs-9">
+                    <div class="left">
+                        <img src="../image/demo1.png" alt="">
+
+                    </div>
+                    <div class="left left2" style="margin-left:5px;">
+                        <div class="ju">￥<span style="font-size:1.4rem;">0.1</span></div>
+                        <div class="text-overflow" style="color:#666;font-size:0.6rem;height:1rem;">1、红包有效期自领取之日起3日起我么们便收回</div>
+                        <div style="font-size:0.4rem;padding-top:4px;">2019.5.5 08:07-2019.5.8 08:07</div>
+                    </div>
+                </div>
+                <div class="aui-col-xs-3">
+                    <div class="xuxian">
+
+                    </div>
+                    <div class="chakan">查看</div>
+                </div>
+            </div>
+            <!-- 第二个 -->
+            <div class="aui-row" style="margin-top:10px;">
+                <div class="aui-col-xs-9">
+                    <div class="left">
+                        <img src="../image/demo1.png" alt="">
+
+                    </div>
+                    <div class="left left2" style="margin-left:5px;">
+                        <div class="ju">￥<span style="font-size:1.4rem;">0.1</span></div>
+                        <div class="text-overflow" style="color:#666;font-size:0.6rem;height:1rem;">1、红包有效期自领取之日起3日起我么们便收回</div>
+                        <div style="font-size:0.4rem;padding-top:4px;">2019.5.5 08:07-2019.5.8 08:07</div>
+                    </div>
+                </div>
+                <div class="aui-col-xs-3">
+                    <div class="xuxian">
+
+                    </div>
+                    <div class="chakan">查看</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 内容 -->
+    <div class="content">
+        <!-- 列表 -->
+        <div class="list_cont">
+            <div class="list_title">
+                <div style="float:left;height:3rem;">
+                    <img src="../image/demo1.png" alt="">
+                </div>
+
+                <span style="line-height:3rem;">实体店花呗红包</span>
+                <div class="right" style="height:3rem;">
+                    <div class="jindian">进店</div>
+                </div>
+            </div>
+            <div class="aui-row">
+                <div class="aui-col-xs-9">
+                    <div class="left">
+                        <img src="../image/demo1.png" alt="">
+                    </div>
+                    <div class="left left2" style="margin-left:5px;">
+                        <div class="ju">￥<span style="font-size:1.4rem;">0.1</span></div>
+                        <div class="text-overflow" style="color:#666;font-size:0.6rem;height:1rem;">1、红包有效期自领取之日起3日起我么们便收回</div>
+                        <div style="font-size:0.4rem;padding-top:4px;">2019.5.5 08:07-2019.5.8 08:07</div>
+                    </div>
+                </div>
+                <div class="aui-col-xs-3">
+                    <div class="xuxian">
+
+                    </div>
+                    <div class="chakan">查看</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var key1 = api.pageParam.key1;
+
+    };
+</script>
+<script type="text/javascript">
+    $("#gengduo").click(function() {
+        $("#lastlist").toggle();
+        $("#gengduo").hide();
+        $("#shouqi").show();
+    });
+    $("#shouqi").click(function() {
+        $("#lastlist").toggle();
+        $("#gengduo").show();
+        $("#shouqi").hide();
+    });
+    $(".menu").click(function() {
+        $(".menu").toggleClass("selected");
+    });
+    $(".frame3-div").click(function() {
+        $(".frame3-div").removeClass("color");
+        $(this).toggleClass("color");
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>订单详情_frame</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+    <style>
+        body,
+        html {
+            background-color: #f2f2f2;
+        }
+
+        .list1 {
+            width: 100%;
+            height: 5rem;
+            background: linear-gradient(to right, #ff9000, #ff5000);
+            color: #fff;
+        }
+
+        .list1_title1 {
+            /*line-height: 5rem;*/
+            /*padding-top: 20px;*/
+        }
+
+        .list1_title2 {
+            font-size: 0.6rem;
+            margin-top: 3px;
+        }
+
+        .list1 .list1_left {
+            padding: 25px 0px 0px 30px;
+        }
+
+        .list1 .aui-col-xs-6 {
+            height: 5rem;
+        }
+
+        .list1 .aui-col-xs-6 img {
+            width: 5.5rem;
+            position: relative;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cont {
+            /*padding: 0 10px;*/
+            margin-top: 10px;
+            background-color: #fff;
+        }
+
+        .list {
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 0 10px;
+            /*height: 10rem;*/
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .title {
+            height: 1.8rem;
+            line-height: 1.8rem;
+            font-size: 0.6rem;
+            margin-bottom: 1px;
+        }
+
+        .title .right {
+            color: #ff4400;
+        }
+
+        .title .left {
+            display: inline-block;
+            color: #333;
+        }
+
+        .aui-col-xs-3 img {
+            border-radius: 10px;
+        }
+
+        .zhong {
+            padding: 0 10px 0 0px;
+        }
+
+        .zhong-1 {
+            color: #333;
+            font-size: 0.6rem;
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .zhong-2 {
+            color: #999;
+            font-size: 0.6rem;
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .zhong-3 {
+            font-size: 0.5rem;
+            background-color: #fff1ec;
+            color: #ff5306;
+            padding: 2px;
+            border-radius: 2px;
+        }
+
+        .right-1 {
+            color: #333;
+            font-size: 0.65rem;
+            text-align: right;
+            width: 100%;
+        }
+
+        .right-2 {
+            color: #999;
+            font-size: 0.6rem;
+            text-align: right;
+            width: 100%;
+        }
+
+        .list3 {
+            /*text-align: center;*/
+            font-size: 0.65rem;
+            height: 3rem;
+            line-height: 3rem;
+            position: relative;
+        }
+
+        .list4 {
+            font-size: 0.65rem;
+            text-align: right;
+            color: #333;
+        }
+
+        .list5 {
+            /*display: flex;*/
+            padding-bottom: 20px;
+            /*margin-top: 15px;*/
+            position: relative;
+            /*height: 2rem;*/
+        }
+
+        .shouhuo1 {
+            height: 1.3rem;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            color: #666;
+            font-size: 0.65rem;
+            text-align: center;
+            line-height: 1.3rem;
+            padding: 0 10px;
+            margin-left: 5px;
+            position: relative;
+        }
+
+        .shouhuo {
+            height: 1.3rem;
+            border-radius: 20px;
+            border: 1px solid #ff4400;
+            color: #ff4400;
+            font-size: 0.65rem;
+            text-align: center;
+            line-height: 1.3rem;
+            padding: 0 10px;
+            margin-left: 5px;
+            position: relative;
+        }
+
+        .list6 {
+            color: #999;
+            font-size: 0.65rem;
+            height: 1rem;
+        }
+
+        .list7 {
+            color: #3d4243;
+            font-size: 0.7rem;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .sanjiao {
+            position: absolute;
+            right: 25px;
+            top: -7%;
+        }
+
+        .nnlt {
+            height: 1.2rem;
+            line-height: 1.2rem;
+        }
+
+        .xinxi {
+            background-color: #fff;
+            padding: 0 10px;
+        }
+
+        .xin_title {
+            height: 2.5rem;
+            line-height: 2.5rem;
+            /*border-left: 2px solid #ff5000;*/
+            /*padding: 10px 0px;*/
+            display: flex;
+            font-size: 0.7rem;
+        }
+
+        .xin_xian {
+            height: 0.8rem;
+            width: 2px;
+            background-color: #ff5000;
+            position: relative;
+            top: 50%;
+            margin-top: -0.4rem;
+        }
+
+        .xin_list {
+            padding-left: 15px;
+            font-size: 0.65rem;
+            color: #666;
+            /*padding-top: 10px;*/
+            height: 2rem;
+            line-height: 2rem;
+        }
+
+        .xin_list .aui-col-xs-9 {
+            padding-left: 10px;
+        }
+
+        .xin_foot {
+            height: 2.4rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.7rem;
+        }
+
+        .xin_foot .aui-col-xs-6 {
+            height: 2.4rem;
+        }
+
+        .foot-2 {
+            height: 1.6rem;
+            line-height: 1.6rem;
+            position: relative;
+            top: 50%;
+            margin-top: -0.8rem;
+            display: flex;
+            text-align: center;
+            border-right: 1px solid #e5e5e5;
+        }
+
+        .foot-2 img {
+            position: relative;
+            top: 50%;
+            margin-top: -0.5rem;
+            left: 20%;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .foot-2 span {
+            position: relative;
+            left: 25%;
+        }
+
+        .aui-list [class*=aui-col-xs-] img {
+            width: 1rem;
+        }
+        .foot {
+            padding: 0 20px;
+        }
+
+        .nont {
+            background-color: #f4f4f4;
+            height: 2rem;
+            display: flex;
+        }
+
+        .yuan {
+            width: 0.8rem;
+            border-radius: 50%;
+            background-color: #ff4f00;
+            height: 0.8rem;
+            /*margin: 0 auto;*/
+            position: relative;
+            top: 30%;
+            left: 22%;
+        }
+
+        .zi {
+            position: relative;
+            left: 23%;
+            line-height: 2rem;
+            color: #ff4f00;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .xian {
+          height: 1px;
+          width: 1rem;
+          background-color: #ff4f00;
+          position: relative;
+          left: 20%;
+          top: 45%;
+        }
+        .xiaoyuan {
+          width: 0.2rem;
+          height: 0.2rem;
+          border-radius: 50%;
+          background-color: #ff4f00;
+          position: absolute;
+          right: 0px;
+          top: -100%;
+
+        }
+        .xian2 {
+          height: 1px;
+          width: 1rem;
+          background-color: #ff4f00;
+          position: relative;
+          left: 26%;
+          top: 45%;
+        }
+        .xiaoyuan2 {
+          width: 0.2rem;
+          height: 0.2rem;
+          border-radius: 50%;
+          background-color: #ff4f00;
+          position: absolute;
+          left:  0px;
+          top: -100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list1">
+        <div class="aui-row">
+            <div class="aui-col-xs-6 list1_left">
+                <div class="list1_title1">卖家已发货</div>
+                <div class="list1_title2">还剩8天4时自动确认</div>
+            </div>
+            <div class="aui-col-xs-6">
+                <img src="../image/huoche.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="aui-card-list">
+        <div class="aui-card-list-content">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle" style="padding:7px 0px 7px 0.75rem;">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media" style="width: 3rem;">
+                            <img src="../image/c.png" class="aui-img-round" style="width:2rem;">
+                        </div>
+                        <div class="aui-list-item-inner aui-list-item-arrow">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title aui-font-size-14" style="color:#3897e0;">到达【宿迁邮区中心局】（经传）</div>
+                                <!-- <div class="aui-list-item-right">08:00</div> -->
+                            </div>
+                            <div class="aui-list-item-text aui-font-size-12" style="color:#999;padding-top:6px;">
+                                2019-05-07 08:16:47
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle" style="padding:7px 0px 4px 0.75rem;">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media" style="width: 3rem;">
+                            <img src="../image/2.png" class="aui-img-round" style="width:2rem;">
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title aui-font-size-14" style="color:#333;">任广发 <span class="aui-font-size-13" style="color:#999;">86-12312312</span></div>
+                                <!-- <div class="aui-list-item-right">08:00</div> -->
+                            </div>
+                            <div class="aui-list-item-text aui-font-size-13" style="color:#333;padding-top:6px;">
+                                江苏省 宿迁市 宿豫区 晓店镇 保险小镇软件园 9区AA栋
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div style="padding:5px;"></div> -->
+    <div class="cont">
+        <div class="list aui-row">
+            <div class="title">
+                <div class="left">
+                    <i class="aui-iconfont aui-icon-home" style="color:#333;font-size: 0.6rem;"></i> &nbsp; 北山小妖 &nbsp;&nbsp;
+                    <i class="aui-iconfont aui-icon-right" style="color:#ccc;font-weight: 800;font-size: 0.6rem;"></i>
+                </div>
+                <div class="right">
+                    买家已发货
+                </div>
+            </div>
+            <div class="aui-row">
+                <div class="aui-col-xs-3">
+                    <img src="../image/demo1.png" alt="" style="width:4rem;">
+                </div>
+                <div class="aui-col-xs-7 zhong">
+                    <span class="zhong-1">百草芬 乳酸菌酸奶蛋糕500g整箱 网红零食早餐小口袋面包吃蒸点心</span>
+                    <span class="zhong-2">乳酸菌味 - 500g/箱</span>
+                    <div class="left zhong-3" style="margin-right:5px;">七天退换</div>
+                    <div class="left zhong-3">公益捐赠0.02元</div>
+                </div>
+                <div class="aui-col-xs-2">
+                    <span class="right-1">￥25.00</span>
+                    <span class="right-2">x 1</span>
+                </div>
+            </div>
+            <div class="list5">
+                <div class="shouhuo1 right">修改地址</div>
+            </div>
+            <div class="list3">
+                <span style="position:relative;left:13%;">运费险</span>
+                <span style="color:#999;position:relative;left:13%;">&nbsp;确认收货前退换货可理赔</span>
+                <span style="position: absolute;right:0px;color:#ff5500;">已出单&nbsp;<i style="color:#ccc;" class="icon ion-chevron-right"></i></span>
+            </div>
+            <div class="list6">
+                <div class="left">
+                    商品总价
+                </div>
+                <div class="right">
+                    ￥9.90
+                </div>
+            </div>
+            <div class="list6">
+                <div class="left">
+                    运费(快递)
+                </div>
+                <div class="right">
+                    ￥0.00
+                </div>
+            </div>
+            <div class="list6">
+                <div class="left">
+                    运费险(卖家赠送)
+                </div>
+                <div class="right">
+                    ￥0.00
+                </div>
+            </div>
+            <div class="list7">
+                <div class="left">
+                    运费险(卖家赠送)
+                </div>
+                <div class="right">
+                    ￥0.00
+                </div>
+            </div>
+            <!-- <div class="list4">
+                  共一件商品 &nbsp;合计:￥ <span style="font-size:0.8rem;">25</span>.90
+                </div> -->
+
+
+        </div>
+    </div>
+    <div class="aui-card-list">
+        <div class="aui-card-list-content">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle" style="padding:10px 10px;position: relative;">
+                    <img class="sanjiao" src="../image/shang.png" alt="" style="width:0.7rem;">
+                    <div class="nnlt">
+                        <div class="right" style="color:#999;font-size:0.66rem;">
+                            支付明细
+                        </div>
+                    </div>
+                    <div class="nnlt">
+                        <div class="left" style="color:#3d4245;font-size:0.7rem;">
+                            红包
+                        </div>
+                        <div class="right" style="color:#3d4245;font-size:0.7rem;">
+                            -￥0.80
+                        </div>
+                    </div>
+                    <div class="nnlt" style="padding:2px 0;height:1.5rem;">
+                        <div class="left" style="color:#3d4245;font-size:0.75rem;">
+                            实付款
+                        </div>
+                        <div class="right" style="color:#ff5001;font-size:0.75rem;">
+                            ￥0.80
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="xinxi">
+        <div class="xin_title">
+            <div class="xin_xian"></div>
+            &nbsp; 订单信息
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">天猫积分:</div>
+                <div class="aui-col-xs-9">获得4点积分</div>
+            </div>
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">订单编号:</div>
+                <div class="aui-col-xs-9">4231231245167892156
+                    <div class="right" style="color:#ff5001">复制</div>
+                </div>
+            </div>
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">支付宝交易号:</div>
+                <div class="aui-col-xs-9">2346765434676546788762</div>
+            </div>
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">创建时间:</div>
+                <div class="aui-col-xs-9">2019-05-05 09:57:28</div>
+            </div>
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">付款时间:</div>
+                <div class="aui-col-xs-9">2019-05-05 09:57:28</div>
+            </div>
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">发货时间:</div>
+                <div class="aui-col-xs-9">2019-05-05 09:57:28</div>
+            </div>
+        </div>
+        <div class="xin_list">
+            <div class="aui-row">
+                <div class="aui-col-xs-3">投诉商家:</div>
+                <div class="aui-col-xs-9"><i class="icon ion-chevron-right right" style="color:#ccc;padding-right:20px;"></i></div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="xin_foot aui-list">
+        <div class="aui-row">
+            <div class="aui-col-xs-6">
+                <div class="foot-2">
+                    <img src="../image/ww.png" alt="" style="">
+                    <span>联系卖家</span>
+                </div>
+            </div>
+            <div class="aui-col-xs-6">
+                <div class="foot-2" style="border-right:none;">
+                    <img src="../image/dianh.png" alt="" style="width:1.4rem;height:1.4rem;margin-top:-0.7rem;">
+                    <span>联系卖家</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding:5px;"></div>
+    <div class="aui-card-list">
+        <div class="aui-card-list-content">
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media" style="width: 3rem;">
+                            <img src="../image/demo5.png" class="aui-img-round">
+                        </div>
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title aui-font-size-14">淘金币</div>
+                                <div class="right" style="position:relative;top:10px;">
+                                    <div class="shouhuo right" style="padding:0 10px;">已领取</div>
+                                </div>
+                            </div>
+                            <div class="aui-list-item-text aui-font-size-12">
+                                购物返金币，100金币抵一元
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="nont">
+          <div class="xian">
+            <div class="xiaoyuan"></div>
+          </div>
+            <div class="yuan">
+                <i class="icon ion-heart" style="color:#fff;font-size:0.6rem;position:relative;left:20%;top:-18%;"></i>
+            </div>
+            <span class="zi">你可能还喜欢</span>
+            <div class="xian2">
+              <div class="xiaoyuan2"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+
+    };
+</script>
+
+</html>

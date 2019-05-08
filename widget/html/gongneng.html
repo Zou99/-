@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>热销榜下拉菜单</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_d4s4h4hylag.css">
+
+    <style>
+        html,
+        body {
+            height: 98%;
+            background: transparent;
+            -webkit-touch-callout: none;
+            font-family: Tahoma, Geneva, sans-serif;
+            font-style: normal;
+        }
+
+        #dialog.in {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .ly-close1 {
+            transition: all 0.5s;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)!important;
+        }
+
+        .content {
+          padding-bottom: 10px;
+          background-color: #797979;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+
+        .left {
+            float: left;
+            font-size: 0.9rem;
+            /*font-weight: bold;*/
+            color: #fff;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .right i {
+            font-size: 0.9rem!important;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        header {
+            padding: 20px;
+            height: 3rem;
+        }
+
+        .comt {
+            padding: 10px;
+            /*background-color: red;*/
+
+        }
+        .neir {
+          width: 4rem;
+          background-color: #3a3a38;
+          border-radius: 10px;
+          height: 4rem;
+          color: #fff;
+          text-align: center;
+          line-height: 3.6rem;
+          font-size: 0.6rem;
+        }
+
+        .neir img {
+          width: 1.1rem;
+          position: relative;
+          left: 50%;
+          top: 20%;
+          transform: translateX(-50%);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <header id="header">
+            <div class="left">
+                <span>功能直达</span>
+            </div>
+            <div class="right">
+                <i class="aui-iconfont aui-icon-close" tapmode onclick="api.closeFrame()"></i>
+            </div>
+        </header>
+        <div class="aui-row">
+            <div class="aui-col-xs-3 comt">
+                <div class="neir">
+                  <img src="../image/i.png" alt="">
+
+                    消息
+                </div>
+
+            </div>
+            <div class="aui-col-xs-3 comt">
+                <div class="neir">
+                    <img src="../image/shouye.png" alt="">
+                    首页
+                </div>
+
+
+            </div>
+            <div class="aui-col-xs-3 comt">
+                <div class="neir">
+                    <img src="../image/kefu.png" alt="">
+                    客服小蜜
+                </div>
+
+            </div>
+            <div class="aui-col-xs-3 comt">
+                <div class="neir">
+                    <img src="../image/fankui.png" alt="">
+                    我要反馈
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="dialog">
+
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+
+<script type="text/javascript">
+    $('#dialog').addClass('in');
+    apiready = function() {
+        api.setStatusBarStyle({
+            style: 'light',
+            color: 'transparent'
+        });
+
+        var header = $api.byId('header');
+
+        $api.fixStatusBar(header);
+
+
+        $(document.body).on('touchend', function(e) {
+            var dialog = $("#dialog")[0];
+            if (!$.contains(dialog, e.target)) {
+                $('#dialog').removeClass('in');
+                setTimeout(function() {
+                    api.closeFrame();
+                }, 200);
+            }
+        });
+
+    };
+</script>
+
+</html>

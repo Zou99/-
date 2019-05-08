@@ -131,7 +131,7 @@
         </div>
         <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
             <i style="color:#000; right:1rem;" class="aui-iconfont aui-icon-share" tapmode onclick="sharetext()"></i>
-            <div class="zzq_list_rig">
+            <div class="zzq_list_rig" style="padding:0 10px;" tapmode onclick="fnOpengongneng()">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -156,7 +156,6 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
-
 <script type="text/javascript">
     apiready = function() {
         api.setStatusBarStyle({
@@ -198,7 +197,7 @@
         }, function(ret, err) {
             fnSetNavMenuSelected(ret.index);
         });
-        xiala();
+
     };
     var menus;
     // 状态栏css样式选中
@@ -217,7 +216,7 @@
     function fnSetNavMenuIndex(index_) {
         fnSetNavMenuSelected(index_);
         api.setFrameGroupIndex({
-            name: 'classify_detailsGroup',
+            name: 'classify_hotGroup',
             index: index_,
             scroll: true
         });
@@ -249,15 +248,27 @@
             pageParam: {
                 name: 'test'
             },
-            bgColor: 'rgba(0,0,0,0.6)',
-            bounces: false
+            bgColor: 'rgba(0,0,0,0.6)'
         });
-    }
-</script>
-<script type="text/javascript">
-    // $(".guding").click(function(){
-    //   $(".xia").toggleClass("ly-close1");
-    // })
+    };
+
+    function fnOpengongneng() {
+        api.openFrame({
+            name: 'gongneng',
+            url: './gongneng.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bgColor: 'rgba(0,0,0,0)',
+        });
+
+    };
 </script>
 
 </html>

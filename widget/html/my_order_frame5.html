@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+      <title>我的订单3——待评价</title>
+      <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+      <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+      <style>
+          body,
+          html {
+              background-color: #f2f2f2;
+          }
+
+          .cont {
+              padding: 0 10px;
+              margin-top: 10px;
+          }
+
+          .list {
+              border-radius: 10px;
+              background-color: #fff;
+              padding: 0 10px;
+              /*height: 10rem;*/
+          }
+
+          .left {
+              float: left;
+          }
+
+          .right {
+              float: right;
+          }
+
+          .title {
+              height: 1.8rem;
+              line-height: 1.8rem;
+              font-size: 0.6rem;
+              margin-bottom: 1px;
+          }
+
+          .title .right {
+              color: #ff4400;
+          }
+
+          .title .left {
+              display: inline-block;
+              color: #333;
+          }
+
+          .aui-col-xs-3 img {
+              border-radius: 10px;
+          }
+
+          .zhong {
+              padding: 0 10px 0 0px;
+          }
+
+          .zhong-1 {
+              color: #333;
+              font-size: 0.6rem;
+              text-overflow: -o-ellipsis-lastline;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+          }
+          .zhong-2 {
+              color: #999;
+              font-size: 0.6rem;
+              text-overflow: -o-ellipsis-lastline;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+          }
+          .zhong-3 {
+            font-size: 0.5rem;
+            background-color: #fff1ec;
+            color: #ff5306;
+            padding: 2px;
+            border-radius: 2px;
+          }
+          .right-1 {
+            color: #333;
+            font-size: 0.65rem;
+            text-align: right;
+            width: 100%;
+          }
+          .right-2 {
+            color: #999;
+            font-size: 0.6rem;
+            text-align: right;
+            width: 100%;
+          }
+          .list3 {
+            /*text-align: center;*/
+            font-size: 0.65rem;
+            height: 3rem;
+            line-height: 3rem;
+            position: relative;
+          }
+          .list4 {
+            font-size: 0.65rem;
+            text-align: right;
+            color: #333;
+          }
+          .list5 {
+            /*display: flex;*/
+            padding-bottom: 10px;
+            margin-top: 15px;
+            position: relative;
+            height: 2rem;
+
+
+          }
+          .shouhuo1 {
+            height: 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #999999;
+            color: #999;
+            font-size: 0.65rem;
+            text-align: center;
+            line-height: 1.5rem;
+            padding: 0 10px;
+            margin-left: 5px;
+            position: relative;
+
+
+          }
+          .shouhuo {
+              height: 1.5rem;
+              border-radius: 20px;
+              border: 1px solid #ff4400;
+              color: #ff4400;
+              font-size: 0.65rem;
+              text-align: center;
+              line-height: 1.5rem;
+              padding: 0 10px;
+              margin-left: 5px;
+              position: relative;
+          }
+          .shouhuo3 {
+              height: 1.5rem;
+              border-radius: 20px;
+              border: 1px solid #ff4400;
+              color: #ff4400;
+              font-size: 0.65rem;
+              text-align: center;
+              line-height: 1.5rem;
+              padding: 0 15px;
+              margin-left: 5px;
+              position: relative;
+          }
+      </style>
+  </head>
+  <body>
+      <div class="cont">
+          <div class="list aui-row">
+              <div class="title">
+                  <div class="left">
+                      <i class="aui-iconfont aui-icon-home" style="color:#333;font-size: 0.6rem;"></i> &nbsp; 北山小妖 &nbsp;&nbsp;
+                      <i class="aui-iconfont aui-icon-right" style="color:#ccc;font-weight: 800;font-size: 0.6rem;"></i>
+                  </div>
+                  <div class="right">
+                      买家已发货
+                  </div>
+              </div>
+              <div class="aui-row">
+                  <div class="aui-col-xs-3">
+                      <img src="../image/demo1.png" alt="" style="width:4rem;">
+                  </div>
+                  <div class="aui-col-xs-7 zhong">
+                      <span class="zhong-1">百草芬 乳酸菌酸奶蛋糕500g整箱 网红零食早餐小口袋面包吃蒸点心</span>
+                      <span class="zhong-2">乳酸菌味 - 500g/箱</span>
+                      <div class="left zhong-3" style="margin-right:5px;">七天退换</div>
+                      <div class="left zhong-3">公益捐赠0.02元</div>
+                  </div>
+                  <div class="aui-col-xs-2">
+                    <span class="right-1">￥25.00</span>
+                    <span class="right-2">x 1</span>
+                  </div>
+              </div>
+              <div class="list3">
+                <span style="position:relative;left:13%;">运费险</span>
+                <span style="color:#999;position:relative;left:13%;">&nbsp;确认收货前退换货可理赔</span>
+                <span style="position: absolute;right:0px;">￥0.00&nbsp;x&nbsp;1</span>
+              </div>
+              <div class="list4">
+                共一件商品 &nbsp;合计:￥ <span style="font-size:0.8rem;">25</span>.90
+              </div>
+              <div class="list5">
+
+                <div class="shouhuo3 right">评价</div>
+                <div class="shouhuo1 right">卖了换钱</div>
+                <div class="shouhuo1 right">查看物流</div>
+              </div>
+          </div>
+      </div>
+  </body>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script type="text/javascript">
+      apiready = function(){
+
+      };
+  </script>
+  </html>

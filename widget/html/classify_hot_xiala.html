@@ -91,16 +91,7 @@
             padding: 0px;
         }
 
-        .menu {
-            width: 4.5rem;
-            height: 2rem;
-            line-height: 2rem;
-            font-size: 0.8rem;
-            color: #404041;
-            text-align: center;
-            display: inline-block;
-            /*padding: 0.6rem 0 1rem 0;*/
-        }
+
 
         .selected {
             /*border-bottom: 2px solid #ff4f05;*/
@@ -138,6 +129,11 @@
             transform: scale(1);
             opacity: 1;
         }
+        .ly-close1 {
+            transition: all 0.5s;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg)!important;
+        }
     </style>
 </head>
 
@@ -149,15 +145,15 @@
         <img class="xia" src="../image/bottom.png" alt="">
     </div>
     <div class="aui-row" id="nav" style="background-color:#fff;margin-top:-10px;padding-bottom:0.7rem;">
-        <div class="aui-col-xs-4 selected" tapmode="selected" onclick="fnSetNavMenuIndex(0)">膨化食品</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(1)">巧克力制品</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(2)">豆腐干</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(3)">面条/挂面</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(4)">传统糕点</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(5)">花草茶</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(6)">压缩饼干</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(7)">酥性饼干</div>
-        <div class="aui-col-xs-4" tapmode="selected" onclick="fnSetNavMenuIndex(8)">西式糕点</div>
+        <div class="aui-col-xs-4 selected menu" tapmode="selected" onclick="fnSetNavMenuIndex(0)">膨化食品</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(1)">巧克力制品</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(2)">豆腐干</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(3)">面条/挂面</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(4)">传统糕点</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(5)">花草茶</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(6)">压缩饼干</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(7)">酥性饼干</div>
+        <div class="aui-col-xs-4 menu" tapmode="selected" onclick="fnSetNavMenuIndex(8)">西式糕点</div>
 
     </div>
     <div id="dialog">
@@ -181,6 +177,8 @@
                 }, 200);
             }
         });
+        $('.guding').find('.xia').addClass('ly-close1');
+
     };
     var menus;
     // 状态栏css样式选中

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>实时推荐</title>
+    <title>实时分类推荐</title>
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
@@ -102,7 +102,7 @@
             商品分类
         </div>
         <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
-            <i style="color:#000; right:1rem;" class="aui-iconfont aui-icon-share"></i>
+            <i style="color:#000; right:1rem;" class="aui-iconfont aui-icon-share"  tapmode onclick="sharetext()"></i>
             <div class="zzq_list_rig">
                 <span></span>
                 <span></span>
@@ -188,6 +188,16 @@
             scroll: true
         });
     }
+    // 分享模块
+    function sharetext() {
+        var sharedModule = api.require('shareAction');
+        sharedModule.share({
+            text: '此处为推荐的消息！',
+            type: 'text'
+        });
+    };
+
+
 </script>
 
 </html>
