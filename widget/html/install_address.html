@@ -4,9 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/dqf_css/install_address.css" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
   <title>我的收货地址</title>
 </head>
-<body>
-  
+<body style="background-color:#f4f4f4;">
+  <div id="dqf_top"></div>
+  <header class="aui-bar aui-bar-nav aui-bar-light" id="dqf_header">
+    <div class="aui-pull-left aui-btn">
+      <span class="aui-iconfont aui-icon-left"></span>
+    </div>
+    <div class="aui-title">我的收货地址</div>
+    <div class="aui-pull-right aui-btn">
+      添加新地址
+    </div>
+  </header>
+  <div class="dqf_box">
+    <div class="dqf_surname">邓</div>
+    <div class="dqf_info_box">
+      <span class="dqf_name">邓琦峰</span>
+      <span class="dqf_phone">18452521832</span>
+    </div>
+    <div class="dqf_detailed_info">
+      <span class="dqf_default dqf_inline">默认</span>
+      江苏省 宿迁市 宿豫区 晓店镇 宿迁软件园E区A2栋101室
+    </div>
+    <div class="dqf_edit">编辑</div>
+  </div>
+  <div class="dqf_box">
+    <div class="dqf_surname">邓</div>
+    <div class="dqf_info_box">
+      <span class="dqf_name">邓琦峰</span>
+      <span class="dqf_phone">18452521832</span>
+    </div>
+    <div class="dqf_detailed_info">
+      <span class="dqf_default">默认</span>
+      江苏省 宿迁市 宿豫区 晓店镇 宿迁软件园E区A2栋101室
+    </div>
+    <div class="dqf_edit">编辑</div>
+  </div>
+  <div class="dqf_box">
+    <div class="dqf_surname">邓</div>
+    <div class="dqf_info_box">
+      <span class="dqf_name">邓琦峰</span>
+      <span class="dqf_phone">18452521832</span>
+    </div>
+    <div class="dqf_detailed_info">
+      <span class="dqf_default">默认</span>
+      江苏省 宿迁市 宿豫区 晓店镇 宿迁软件园E区A2栋101室
+    </div>
+    <div class="dqf_edit">编辑</div>
+  </div>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function() {
+      var topBox = $api.byId("dqf_top");
+      $api.fixStatusBar(topBox);
+    }
+  </script>
 </body>
 </html>

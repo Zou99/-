@@ -30,7 +30,7 @@
       </div>
       <div class="dqf_btn">编辑</div>
     </div>
-    <div class="dqf_option_box">
+    <div class="dqf_option_box" onclick="openSetAddress()">
       <div class="dqf_title">我的收货地址<i class="icon ion-chevron-right"></i></div>
     </div>
   </div>
@@ -71,6 +71,15 @@
       api.openWin({
           name: 'install_edit_data',
           url: './install_edit_data.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openSetAddress(){
+      api.openWin({
+          name: 'install_address',
+          url: './install_address.html',
           pageParam: {
               name: 'test'
           }

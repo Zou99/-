@@ -1,0 +1,89 @@
+#dqf_header{
+  background-color: #f4f4f4;
+}
+#dqf_header .aui-iconfont{
+  color: #444;
+  font-weight: 700;
+  font-size: 14px;
+}
+#dqf_header .aui-title{
+  color: #333;
+}
+#dqf_header .aui-pull-right{
+  font-size: 14px;
+  color: #333;
+}
+#dqf_top{
+  width: 100%;
+  background-color: #f00;
+}
+/* 地址列表 */
+.dqf_box{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 12px 11px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  position: relative;
+}
+.dqf_box::after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+.dqf_box .dqf_surname{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #bbbabc;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  float: left;
+  margin-top: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.dqf_box .dqf_info_box{
+  width: 70%;
+  float: left;
+}
+.dqf_box .dqf_info_box .dqf_name{
+  color: #333;
+  font-size: 14px;
+}
+.dqf_box .dqf_info_box .dqf_phone{
+  color: #999; 
+}
+.dqf_box .dqf_detailed_info{
+  width: 70%;
+  float: left;
+  color: #333;
+}
+.dqf_box .dqf_detailed_info .dqf_default{
+  background-color: #fff1eb;
+  color: #ff5f15;
+  padding: 2px 3px;
+  display: none;
+}
+.dqf_box .dqf_edit{
+  position: absolute;
+  color: #999;
+  height: 25px;
+  width: 40px;
+  right: 10px;
+  top: 25px;
+  text-align: center;
+  line-height: 25px;
+  border-left: 1px solid #eee;
+}
+.dqf_inline{
+  display: inline!important;
+}
+
+
+
+
+
+
+
