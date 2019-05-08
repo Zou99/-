@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/dqf_css/collect_content_frame.css">
+  <link rel="stylesheet" href="../css/aui.css">
+  <title>collect_content_frame</title>
+</head>
+<body>
+  <!-- 收藏的内容列表frame -->
+  <div class="dqf_big_box">
+    <!-- 收藏内容一 -->
+    <div class="dqf_list_box">
+      <div class="dqf_img">
+        <img src="../image/collect_content01.jpg" alt="" class="dqf_goods_img">
+      </div>
+      <div class="dqf_title">漫趣舰队北方栖姬甚平家居服套装</div>
+      <div class="dqf_content"></div>
+      <div class="dqf_date">2019-04-29</div>
+      <div class="dqf_icon">达人淘</div>
+    </div>
+    <!-- 收藏内容二 -->
+    <div class="dqf_list_box">
+      <div class="dqf_img">
+        <img src="../image/collect_content03.jpg" alt="" class="dqf_goods_img">
+      </div>
+      <div class="dqf_title">精彩内容为您送上</div>
+      <div class="dqf_content">买的泡泡纸到了，质量很好，颗粒饱满大小均匀，色泽晶莹透明，...</div>
+      <div class="dqf_date">2019-04-29</div>
+      <div class="dqf_icon">达人淘</div>
+    </div>
+    <!-- 收藏内容一 -->
+    <div class="dqf_list_box">
+      <div class="dqf_img">
+        <img src="../image/collect_content02.jpg" alt="" class="dqf_goods_img">
+      </div>
+      <div class="dqf_title">精彩内容为您送上</div>
+      <div class="dqf_content">和手办搭配的盘子可能需要再大一圈</div>
+      <div class="dqf_date">2019-04-29</div>
+      <div class="dqf_icon">达人淘</div>
+    </div>
+  </div>
+  <script>
+    var boxs = document.querySelectorAll(".dqf_list_box");
+    var imgs = document.querySelectorAll(".dqf_goods_img");
+    for(let i=0;i<imgs.length;i++){
+      boxs[i].style.height = imgs[i].offsetWidth+"px";
+    }
+  </script>
+</body>
+</html>

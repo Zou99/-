@@ -1,0 +1,102 @@
+#dqf_header{
+  background-color: #f9f9f9;
+}
+#dqf_header .aui-icon-left{
+  color: #ccc;
+  font-weight: 700;
+  font-size: 14px;
+}
+#dqf_header .aui-title{
+  color: #333;
+}
+#dqf_header .ion-ios-barcode-outline{
+  color: #999;
+}
+/* 第一个大盒子，头像昵称等 */
+.dqf_top_box{
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.dqf_top_box .dqf_per_info{
+  width: 100%;
+  position: relative;
+  padding-bottom: 10px;
+}
+.dqf_top_box .dqf_per_info >div{
+  float: left;
+}
+.dqf_top_box .dqf_per_info::after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+.dqf_top_box .dqf_avatar{
+  /* width: 20%; */
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.dqf_top_box .dqf_avatar img{
+  height: 60px;
+}
+.dqf_top_box .dqf_member_info{
+  padding-top: 15px;
+}
+.dqf_top_box .dqf_member_info .dqf_nickname{
+  color: #333;
+  font-weight: 900;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.dqf_top_box .dqf_member_info .dqf_member_name{
+  color: #aaa;
+  font-size: 14px;
+}
+.dqf_top_box .dqf_btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #ff5500;
+  border: 1px solid #ff5c11;
+  border-radius: 3px;
+  padding: 0 3px;
+  font-size: 14px;
+}
+.dqf_option_box{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ddd;
+}
+.dqf_option_box .dqf_title{
+  position: relative;
+  color: #051b28;
+}
+.ion-chevron-right{
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  color: #ccc;
+}
+.dqf_box{
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.dqf_box .dqf_option_box:first-child{
+  border: none;
+}
+
+
+
+
+
+
+
+

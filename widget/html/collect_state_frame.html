@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/api.css" />
+  <title>收藏列表全部类目</title>
+</head>
+<style>
+  .dqf_big_box{
+    box-sizing: border-box;
+    padding: 0 10px;
+    height: 100%;
+    width: 100%;
+  }
+  .dqf_cate_box{
+    width: 49%;
+    background-color: #f6f6f6;
+    float: left;
+    height: 41px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #666;
+    line-height: 41px;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+  .dqf_cate_box:nth-of-type(odd){
+    margin-right: 2%;
+  }
+  .dqf_cate_box.dqf_active{
+    color: #ff5000;
+    background-color: #fff6f2;
+  }
+</style>
+<body>
+  <div class="dqf_big_box">
+      <div class="dqf_cate_box dqf_active">全部状态</div>
+      <div class="dqf_cate_box">降价中</div>
+      <div class="dqf_cate_box">低库存</div>
+      <div class="dqf_cate_box">失效</div>
+  </div>
+  <script>
+    var allBox = document.querySelectorAll(".dqf_cate_box");
+    for(let i=0;i<allBox.length;i++){
+      allBox[i].onclick = function(){
+        let active = document.querySelector(".dqf_active");
+        active.classList.remove("dqf_active");
+        this.classList.add("dqf_active");
+      }
+    }
+  </script>
+</body>
+</html>

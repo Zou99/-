@@ -19,23 +19,23 @@
             </div>
             <!-- </div> -->
             <div class="dqf_nickname">
-                七月宵伽
+                ロリコン
             </div>
-            <div class="dqf_setup">
+            <div class="dqf_setup" onclick="openMySet()">
                 <img src="../image/setup.png" alt="">
             </div>
         </div>
         <!-- 头部第二部分，收藏关注足迹... -->
         <div class="dqf_header_two clearfix">
-            <div class="dqf_box">
+            <div class="dqf_box" template onclick="openCollection()">
                 <span>2</span>
                 <span>收藏夹</span>
             </div>
-            <div class="dqf_box" onclick="concernList()">
+            <div class="dqf_box" template onclick="concernList()">
                 <span>5</span>
                 <span>关注店铺</span>
             </div>
-            <div class="dqf_box" onclick="browseHistory()">
+            <div class="dqf_box" template onclick="browseHistory()">
                 <span>40</span>
                 <span>足迹</span>
             </div>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="dqf_info_box">
                     <div class="dqf_deal_img">
-                        <img src="../image/f3.png" alt="" class="fl" width="40px" style="margin-right: 10px;">
+                        <img src="../image/mihoyo02.jpg" alt="" class="fl" width="40px" style="margin-right: 10px;">
                     </div>
                     <div class="dqf_deal_right">
                         <div class="dqf_hook">
@@ -166,16 +166,25 @@
         var header = $api.byId("dqf_header");
         $api.fixStatusBar(header);
     }
+    function openMySet(){
+      api.openWin({
+          name: 'personal_my_set',
+          url: './personal_my_set.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
     var dealInfo = document.querySelector('.dqf_explicit');
     var dealTxt = dealInfo.innerText;
-    if (dealTxt.length > 22) {
-        var str = dealTxt.substr(0, 22);
+    if (dealTxt.length > 20) {
+        var str = dealTxt.substr(0, 20);
         dealInfo.innerText = str + "...";
     }
     function cili() {
-        api.closeWin({
-            name: 'personal'
-        });
+      api.closeWin({
+          name: 'personal'
+      });
     }
     function concernList() {
       api.openWin({
@@ -195,6 +204,7 @@
          }
      })
     }
+
     // 打开红包卡券
     function fnOpenRenCard(){
       api.openWin({
@@ -206,6 +216,19 @@
       });
 
     }
+
+    function openCollection(){
+      api.openWin({
+          name: 'collect',
+          url: './collect.html',
+
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+
     // 打开我的订单
     function fnOpenOrder(index_){
       api.openWin({
@@ -216,4 +239,5 @@
           }
       });
     }
+
 </script>
