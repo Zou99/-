@@ -1,0 +1,47 @@
+#dqf_header{
+  width: 100%;
+  background-color: #ff452c;
+}
+#dqf_header .ion-android-arrow-back{
+  font-size: 24px;
+}
+#dqf_header .ion-android-more-vertical{
+  font-size: 25px;
+}
+.dqf_box{
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.dqf_box .dqf_menu_box{
+  border-top: 1px solid #efefef;
+}
+.dqf_box .dqf_menu_box:first-child{
+  border: none;
+}
+.dqf_box .dqf_menu_box{
+  width: 100%;
+  position: relative;
+  padding: 9px 0;
+}
+.dqf_box .dqf_menu_box .dqf_left_box{
+  color: #3d4244;
+  font-size: 14px;
+}
+.dqf_box .dqf_menu_box .dqf_right_box{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #666;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
