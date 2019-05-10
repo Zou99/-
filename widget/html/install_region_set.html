@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/dqf_css/install_region_set.css" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+  <title>地区设置</title>
+</head>
+<body>
+  <!-- install_region_set -->
+  <header class="aui-bar aui-bar-nav" id="dqf_header">
+    <div class="aui-pull-left aui-btn" tapmode onclick="api.closeWin();">
+      <i class="icon ion-android-arrow-back"></i>
+    </div>
+    <div class="aui-title">地区设置</div>
+    <div class="aui-pull-right aui-btn" tapmode onclick="openGongnengFrame()">
+      <i class="icon ion-android-more-vertical"></i>
+    </div>
+  </header>
+  <div class="dqf_top_box" id="dqf_top_box">
+    当前选择的国家/地区：中国大陆-家乡版
+  </div>
+  <div class="dqf_big_box" id="dqf_big_box">
+    <div class="dqf_box">中国大陆</div>
+    <div class="dqf_box">标准版</div>
+    <div class="dqf_box dqf_active">家乡版<span class="dqf_notes">(农村淘宝服务覆盖)</span></div>
+    <div class="dqf_box">香港</div>
+    <div class="dqf_box">澳门</div>
+    <div class="dqf_box">台湾</div>
+    <div class="dqf_box">新加坡</div>
+    <div class="dqf_box">马来西亚</div>
+    <div class="dqf_box">美国</div>
+    <div class="dqf_box">加拿大</div>
+    <div class="dqf_box">澳大利亚</div>
+    <div class="dqf_box">新西兰</div>
+    <div class="dqf_box">日本</div>
+    <div class="dqf_box">韩国</div>
+    <div class="dqf_box">全球</div>
+  </div>
+  <div class="dqf_footer">
+    确认
+  </div>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function() {
+      var header = $api.byId("dqf_header");
+      var topBox = $api.byId("dqf_top_box");
+      var bigBox = $api.byId("dqf_big_box");
+      $api.fixStatusBar(header);
+      var winHeight = api.winHeight;
+      bigBox.style.height =  winHeight-(header.offsetHeight+topBox.offsetHeight+58)+"px";
+      // alert(headHeight);
+    }
+    function openGongnengFrame(){
+      api.openFrame({
+          name: 'gongneng',
+          url: './gongneng.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    var allBox = document.querySelectorAll(".dqf_box");
+    for(let i=1;i<allBox.length;i++){
+      allBox[i].onclick = function(){
+        let activeObj = document.querySelector(".dqf_active");
+        activeObj.classList.remove("dqf_active");
+        this.classList.add("dqf_active");
+      }
+    }
+  </script>
+</body>
+</html>

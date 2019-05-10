@@ -11,7 +11,7 @@
 </head>
 <body style="background-color: #eee;">
   <header class="aui-bar aui-bar-nav aui-bar-light" id="dqf_header">
-    <div class="aui-pull-left aui-btn" onclick="api.closeWin()">
+    <div class="aui-pull-left aui-btn" tapmode onclick="api.closeWin()">
         <span class="aui-iconfont aui-icon-left"></span>
     </div>
     <div class="aui-title">设置</div>
@@ -20,7 +20,7 @@
     </div>
   </header>
   <div class="dqf_top_box">
-    <div class="dqf_per_info" onclick="openEditData()">
+    <div class="dqf_per_info" tapmode onclick="openEditData()">
       <div class="dqf_avatar">
           <img src="../image/bh3_01.jpg" alt="">
       </div>
@@ -30,17 +30,17 @@
       </div>
       <div class="dqf_btn">编辑</div>
     </div>
-    <div class="dqf_option_box" onclick="openSetAddress()">
+    <div class="dqf_option_box" tapmode onclick="openSetAddress()">
       <div class="dqf_title">我的收货地址<i class="icon ion-chevron-right"></i></div>
     </div>
   </div>
   <div class="dqf_box">
-    <div class="dqf_option_box">
+    <div class="dqf_option_box" tapmode onclick="openAccountSecurity()">
       <div class="dqf_title">账户与安全<i class="icon ion-chevron-right"></i></div>
     </div>
   </div>
   <div class="dqf_box">
-      <div class="dqf_option_box">
+      <div class="dqf_option_box" tapmode onclick="openRegionSet()">
         <div class="dqf_title">地区设置<i class="icon ion-chevron-right"></i></div>
       </div>
       <div class="dqf_option_box">
@@ -80,6 +80,24 @@
       api.openWin({
           name: 'install_address',
           url: './install_address.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openAccountSecurity(){
+      api.openWin({
+          name: 'install_account_security',
+          url: './install_account_security.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openRegionSet(){
+      api.openWin({
+          name: 'install_region_set',
+          url: './install_region_set.html',
           pageParam: {
               name: 'test'
           }
