@@ -1,71 +1,288 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
-    <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>Hello APP</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
-    <style>
-        label {
-            margin: 10px;
-            font-size: 24px;
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" href="../css/aui-slide.css" />
+    <link rel="stylesheet" href="../css/tabo.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_890558_yeiqczddze8.css">
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
         }
 
-        ul {
-            margin-bottom: 10px;
+        .wrap {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-flex-flow: column;
         }
 
-        ul li {
-            margin: 5px 10px;
-            padding: 5px;
-            color: #000;
-            word-wrap: break-word;
+        header {
+            height: 44px;
+            width: 100%;
+            text-align: center;
+            /*background-color: #81a9c3;*/
+            color: #fff;
+            line-height: 44px;
+            font-size: 20px;
+            background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+            position: fixed;
+        }
+
+        .flex-1 {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            padding-top: 68px;
+        }
+
+        footer {
+            height: 30px;
+            width: 100%;
+            background-color: #81a9c3;
+            color: white;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .aui-searchbar {
+            background-color: initial;
+        }
+
+        #search-input:-moz-placeholder {
+            color: #fff;
+        }
+        .aui-active>i{
+          color: #FF5511;
+        }
+        .aui-active>.aui-bar-tab-label{
+          color: #df6019;
         }
     </style>
 </head>
 
-<body>
-    <label>Hello APP</label>
-    <div id='sys-info'></div>
+<body class="wrap">
+    <header class="aui-bar aui-bar-nav" style="position:fixed;" id="aui-header">
+        <div class="aui-pull-left aui-btn">
+            <span class="iconfont icon-saoma"></span>
+        </div>
+        <div class="aui-title" style="left:2rem; right: 2rem;">
+            <div class="aui-searchbar">
+                <div class="aui-searchbar-input aui-border-radius" style="border-bottom: 1px solid #fff;background-color:initial;border-radius:0px;" onclick="opn()">
+                    <i class="aui-iconfont aui-icon-search" style="color:#fff!important;"></i>
+                    <input type="search" placeholder="请输入搜索内容" id="search-input"style="color:#fff;">
+                    <div class="aui-searchbar-clear-btn">
+                        <i class="aui-iconfont aui-icon-close"></i>
+                    </div>
+                </div>
+                <div class="aui-searchbar-btn" tapmode>取消</div>
+            </div>
+        </div>
+        <div class="aui-pull-right aui-btn">
+            <i class="iconfont icon-huiyuanma" style="font-size:20px;"></i>
+        </div>
+    </header>
+
+
+    <section class="flex-1">
+      <!-- 热搜 -->
+        <div class="zzq_hot">
+          <div class="zzq_hot_fo">
+            <span style="margin-right:5px;">热搜111 :</span>
+            <span class="zzq_hot_txt zzq_hot_tx1">最贵的手机</span>
+            <span class="zzq_hot_txt">拖鞋</span>
+            <span class="zzq_hot_txt">自然堂</span>
+            <span class="zzq_hot_txt">小ck</span>
+          </div>
+        </div>
+    <!-- 轮播 -->
+        <div class="zzq_bannr">
+            <div>
+                <div id="aui-slide">
+                    <div class="aui-slide-wrap">
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../image/5.jpg" />
+                        </div>
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../image/a1.jpg" />
+                        </div>
+                        <div class="aui-slide-node bg-dark">
+                            <img src="../image/4.jpg" />
+                        </div>
+                    </div>
+                    <div class="aui-slide-page-wrap">
+                        <!--分页容器-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 圆形按钮列表 -->
+        <div class="zzq_lie aui-row">
+          <div class="aui-container ">
+            <ul class="zzq_lie_ul">
+              <li>
+                <a href="#" class="zzq_index_a" tapmode onclick="wu()">
+                  <img src="../image/lie/mac.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      MAC
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/carslan.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      卡姿兰
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/chando.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      自然堂
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/chanel.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                    Chanel
+                  </p>
+                </a>
+              </li>
+              <li tapmode onclick="fnOpenClassify()">
+                <a href="#">
+                  <img src="../image/lie/dior.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      分类
+                  </p>
+                </a>
+              </li>
+            </ul>
+
+            <!-- 第二排 -->
+            <ul class="zzq_lie_ul">
+              <li>
+                <a href="#">
+                  <img src="../image/lie/estee.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      ESTEE
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/lancom.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      LanCom
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/loreal.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      LOREAL
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/meili.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                    Meili
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../image/lie/sk2.jpg" alt="">
+                  <p class="zzq_lie_p_t">
+                      SK-II
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 新闻 -->
+
+    </section>
 </body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-tab.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/tabo.js"></script>
 <script type="text/javascript">
     apiready = function() {
-        var ver = api.version;
-        var sType = api.systemType;
-        var sVer = api.systemVersion;
-        var id = api.deviceId;
-        var model = api.deviceModel;
-        var name = api.deviceName;
-        var cType = api.connectionType;
-        var winName = api.winName;
-        var winWidth = api.winWidth;
-        var winHeight = api.winHeight;
-        var frameName = api.frameName || '';
-        var frameWidth = api.frameWidth || '';
-        var frameHeight = api.frameHeight || '';
+        // api.parseTapmode();
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+}
 
-        var str = '<ul>';
-        str += '<li>引擎版本信息: ' + ver + '</li>';
-        str += '<li>系统类型: ' + sType + '</li>';
-        str += '<li>系统版本: ' + sVer + '</li>';
-        str += '<li>设备标识: ' + id + '</li>';
-        str += '<li>设备型号: ' + model + '</li>';
-        str += '<li>设备名称: ' + name + '</li>';
-        str += '<li>网络状态: ' + cType + '</li>';
-        str += '<li>主窗口名字: ' + winName + '</li>';
-        str += '<li>主窗口宽度: ' + winWidth + '</li>';
-        str += '<li>主窗口高度: ' + winHeight + '</li>';
-        str += '<li>子窗口名字: ' + frameName + '</li>';
-        str += '<li>子窗口宽度: ' + frameWidth + '</li>';
-        str += '<li>子窗口高度: ' + frameHeight + '</li>';
-        str += '</ul>';
+    // 点击搜索框跳转
+    function opn() {
+      api.openWin({
+         name: 'search',
+         url: './search.html',
+         pageParam: {
+            name:'test'
+         }
+     })
+   };
 
-        $api.byId('sys-info').innerHTML = str;
 
-    };
+  // 点击打开通知页面
+  function notice(){
+    var footerH = $api.dom('footer').offsetHeight;
+    api.openFrame({
+        name: 'notice',
+        url: './html/notice.html',
+        rect: {
+            x: 0,
+            y: 0,
+            w: 'auto',
+            h: 'auto',
+            marginBottom:footerH,
+        },
+        pageParam: {
+            name: 'test'
+        }
+    });
+
+  }
+
+   // 点击logo跳转商品列表
+   function wu() {
+     api.openWin({
+        name: 'list',
+        url: './list.html',
+        pageParam: {
+           name:'test'
+        }
+    })
+  };
+
+  // 点击logo跳转商品分类
+  function fnOpenClassify() {
+    api.openWin({
+       name: 'classify_frame_win',
+       url: './classify_frame_win.html',
+       pageParam: {
+          name:'test'
+       }
+   })
+  };
+
 </script>
 
 </html>

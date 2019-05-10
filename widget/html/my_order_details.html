@@ -60,45 +60,48 @@
             background-color: #fff;
             border: 1px solid #fff;
         }
-        footer {
-          position: absolute;
-          bottom: 0px;
-          width: 100%;
-          height: 2.5rem;
-          background-color: #fff;
-          /*border-top: 1px solid #e7e7e7;*/
-        }
-        .right {
-          float: right;
-        }
-        .shouhuo1 {
-          height: 1.4rem;
-          border-radius: 20px;
-          border: 1px solid #ccc;
-          color: #666;
-          font-size: 0.6rem;
-          text-align: center;
-          line-height: 1.4rem;
-          padding: 0 15px;
-          margin-right: 5px;
-          position: relative;
-          top: 50%;
-          margin-top: -0.7rem;
-        }
-        .shouhuo {
-          height: 1.4rem;
-          border-radius: 20px;
-          border: 1px solid #ff4400;
-          color: #ff4400;
-          font-size: 0.6rem;
-          text-align: center;
-          line-height: 1.4rem;
-          padding: 0 15px;
-          margin-right: 5px;
-          position: relative;
-          top: 50%;
-          margin-top: -0.7rem;
 
+        footer {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 2.5rem;
+            background-color: #fff;
+            /*border-top: 1px solid #e7e7e7;*/
+        }
+
+        .right {
+            float: right;
+        }
+
+        .shouhuo1 {
+            height: 1.4rem;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            color: #666;
+            font-size: 0.6rem;
+            text-align: center;
+            line-height: 1.4rem;
+            padding: 0 15px;
+            margin-right: 5px;
+            position: relative;
+            top: 50%;
+            margin-top: -0.7rem;
+        }
+
+        .shouhuo {
+            height: 1.4rem;
+            border-radius: 20px;
+            border: 1px solid #ff4400;
+            color: #ff4400;
+            font-size: 0.6rem;
+            text-align: center;
+            line-height: 1.4rem;
+            padding: 0 15px;
+            margin-right: 5px;
+            position: relative;
+            top: 50%;
+            margin-top: -0.7rem;
         }
     </style>
 </head>
@@ -112,7 +115,7 @@
             订单详情
         </div>
         <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
-            <i style="color:#fff; right:1rem;" class="aui-iconfont aui-icon-share" tapmode onclick="sharetext()"></i>
+            <i style="color:#fff; right:1rem;" class="aui-iconfont aui-icon-share"></i>
             <div class="zzq_list_rig" style="padding:0 10px;" tapmode onclick="fnOpengongneng()">
                 <span></span>
                 <span></span>
@@ -121,9 +124,10 @@
         </div>
     </header>
     <footer class="aui-list" id="footer" style="position: absolute;">
-      <div class="shouhuo right">确认收货</div>
-      <div class="shouhuo1 right">修改地址</div>
-      <div class="shouhuo1 right">提醒发货</div>
+        <div class="shouhuo right">确认收货</div>
+        <div class="shouhuo1 right">修改地址</div>
+        <div class="shouhuo1 right" tapmode onclick="fnOpenToal()">提醒发货</div>
+        <div class="shouhuo1 right" tapmode onclick="openDialog()">延长收货</div>
     </footer>
 
 </body>
@@ -179,9 +183,75 @@
             },
             bgColor: 'rgba(0,0,0,0)',
         });
-        a
+
 
     };
+    function fnOpenToal() {
+        api.toast({
+            msg: '提醒卖家发货发送消息成功',
+            duration: 2000,
+            location: 'bottom'
+        });
+    }
+
+    function openDialog() {
+        var dialogBox = api.require('dialogBox');
+        dialogBox.alert({
+            texts: {
+                title: '确认延长收货时间',
+                content: '每笔订单只能延迟一次哦',
+                leftBtnTitle: '取消',
+                rightBtnTitle: '确认'
+            },
+            styles: {
+                bg: '#fff',
+                w: 300,
+                corner: 2,
+                title: {
+                    marginT: 20,
+                    icon: 'widget://res/gou.png',
+                    iconSize: 40,
+                    titleSize: 14,
+                    titleColor: '#000'
+                },
+                content: {
+                    color: '#000',
+                    size: 14
+                },
+                left: {
+                    marginB: 7,
+                    marginL: 20,
+                    w: 130,
+                    h: 35,
+                    corner: 2,
+                    bg: '#f2f2f2',
+                    size: 12
+                },
+                right: {
+                    marginB: 7,
+                    marginL: 10,
+                    w: 130,
+                    h: 35,
+                    corner: 2,
+                    bg: '#f2f2f2',
+                    size: 12
+                }
+            }
+        }, function(ret) {
+            if (ret.eventType == 'left') {
+                var dialogBox = api.require('dialogBox');
+                dialogBox.close({
+                    dialogName: 'alert'
+                });
+            }
+            if (ret.eventType == 'right') {
+                var dialogBox = api.require('dialogBox');
+                dialogBox.close({
+                    dialogName: 'alert'
+                });
+            }
+        });
+    }
 </script>
 
 </html>

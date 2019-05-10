@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        body,
+        html {
+            background-color: #f4f4f4;
+        }
+
+        .aui-bar-nav {
+            background-color: #f4f4f4;
+        }
+
+        .aui-searchbar {
+            background-color: #f4f4f4;
+        }
+
+        .aui-searchbar-input {
+            height: 1.5rem;
+            line-height: 1.5rem;
+        }
+
+        .cont {
+            padding: 0 10px;
+            height: 1.5rem;
+        }
+
+        .title .left {
+            height: 1.5rem;
+            line-height: 1.5rem;
+            font-size: 0.75rem;
+            color: #999;
+            float: left;
+        }
+
+        .title .right {
+            height: 1.5rem;
+            line-height: 1.5rem;
+            font-size: 0.75rem;
+            color: #000;
+            float: right;
+        }
+
+        .aui-col-xs-4 {
+            padding: 3px;
+            height: 2.5rem;
+        }
+
+        .nont {
+            background-color: #eee;
+            /*height: 2rem;*/
+            /*width: 6rem;*/
+            font-size: 0.7rem;
+            text-align: center;
+            line-height: 2rem;
+            color: #787878;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <div class="aui-title" style="left:0rem; right: 4rem;">
+            <div class="aui-searchbar">
+                <div class="aui-searchbar-input aui-border-radius">
+                    <input type="search" placeholder="请输入搜索关键字" id="search-input">
+                    <div class="aui-searchbar-clear-btn">
+                        <i class="aui-iconfont aui-icon-close"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="aui-pull-right aui-btn">
+            <div class="aui-btn aui-btn-danger" style="background-color: #ff4400!important;height:1.5rem;line-height:1.5rem;font-size:0.84rem;">搜订单</div>
+        </div>
+    </header>
+    <div class="cont" id="cont">
+        <div class="title">
+            <div class="left">
+                搜索历史
+            </div>
+            <div class="right" tapmode onclick="fnClean()">
+                清除
+            </div>
+        </div>
+    </div>
+    <div class="aui-row" style="padding:10px;" id="row">
+        <div class="aui-col-xs-4">
+            <div class="nont">
+                今年把你
+            </div>
+        </div>
+        <div class="aui-col-xs-4">
+            <div class="nont">
+                今年把你
+            </div>
+        </div>
+        <div class="aui-col-xs-4">
+            <div class="nont">
+                今年把你
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerH = $api.offset(header).h;
+    };
+    function fnClean(){
+      $("#cont").remove();
+      $("#row").remove();
+    }
+</script>
+
+</html>

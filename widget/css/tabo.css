@@ -165,7 +165,7 @@
 .zzq_foot_list_shop {
     position: fixed;
     width: 100%;
-    bottom: 60px;
+    bottom: 0px;
 }
 
 .zzq_shop_car_mon {

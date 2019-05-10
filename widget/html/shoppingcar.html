@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>购物车</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <link rel="stylesheet" href="../css/aui-slide.css" />
@@ -175,7 +175,7 @@
 </head>
 
 <body>
-    <header class="aui-bar aui-bar-nav" style="position:fixed;">
+    <header class="aui-bar aui-bar-nav" style="position:fixed;" id="header">
         <div class="aui-pull-left aui-btn">
             <!-- <span class="iconfont icon-saoma"></span> -->
         </div>
@@ -528,35 +528,6 @@
             </div>
         </div>
     </div>
-    <footer class="aui-bar aui-bar-tab">
-        <!-- 底部栏 -->
-        <div class="aui-bar-tab-item" tapmode onclick="closhop()">
-            <i class="aui-iconfont aui-icon-home"></i>
-            <div class="aui-bar-tab-label">首页</div>
-        </div>
-        <div class="aui-bar-tab-item" tapmode onclick="classify()">
-            <i class="aui-iconfont aui-icon-star"></i>
-            <div class="aui-bar-tab-label">分类</div>
-        </div>
-        <div class="aui-bar-tab-item" tapmode>
-            <i class="aui-iconfont aui-icon-comment"></i>
-            <div class="aui-bar-tab-label">通知</div>
-        </div>
-        <div class="aui-bar-tab-item aui-active" tapmode>
-            <div class="aui-badge">99</div>
-            <i class="aui-iconfont aui-icon-cart"></i>
-            <div class="aui-bar-tab-label">购物车</div>
-        </div>
-        <div class="aui-bar-tab-item" tapmode onclick="personal()">
-            <div class="aui-dot"></div>
-            <i class="aui-iconfont aui-icon-my"></i>
-            <div class="aui-bar-tab-label">个人中心</div>
-        </div>
-    </footer>
-
-
-
-
 </body>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
@@ -566,14 +537,14 @@
 <script type="text/javascript" src="../script/zzq_js/detil.js"></script>
 <script type="text/javascript">
     apiready = function() {
-        var header = $api.dom('header'); // 获取 header 标签元素
-        var footer = $api.dom('footer'); // 获取 footer 标签元素
+        var header = $api.byId('header'); // 获取 header 标签元素
+
         // 1.修复开启沉浸式效果带来的顶部Header与手机状态栏重合的问题，最新api.js方法已支持适配iPhoneX；
         // 2.默认已开启了沉浸式效果 config.xml中 <preference name="statusBarAppearance" value="true"/>
         // 3.沉浸式效果适配支持iOS7+，Android4.4+以上版本
-        var headerH = $api.fixStatusBar(header);
+
         // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
-        var footerH = $api.fixTabBar(footer);
+        $api.fixStatusBar(header);
     };
 
     function closhop() {
@@ -591,25 +562,7 @@
          }
      })
     }
-    function personal(){
-      api.openWin({
-         name: 'personal',
-         url: './personal.html',
-         pageParam: {
-            name:'test'
-         }
-     })
-    }
-    // 分类
-    function classify(){
-      api.openWin({
-         name: 'classify',
-         url: './classify_frame_win.html',
-         pageParam: {
-            name:'test'
-         }
-     })
-    }
+
 </script>
 
 </html>

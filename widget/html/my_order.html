@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>商品分类热销榜</title>
+    <title>我的订单</title>
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
@@ -140,7 +140,7 @@
             我的订单
         </div>
         <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
-            <i style="color:#6f6f6f; right:1rem; font-weight: bold;" class="aui-iconfont aui-icon-search" tapmode onclick="sharetext()"></i>
+            <i style="color:#6f6f6f; right:1rem; font-weight: bold;" class="aui-iconfont aui-icon-search" tapmode onclick="fnOpenSearch()"></i>
             <div class="zzq_list_rig" style="padding:0 10px;" tapmode onclick="fnOpengongneng()">
                 <span></span>
                 <span></span>
@@ -246,6 +246,35 @@
             index: index_,
             scroll: true
         });
+    }
+    function fnOpengongneng() {
+        api.openFrame({
+            name: 'gongneng',
+            url: './gongneng.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bgColor: 'rgba(0,0,0,0)',
+        });
+
+
+    };
+    // 打开搜索页面
+    function fnOpenSearch(){
+      api.openWin({
+          name: 'my_order_search',
+          url: './my_order_search.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
     }
 </script>
 

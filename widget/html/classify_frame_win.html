@@ -93,7 +93,7 @@
         <div class="aui-title" style="left:-3rem; right: 2rem;width:75%;color: #505050;">
             商品分类
         </div>
-        <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;">
+        <div class="aui-pull-right aui-btn" style="padding:0 20px;line-height:2.1;" tapmode onclick="fnOpengongneng()">
             <div class="zzq_list_rig">
                 <span></span>
                 <span></span>
@@ -256,6 +256,23 @@
             name: 'shopify'
         });
     }
+    function fnOpengongneng() {
+        api.openFrame({
+            name: 'gongneng',
+            url: './gongneng.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            bgColor: 'rgba(0,0,0,0)',
+        });
+
+    };
 </script>
 
 </html>

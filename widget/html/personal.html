@@ -64,7 +64,7 @@
         <!-- center1 -->
         <div class="dqf_cent1">
             <!-- 我的订单 -->
-            <div class="dqf_order">
+            <div class="dqf_order" tapmode onclick="fnOpenOrder(0)">
                 <div class="dqf_myorder">我的订单</div>
                 <div class="dqf_allorder">查看全部订单&gt;</div>
             </div>
@@ -94,7 +94,7 @@
                     </div>
                     <span>待评价</span>
                 </div>
-                <div class="dqf_deal_box">
+                <div class="dqf_deal_box" tapmode onclick="fnOpenRefund()">
                     <div class="dqf_img_box">
                         <img src="../image/deal_05.png" alt="">
                     </div>
@@ -236,6 +236,16 @@
           url: './my_order.html',
           pageParam: {
               key1: index_
+          }
+      });
+    }
+    //打开退款页面
+    function fnOpenRefund(){
+      api.openWin({
+          name: 'my_refund',
+          url: './my_refund.html',
+          pageParam: {
+            name: 'test'
           }
       });
     }
