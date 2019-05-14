@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/dqf_css/problem_feedback.css" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+  <title>问题反馈</title>
+</head>
+
+<body>
+  <!-- problem_feedback -->
+  <div id="dqf_top_box" style="background-color: #cf3722;"></div>
+  <header id="dqf_header">
+    <div class="dqf_head_left" tapmode onclick="api.closeWin();">
+      <i class="icon ion-chevron-left"></i>
+    </div>
+    <div class="dqf_title">
+      <img src="../image/tool_04.png" alt="">
+    </div>
+    <div class="dqf_head_right" tapmode onclick="openGongnengFrame()">
+      <i class="icon ion-ios-bell-outline" style="padding-right: 20px;"></i>
+      <i class="icon ion-more"></i>
+    </div>
+  </header>
+  <div class="dqf_content" id="dqf_content">
+      <div class="dqf_txt_box">
+          <div class="dqf_content_left">Hi，閻魔愛，购物遇到问题随时找小蜜哟，还能帮你冲话费、查天气、订机票、挑东西呢。</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_right">哦？这么牛逼？</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_left">Hi，☆阎魔☆，下午好，购物有问题记得找小蜜哟</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_right">不要，滚</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_left">Hi，☆阎魔☆，下午好，购物有问题记得找小蜜哟</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_right">不找，滚</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_left">Hi，☆阎魔☆，下午好，购物有问题记得找小蜜哟</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_right">不问，滚</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_left">Hi，☆阎魔☆，下午好，购物有问题记得找小蜜哟</div>
+      </div>
+      <div class="dqf_txt_box">
+          <div class="dqf_content_right">滚啊</div>
+      </div>
+  </div>
+  <div class="dqf_footer" id="dqf_footer">
+    <div class="dqf_over_box">
+      <div class="dqf_menu_box">
+        <div class="dqf_menu">买内存卡</div>
+        <div class="dqf_menu">买抱枕</div>
+        <div class="dqf_menu">挑好货</div>
+        <div class="dqf_menu">查天气</div>
+        <div class="dqf_menu dqf_active">充话费</div>
+        <div class="dqf_menu dqf_active">段子手</div>
+        <div class="dqf_menu">购物攻略</div>
+        <div class="dqf_menu">买火车票</div>
+        <div class="dqf_menu">订酒店</div>
+        <div class="dqf_menu">订机票</div>
+        <div class="dqf_menu">注销账户</div>
+      </div>
+    </div>
+    <div class="dqf_bottom_box">
+      <div class="dqf_left_add">
+          <i class="icon ion-plus-round"></i>
+      </div>
+      <div class="dqf_input">
+        <input type="text" name="" id="dqf_input" placeholder="有问题 找小蜜">
+        <i class="icon ion-mic-a"></i>
+        <i class="icon ion-ios-navigate" style="color: #fff;z-index: -1;" onclick="sendNews()"></i>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function () {
+      let topBox = $api.byId("dqf_top_box");
+      let head = $api.byId("dqf_header");
+      let content = $api.byId("dqf_content");
+      let footer = $api.byId("dqf_footer");
+      // var winHeight = api.winHeight;
+      $api.fixStatusBar(topBox);
+      // content.style.height = winHeight-topBox.offsetHeight-head.offsetHeight+"px";
+      head.style.top = topBox.offsetHeight+"px";
+      content.style.paddingBottom = footer.offsetHeight+"px";
+      content.style.paddingTop = topBox.offsetHeight+head.offsetHeight+10+"px";
+    }
+    var inputObj = document.getElementById("dqf_input");
+    inputObj.onfocus = function(){
+      let bodyObj = document.querySelector("body");
+      setTimeout(function(){bodyObj.scrollTop = document.body.scrollHeight;},300);
+    }
+    inputObj.onkeyup = function(){
+      let iconObj1 = document.querySelector(".ion-mic-a");
+      let iconObj2 = document.querySelector(".ion-ios-navigate");
+      if(this.value != ""){
+        // console.log(iconObj)
+        iconObj2.style.color = "#ffc233";
+        iconObj2.style.zIndex = "1";
+        iconObj1.style.color = "#fff";
+        iconObj1.style.zIndex = "-1";
+      }else{
+        // console.log(iconObj)
+        iconObj1.style.color = "#ffc233";
+        iconObj1.style.zIndex = "1";
+        iconObj2.style.color = "#fff";
+        iconObj2.style.zIndex = "-1";
+      }
+    }
+    function sendNews(){
+      let iconObj1 = document.querySelector(".ion-mic-a");
+      let iconObj2 = document.querySelector(".ion-ios-navigate");
+      let content = document.getElementById("dqf_content");
+      let bodyObj = document.querySelector("body");
+      let str =  `<div class="dqf_txt_box">
+                   <div class="dqf_content_right">`+inputObj.value+`</div>
+                 </div>`
+      inputObj.value = '';
+      content.innerHTML += str;
+      bodyObj.scrollTop = document.body.scrollHeight-200;
+      inputObj.focus();
+      iconObj1.style.color = "#ffc233";
+      iconObj1.style.zIndex = "1";
+      iconObj2.style.color = "#fff";
+      iconObj2.style.zIndex = "-1";
+    }
+  </script>
+</body>
+
+</html>

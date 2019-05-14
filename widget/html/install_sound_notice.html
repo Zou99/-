@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
   <title>音效与通知</title>
 </head>
+
 <body>
   <!-- install_sound_notice -->
   <header class="aui-bar aui-bar-nav" id="dqf_header">
@@ -17,12 +19,67 @@
     </div>
     <div class="aui-title">音效与通知</div>
   </header>
+  <!--  -->
+  <div class="dqf_title">音效</div>
+  <div class="dqf_option_box">
+    <div class="dqf_content">手淘内置音效</div>
+    <div class="dqf_describe">包括刷新、赞、发布等操作反馈音效</div>
+    <div class="dqf_btn_box dqf_active">
+      <input type="checkbox" name="" id="" checked class="dqf_checkbox" style="display: none;">
+      <div class="dqf_check_style"></div>
+    </div>
+  </div>
+  <div class="dqf_title">通知</div>
+  <div class="dqf_option_box" style="border-bottom: 1px solid #eee;">
+    <div class="dqf_content">新消息提示</div>
+    <div class="dqf_describe">关闭后，手机淘宝不运行时收不到将新消息提示</div>
+    <div class="dqf_btn_box">
+      <input type="checkbox" name="" id="" class="dqf_checkbox" style="display: none;">
+      <div class="dqf_check_style"></div>
+    </div>
+  </div>
+  <div class="dqf_option_box" style="margin-top: 10px;border-bottom: 1px solid #eee;">
+    <div class="dqf_content">应用内横幅提醒</div>
+    <div class="dqf_describe">关闭后手机淘宝运行时收到的淘友、店铺及服务号消息，将不再以横幅样式提醒</div>
+    <div class="dqf_btn_box" style="top: 30px;">
+      <input type="checkbox" name="" id="" class="dqf_checkbox" style="display: none;">
+      <div class="dqf_check_style"></div>
+    </div>
+  </div>
+  <div class="dqf_option_box" style="border-bottom: 1px solid #eee;">
+    <div class="dqf_content">铃声提醒</div>
+    <div class="dqf_btn_box" style="top: 10px;">
+      <input type="checkbox" name="" id="" class="dqf_checkbox" style="display: none;">
+      <div class="dqf_check_style"></div>
+    </div>
+  </div>
+  <div class="dqf_option_box" style="border-bottom: 1px solid #eee;">
+    <div class="dqf_content">震动提醒</div>
+    <div class="dqf_btn_box" style="top: 10px;">
+      <input type="checkbox" name="" id="" class="dqf_checkbox" style="display: none;">
+      <div class="dqf_check_style"></div>
+    </div>
+  </div>
   <script type="text/javascript" src="../script/api.js"></script>
   <script>
-    apiready = function() {
+    apiready = function () {
       var header = $api.byId("dqf_header");
       $api.fixStatusBar(header);
     }
+    var allBox = document.querySelectorAll(".dqf_btn_box");
+    for(let i=0;i<allBox.length;i++){
+      allBox[i].onclick = function(){
+        let checkboxObj = this.querySelector("input");
+        if(checkboxObj.checked){
+          checkboxObj.checked = false;
+          this.classList.remove("dqf_active");
+        }else{
+          checkboxObj.checked = true;
+          this.classList.add("dqf_active");
+        }
+      }
+    }
   </script>
 </body>
+
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/dqf_css/install_currency_set.css" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+  <title>音效与通知</title>
+</head>
+
+<body>
+  <!-- install_currency_set -->
+  <header class="aui-bar aui-bar-nav" id="dqf_header">
+    <div class="aui-pull-left aui-btn" tapmode onclick="api.closeWin();">
+      <i class="icon ion-android-arrow-back"></i>
+    </div>
+    <div class="aui-title">通用</div>
+    <div class="aui-pull-right aui-btn" tapmode onclick="openGongnengFrame()">
+      <i class="icon ion-android-more-vertical"></i>
+    </div>
+  </header>
+  <!--  -->
+  <div class="dqf_center">
+    <div class="dqf_option_box">
+      <div class="dqf_content">指纹 / 面容支付</div>
+      <div class="dqf_describe">开启生物支付，安全又快捷</div>
+      <div class="dqf_btn_box" style="color: #aaa;right: 17px">
+        <i class="icon ion-chevron-right"></i>
+      </div>
+    </div>
+    <div class="dqf_option_box">
+      <div class="dqf_content">手淘内置音效</div>
+      <div class="dqf_describe">包括刷新、赞、发布等操作反馈音效</div>
+      <div class="dqf_btn_box">
+        <input type="checkbox" name="" id="" class="dqf_checkbox" style="display: none;">
+        <div class="dqf_check_style"></div>
+      </div>
+    </div>
+    <div class="dqf_option_box">
+      <div class="dqf_content">开启首页摇一摇</div>
+      <div class="dqf_describe">摇一摇与电视节目互动，更有身边限时优惠</div>
+      <div class="dqf_btn_box dqf_active">
+        <input type="checkbox" name="" id="" checked class="dqf_checkbox" style="display: none;">
+        <div class="dqf_check_style"></div>
+      </div>
+    </div>
+    <div class="dqf_option_box">
+      <div class="dqf_content">WIFI下自动播放视频</div>
+      <div class="dqf_describe">开启后，详情和微淘视频将自动播放</div>
+      <div class="dqf_btn_box">
+        <input type="checkbox" name="" id="" class="dqf_checkbox" style="display: none;">
+        <div class="dqf_check_style"></div>
+      </div>
+    </div>
+    <div class="dqf_option_box" style="border: none;">
+      <div class="dqf_content">开启淘口令快捷查看</div>
+      <div class="dqf_describe">复制口令后收到提醒</div>
+      <div class="dqf_btn_box dqf_active">
+        <input type="checkbox" name="" id="" checked class="dqf_checkbox" style="display: none;">
+        <div class="dqf_check_style"></div>
+      </div>
+    </div>
+  </div>
+  <div class="dqf_center">
+    <div class="dqf_option_box">
+      <div class="dqf_content">清除缓存</div>
+      <div class="dqf_describe">包括：图片、数据等</div>
+      <div class="dqf_btn_box" style="color: #aaa;right: 17px">
+        <i class="icon ion-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function () {
+      var header = $api.byId("dqf_header");
+      $api.fixStatusBar(header);
+    }
+    var allBox = document.querySelectorAll(".dqf_btn_box");
+    for(let i=0;i<allBox.length;i++){
+      allBox[i].onclick = function(){
+        let checkboxObj = this.querySelector("input");
+        if(checkboxObj.checked){
+          checkboxObj.checked = false;
+          this.classList.remove("dqf_active");
+        }else{
+          checkboxObj.checked = true;
+          this.classList.add("dqf_active");
+        }
+      }
+    }
+    function openGongnengFrame(){
+      api.openFrame({
+          name: 'gongneng',
+          url: './gongneng.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+  </script>
+</body>
+
+</html>

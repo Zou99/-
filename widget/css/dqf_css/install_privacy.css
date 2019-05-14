@@ -1,0 +1,33 @@
+#dqf_header{
+  background-color: #ff452c;
+}
+#dqf_header .ion-android-arrow-back{
+  color: #fff;
+  font-size: 24px;
+}
+#dqf_header .aui-title{
+  color: #fff;
+}
+#dqf_header .ion-android-more-vertical{
+  font-size: 25px;
+  color: #fff;
+}
+.dqf_box{
+  box-sizing: border-box;
+  padding: 10px 10px;
+  background-color: #fff;
+  margin-top: 10px;
+  position: relative;
+  color: #333;
+  font-size: 14px;
+}
+.dqf_box .dqf_right{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+
+
