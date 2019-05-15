@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style>
+        body,
+        html {
+            background-color: #fff;
+        }
+
+        .cont {
+            height: 6em;
+            padding-top: 20px;
+        }
+
+        .cont img {
+            border-radius: 100%;
+            margin: auto;
+        }
+
+        .content {
+            padding: 0 10px;
+            height: 100%;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .butn {
+            padding: 0 10px;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            background-color: #FF5500 !important;
+            opacity: 0.5;
+        }
+
+        .noneee {
+            background-color: #FF5500 !important;
+            opacity: 1;
+        }
+
+        .foot {
+            height: 3rem;
+            padding: 0 20px;
+            line-height: 3rem;
+            color: #7b7b7b;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="aui-bar aui-bar-nav" id="aui-header" style="background-color:#fff;">
+        <div class="aui-pull-left aui-btn" style="left:20px;">
+
+            <i class="icon ion-chevron-left" style="color:#333;font-size:1rem;"></i>
+        </div>
+
+        <div class="aui-pull-right aui-btn">
+            <span style="color:#333;">帮助</span>
+        </div>
+    </header>
+    <div class="cont">
+        <img src="../image/demo1.png" alt="" style="width:3rem;">
+    </div>
+    <div class="content">
+        <ul class="aui-list aui-form-list" style="background-image:none;">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-input" style="padding-left:0.8rem;">
+                        <input type="text" placeholder="请输入淘宝账户" id="name">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item" style="padding-top:0.8rem;height:3rem;">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-input" style="padding-left:0.8rem;">
+                        <input type="password" placeholder="请输入密码" style="width:95%;float:left;" id="password">
+                        <div class="right" style="position:absolute;right:0px;color:#7b7b7b;top:13px;font-size:0.7rem;">忘记密码</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="butn">
+        <div class="aui-btn aui-btn-danger aui-btn-block btn" style="border-radius:20px;" id="btn">登录</div>
+    </div>
+    <div class="foot">
+        <div class="left">
+            短信验证码登录
+        </div>
+        <div class="right">
+            注册
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.setStatusBarStyle({
+            style: 'dark',
+            color: '#fff'
+        });
+        var header = $api.byId('aui-header');
+        $api.fixStatusBar(header);
+        var headerH = $api.offset(header).h;
+
+    };
+
+    var nameInput = document.querySelector("#name")
+    var pwdInput = document.querySelector("#password")
+    var btn = document.querySelector("#btn")
+    nameInput.onkeyup = function() {
+        if (nameInput.value != "") {
+            if (pwdInput.value != "") {
+                $("#btn").addClass("noneee");
+                $("#btn").removeClass("btn");
+
+            } else {
+                $("#btn").addClass("btn");
+                $("#btn").removeClass("noneee");
+            }
+        }
+    }
+    pwdInput.onkeyup = function() {
+        if (pwdInput.value != "") {
+            if (nameInput.value != "") {
+                $("#btn").addClass("noneee");
+                $("#btn").removeClass("btn");
+            } else {
+                $("#btn").addClass("btn");
+                $("#btn").removeClass("noneee");
+            }
+        }
+    }
+</script>
+
+</html>
