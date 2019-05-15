@@ -8,22 +8,25 @@
 #dqf_header .aui-title{
   color: #444;
 }
-.dqf_title{
+#dqf_header .ion-android-more-vertical{
+  font-size: 25px;
+  color: #444;
+}
+.dqf_center{
   width: 100%;
   box-sizing: border-box;
-  background-color: #f4f4f4;
-  color: #444;
-  font-size: 12px;
-  padding: 5px 10px;
-  margin-top: 10px;
+  padding-left: 10px;
+  background-color: #fff;
+  margin: 10px 0;
 }
 .dqf_option_box{
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 10px;
+  padding: 10px 0px 5px 0;
   padding-right: 55px;
   background-color: #fff;
   position: relative;
+  border-bottom: 1px solid #eee;
 }
 .dqf_option_box .dqf_content{
   color: #333;
@@ -34,7 +37,7 @@
 }
 .dqf_option_box .dqf_btn_box{
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 20px;
 }
 .dqf_option_box .dqf_btn_box .dqf_check_style{

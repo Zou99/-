@@ -43,18 +43,18 @@
       <div class="dqf_option_box" tapmode onclick="openRegionSet()">
         <div class="dqf_title">地区设置<i class="icon ion-chevron-right"></i></div>
       </div>
-      <div class="dqf_option_box">
+      <div class="dqf_option_box" tapmode onclick="openSoundNotice()">
         <div class="dqf_title">音效与通知<i class="icon ion-chevron-right"></i></div>
       </div>
-      <div class="dqf_option_box">
+      <div class="dqf_option_box" tapmode onclick="openPrivacy()">
         <div class="dqf_title">隐私<i class="icon ion-chevron-right"></i></div>
       </div>
-      <div class="dqf_option_box">
+      <div class="dqf_option_box" tapmode onclick="openCurrencySet()">
         <div class="dqf_title">通用<i class="icon ion-chevron-right"></i></div>
       </div>
   </div>
   <div class="dqf_box">
-      <div class="dqf_option_box">
+      <div class="dqf_option_box" tapmode onclick="openProblemFeedback()">
         <div class="dqf_title">问题反馈<i class="icon ion-chevron-right"></i></div>
       </div>
       <div class="dqf_option_box">
@@ -98,6 +98,42 @@
       api.openWin({
           name: 'install_region_set',
           url: './install_region_set.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openSoundNotice(){
+      api.openWin({
+          name: 'install_sound_notice',
+          url: './install_sound_notice.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openPrivacy(){
+      api.openWin({
+          name: 'install_privacy',
+          url: './install_privacy.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openCurrencySet(){
+      api.openWin({
+          name: 'install_currency_set',
+          url: './install_currency_set.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openProblemFeedback(){
+      api.openWin({
+          name: 'problem_feedback',
+          url: './problem_feedback.html',
           pageParam: {
               name: 'test'
           }
