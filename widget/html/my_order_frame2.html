@@ -133,8 +133,68 @@
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
     apiready = function() {
+      api.ajax({
+          url: 'http://192.168.2.24/api/order/details?order_id=3',
+          method: 'get',
+        }, function(ret, err) {
+          console.log(JSON.stringify(ret));
+          if(ret.status === 1) {
+            // $api.byId('goods_name').text(ret.data.goods_name)
+            // document.getElementById('goods_name').innerText(ret.data.goods_name)
+            let data = ret.data;
+            orderDetails(data);
+          } else {
+            api.alert({msg: JSON.stringify(err)})
+          }
+        })
 
     };
+    function orderDetails(data) {
+      let html = `
+      <div class="cont">
+          <div class="list aui-row">
+              <div class="title">
+                  <div class="left">
+                      <i class="aui-iconfont aui-icon-home" style="color:#333;font-size: 0.6rem;"></i> &nbsp; ${data.shop_name} &nbsp;&nbsp;
+                      <i class="aui-iconfont aui-icon-right" style="color:#ccc;font-weight: 800;font-size: 0.6rem;"></i>
+                  </div>
+                  <div class="right">
+                      买家已发货
+                  </div>
+              </div>
+              <div class="aui-row" tapmode onclick="fnOpenOrderDetalis(${data.id})">
+                  <div class="aui-col-xs-3">
+                      <img src="${data.logo}" alt="" style="width:4rem;">
+                  </div>
+                  <div class="aui-col-xs-7 zhong">
+                      <span class="zhong-1">百草芬 乳酸菌酸奶蛋糕500g整箱 网红零食早餐小口袋面包吃蒸点心</span>
+                      <span class="zhong-2">${data.value_name}</span>
+                      <div class="left zhong-3" style="margin-right:5px;">七天退换</div>
+                      <div class="left zhong-3">公益捐赠0.02元</div>
+                  </div>
+                  <div class="aui-col-xs-2">
+                      <span class="right-1">￥${data.real_payment}</span>
+                      <span class="right-2">x 1</span>
+                  </div>
+              </div>
+              <div class="list3" tapmode onclick="fnOpenOrderDetalis(${data.id})">
+                  <span style="position:relative;left:13%;">运费险</span>
+                  <span style="color:#999;position:relative;left:13%;">&nbsp;确认收货前退换货可理赔</span>
+                  <span style="position: absolute;right:0px;">￥0.00&nbsp;x&nbsp;1</span>
+              </div>
+              <div class="list4">
+                  共一件商品 &nbsp;合计:￥ <span style="font-size:0.8rem;">25</span>.90
+              </div>
+              <div class="list5">
+                  <div class="shouhuo1 right">修改地址</div>
+                  <div class="shouhuo1 right" tapmode onclick="fnOpenToal()">提醒发货</div>
+              </div>
+          </div>
+      </div>
+      `;
+      let goodsInfo = document.getElementById('body');
+      $api.html(goodsInfo, html);
+    }
 </script>
 
 </html>

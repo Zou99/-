@@ -81,14 +81,14 @@
             <li class="aui-list-item">
                 <div class="aui-list-item-inner">
                     <div class="aui-list-item-input" style="padding-left:0.8rem;">
-                        <input type="text" placeholder="请输入淘宝账户" id="name">
+                        <input type="text" placeholder="请输入淘宝账户" id="name" name="mobile">
                     </div>
                 </div>
             </li>
             <li class="aui-list-item" style="padding-top:0.8rem;height:3rem;">
                 <div class="aui-list-item-inner">
                     <div class="aui-list-item-input" style="padding-left:0.8rem;">
-                        <input type="password" placeholder="请输入密码" style="width:95%;float:left;" id="password">
+                        <input type="password" placeholder="请输入密码" style="width:95%;float:left;" id="password" name="code">
                         <div class="right" style="position:absolute;right:0px;color:#7b7b7b;top:13px;font-size:0.7rem;">忘记密码</div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
         <div class="left">
             短信验证码登录
         </div>
-        <div class="right">
+        <div class="right" tapmode  onclick="fnOpenRegister()">
             注册
         </div>
     </div>
@@ -110,6 +110,7 @@
 </body>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
+<script src="../script/ajax.js"></script>
 <script type="text/javascript">
     apiready = function() {
         api.setStatusBarStyle({
@@ -148,6 +149,64 @@
             }
         }
     }
+    //打开注册页面
+    function fnOpenRegister(){
+      api.openWin({
+          name: 'register',
+          url: './register.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+
+    }
+    //点击提交
+        let submitBtn = $api.byId('btn');
+        submitBtn.addEventListener('click', function() {
+            // let form = document.querySelector("#form1");
+
+            let mobile = document.querySelector('input[name=mobile]').value;
+            let code = document.querySelector('input[name=code]').value;
+            api.ajax({
+                url: 'http://192.168.2.24/api/index/login',
+                method: 'post',
+                data: {
+                    values: {
+                        mobile: mobile,
+                        code: code,
+                    }
+                }
+            }, function(ret, err) {
+                if (ret) {
+                    $api.setStorage('token', ret.data.ACCESS_TOKEN);
+                    api.openWin({
+                        name: 'index',
+                        url: '../index.html',
+                        pageParam: {
+                            name: 'test'
+                        }
+                    });
+
+                } else {
+                    alert(JSON.stringify(err.msg));
+                }
+            });
+
+            // ajaxPost('/index/register',{'mobile':mobile, 'code':code})
+            // .then(res => {
+            //   api.setStorage('token', res.data.ACCESS_TOKEN)
+            //   console.log('注册成功')
+            // })
+            // .catch(err => {
+            //   api.toast({
+            //     msg: err.msg,
+            //     duration: 2000,
+            //     location: 'middle'
+            //   });
+            //   console.log(JSON.stringify(err));
+            // })
+            // console.log(JSON.stringify({'mobile':mobile, 'code':code}));
+        })
 </script>
 
 </html>
