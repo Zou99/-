@@ -57,7 +57,7 @@
       <div class="dqf_option_box" tapmode onclick="openProblemFeedback()">
         <div class="dqf_title">问题反馈<i class="icon ion-chevron-right"></i></div>
       </div>
-      <div class="dqf_option_box">
+      <div class="dqf_option_box" tapmode onclick="openAboutTaobao()">
         <div class="dqf_title">关于手机淘宝<i class="icon ion-chevron-right"></i></div>
       </div>
   </div>
@@ -134,6 +134,15 @@
       api.openWin({
           name: 'problem_feedback',
           url: './problem_feedback.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function openAboutTaobao(){
+      api.openWin({
+          name: 'install_about_taobao',
+          url: './install_about_taobao.html',
           pageParam: {
               name: 'test'
           }

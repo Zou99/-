@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+  <link rel="stylesheet" type="text/css" href="../css/dqf_css/install_about_taobao.css" />
+  <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+  <title>关于手机淘宝</title>
+</head>
+<!-- install_about_taobao -->
+<body style="background-color: #eee;">
+  <header class="aui-bar aui-bar-nav" id="dqf_header">
+    <div class="aui-pull-left aui-btn" tapmode onclick="api.closeWin();">
+      <i class="icon ion-android-arrow-back"></i>
+    </div>
+    <div class="aui-title">关于手机淘宝</div>
+    <div class="aui-pull-right aui-btn" tapmode onclick="openGongnengFrame()">
+      <i class="icon ion-android-more-vertical"></i>
+    </div>
+  </header>
+  <div class="dqf_box">
+      <div class="dqf_option_box">
+        <div class="dqf_title">新版本检测 
+          <div class="dqf_right">
+            <span>有新版&nbsp;&nbsp;&nbsp;</span>
+            <i class="icon ion-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="dqf_option_box">
+        <div class="dqf_title">版本信息<i class="icon ion-chevron-right"></i></div>
+      </div>
+      <div class="dqf_option_box">
+        <div class="dqf_title">软件许可使用协议<i class="icon ion-chevron-right"></i></div>
+      </div>
+      <div class="dqf_option_box">
+        <div class="dqf_title">淘宝平台服务协议<i class="icon ion-chevron-right"></i></div>
+      </div>
+      <div class="dqf_option_box">
+        <div class="dqf_title">隐私权政策<i class="icon ion-chevron-right"></i></div>
+      </div>
+      <div class="dqf_option_box">
+        <div class="dqf_title">证照信息<i class="icon ion-chevron-right"></i></div>
+      </div>
+      <div class="dqf_option_box">
+        <div class="dqf_title">帮助中心<i class="icon ion-chevron-right"></i></div>
+      </div>
+  </div>
+  <div class="dqf_footer_box">
+    <div class="dqf_txt">分享二维码给好友</div>
+    <div class="dqf_img_box">
+      <img src="../image/tow_code.png" alt="">
+      <div>当前版本号:<span>8.6.10</span></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../script/api.js"></script>
+  <script>
+    apiready = function() {
+      var header = $api.byId("dqf_header");
+      $api.fixStatusBar(header);
+    }
+    function openGongnengFrame(){
+      api.openFrame({
+          name: 'gongneng',
+          url: './gongneng.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    
+  </script>
+</body>
+</html>

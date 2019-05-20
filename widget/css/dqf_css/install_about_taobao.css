@@ -1,0 +1,81 @@
+#dqf_header{
+  width: 100%;
+  background-color: #f3f3f3;
+}
+#dqf_header .ion-android-arrow-back{
+  font-size: 24px;
+  color: #444;
+}
+#dqf_header .aui-title{
+  color: #444;
+}
+#dqf_header .ion-android-more-vertical{
+  font-size: 25px;
+  color: #444;
+}
+.dqf_option_box{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ddd;
+}
+.dqf_option_box .dqf_title{
+  position: relative;
+  color: #051b28;
+}
+.dqf_option_box .dqf_title >i{
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  color: #aaa;
+}
+.dqf_option_box .dqf_title .dqf_right{
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  color: #aaa;
+}
+.dqf_option_box .dqf_title .dqf_right >span{
+  color: #dd0000;
+  font-size: 14px;
+}
+.dqf_box{
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.dqf_box .dqf_option_box:first-child{
+  border: none;
+}
+.dqf_footer_box{
+  width: 100%;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.dqf_footer_box .dqf_txt{
+  padding-left: 10px;
+  padding-bottom: 5px;
+  color: #3d4245;
+  font-size: 14px;
+}
+.dqf_footer_box .dqf_img_box{
+  width: 127px;
+  margin: 0 auto;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
+.dqf_footer_box .dqf_img_box {
+  width: 127px;
+  margin: 0 auto;
+}
+
+
+
+
+
+
+
