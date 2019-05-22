@@ -39,7 +39,7 @@
 
         .butn {
             padding: 0 10px;
-            margin-top: 1rem;
+            margin-top: 4rem;
         }
 
         .btn {
@@ -59,47 +59,50 @@
             color: #333;
             font-size: 0.7rem;
         }
-
-        #name::-webkit-input-placeholder {
+        /*#name::-webkit-input-placeholder {
             font-size: 1rem;
-        }
-        .none {
-          height: 1.2rem;
-          width: 4.5rem;
-          border-radius: 20px;
-          background-color: #f0f0f0!important;
-          color: #ff5500;
-          font-size: 0.67rem;
-          padding: 0 9px;
-          line-height: 1.2rem;
-          text-align: center;
-          opacity: 0.65;
-        }
-        .none2 {
-          height: 1.2rem;
-          width: 4.5rem;
-          border-radius: 20px;
-          background-color: #fff!important;
-          color: #ff5500;
-          font-size: 0.67rem;
-          padding: 0 9px;
-          line-height: 1.2rem;
-          text-align: center;
-          opacity: 0.2;
-        }
-        .yuedu {
-          padding: 0 10px;
-          color: #ddd;
-          font-size: 0.67rem;
-          padding-top: 1rem;
+        }*/
 
+        .none {
+            height: 1.2rem;
+            width: 4.5rem;
+            border-radius: 20px;
+            background-color: #f0f0f0!important;
+            color: #ff5500;
+            font-size: 0.67rem;
+            padding: 0 9px;
+            line-height: 1.2rem;
+            text-align: center;
+            opacity: 0.65;
         }
-        .yuedu span{
-          color: #ff5500;
+
+        .none2 {
+            height: 1.2rem;
+            width: 4.7rem;
+            border-radius: 20px;
+            background-color: #fff!important;
+            color: #ff5500;
+            font-size: 0.67rem;
+            padding: 0 9px;
+            line-height: 1.2rem;
+            text-align: center;
+            opacity: 0.2;
         }
-        .yuedu a{
-          color: #ff5500;
-        text-decoration: underline!important;
+
+        .yuedu {
+            padding: 0 10px;
+            color: #ddd;
+            font-size: 0.67rem;
+            padding-top: 1rem;
+        }
+
+        .yuedu span {
+            color: #ff5500;
+        }
+
+        .yuedu a {
+            color: #ff5500;
+            text-decoration: underline!important;
         }
     </style>
 </head>
@@ -125,12 +128,22 @@
         </div>
     </div>
     <div class="content">
-        <ul class="aui-list aui-form-list" style="background-image:none;height:6rem;padding-top:0.5rem;">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-input" style="padding-left:0.8rem;">
-                        <input type="text" placeholder="请输入手机号码" id="name" value="">
+        <form id="form1" name="formOne">
+            <ul class="aui-list aui-form-list" style="background-image:none;height:6rem;padding-top:0.5rem;">
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-input" style="padding-left:0.8rem;">
+                            <input type="text" placeholder="请输入手机号码" name="mobile" id="name" value="">
+                        </div>
                     </div>
+                </li>
+                <li class="aui-list-item" style="padding-top:0.8rem;height:3rem;">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-input" style="padding-left:0.8rem;">
+                            <input type="password" placeholder="请输入密码" style="width:95%;float:left;" name="code2" id="password2">
+                        </div>
+                    </div>
+<<<<<<< HEAD
                 </div>
             </li>
             <li class="aui-list-item" style="padding-top:0.8rem;height:3rem;">
@@ -138,20 +151,32 @@
                     <div class="aui-list-item-input" style="padding-left:0.8rem;">
                         <input type="password" placeholder="请输入验证码" style="width:95%;float:left;" id="password">
                         <div class="right none2" style="position:absolute;right:0px;top:13px;" id="btn2">获取验证码</div>
+=======
+                </li>
+                <li class="aui-list-item" style="padding-top:0.8rem;height:3rem;">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-input" style="padding-left:0.8rem;">
+                            <input type="text" placeholder="请输入验证码" style="width:95%;float:left;" name="code" id="password">
+                            <!-- <div class="right none2" style="position:absolute;right:0px;top:13px;" id="btn2" tapmode onclick="settime(this)" >获取验证码</div> -->
+                            <input type="button" value="获取验证码" class="right none2" style="position:absolute;right:0px;top:13px;" id="btn2" tapmode onclick="settime(this)" />
+
+                        </div>
+>>>>>>> f621c026adf6dd12361f0fab1a86307bf09338fb
                     </div>
-                </div>
-            </li>
-        </ul>
+                </li>
+            </ul>
+        </form>
     </div>
     <div class="butn">
         <div class="aui-btn aui-btn-danger aui-btn-block btn" style="border-radius:20px;" id="btn">同意协议并注册</div>
     </div>
     <div class="yuedu">
-      已阅读并同意以下协议：<a href="">淘宝平台服务协议</a><span>、</span><a href="">隐私权政策</a><span>、</span><a href="">法律声明</a><span>、</span><a href="">支付宝及客户端服务协议</a>
+        已阅读并同意以下协议：<a href="">淘宝平台服务协议</a><span>、</span><a href="">隐私权政策</a><span>、</span><a href="">法律声明</a><span>、</span><a href="">支付宝及客户端服务协议</a>
     </div>
 </body>
 <script type="text/javascript" src="../script/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../script/api.js"></script>
+<script src="../script/ajax.js"></script>
 <script type="text/javascript">
     apiready = function() {
         api.setStatusBarStyle({
@@ -163,25 +188,63 @@
         var headerH = $api.offset(header).h;
 
     };
+    // 发送验证码60s计时
+    var countdown = 60;
+
+    function settime(obj) {
+      //验证手机验证码
+        var phone = document.getElementById('name').value;
+        if (!(/^1[34578]\d{9}$/.test(phone))) {
+            api.toast({
+                msg: '手机号码有误，请重新输入',
+                duration: 2300,
+                location: 'middle'
+            });
+            return false;
+        }
+
+        //获取验证码按钮倒计时
+        if (countdown == 0) {
+            obj.removeAttribute("disabled");
+            obj.value = "免费获取验证码";
+            countdown = 60;
+            return;
+        } else {
+            obj.setAttribute("disabled", true);
+            obj.value = "重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function() {
+            settime(obj)
+        }, 1000)
+    }
 
     var nameInput = document.querySelector("#name")
     var pwdInput = document.querySelector("#password")
+    var pwdInput2 = document.querySelector("#password2")
     var btn = document.querySelector("#btn")
+
+
+
+    //同意协议并注册按钮样式
     nameInput.onkeyup = function() {
-        if (nameInput.value != "") {
-            if (pwdInput.value != "") {
-              $("#btn").removeClass("noneee");
+            if (nameInput.value != "") {
+                if (pwdInput2.value != "") {
+                    if (pwdInput.value != "") {
+                        $("#btn").removeClass("noneee");
 
-                $("#btn").addClass("btn");
+                        $("#btn").addClass("btn");
 
-            } else {
-                $("#btn").addClass("btn");
-                $("#btn").removeClass("noneee");
+                    } else {
+                        $("#btn").addClass("btn");
+                        $("#btn").removeClass("noneee");
+                    }
+                }
             }
         }
-    }
+        // 获取验证码样式
     nameInput.onkeyup = function() {
-        if (nameInput.value != "") {
+            if (nameInput.value != "") {
 
                 $("#btn2").addClass("none");
                 $("#btn2").removeClass("none2");
@@ -191,18 +254,102 @@
                 $("#btn2").removeClass("none");
             }
         }
+        //同意协议并注册按钮样式
 
     pwdInput.onkeyup = function() {
+            if (pwdInput.value != "") {
+                if (pwdInput2.value != "") {
+                    if (nameInput.value != "") {
+                        $("#btn").addClass("noneee");
+                        $("#btn").removeClass("btn");
+                    } else {
+                        $("#btn").addClass("btn");
+                        $("#btn").removeClass("noneee");
+                    }
+                }
+            }
+        }
+        //同意协议并注册按钮样式
+
+    pwdInput2.onkeyup = function() {
         if (pwdInput.value != "") {
-            if (nameInput.value != "") {
-                $("#btn").addClass("noneee");
-                $("#btn").removeClass("btn");
-            } else {
-                $("#btn").addClass("btn");
-                $("#btn").removeClass("noneee");
+            if (pwdInput2.value != "") {
+                if (nameInput.value != "") {
+                    $("#btn").addClass("noneee");
+                    $("#btn").removeClass("btn");
+                } else {
+                    $("#btn").addClass("btn");
+                    $("#btn").removeClass("noneee");
+                }
             }
         }
     }
+
+    // 发送验证码
+    let registerBtn = $api.byId('btn2');
+    registerBtn.addEventListener('click', function() {
+        // let mobile = $api.byId('name').value;
+        let mobile = document.querySelector('#name').value;
+        ajaxGet('/sms/send?mobile=' + mobile)
+            .then(res => {
+                api.toast({
+                    msg: '验证码已发送',
+                    duration: 2000,
+                    location: 'middle'
+                });
+            })
+            .catch(err => console.log(JSON.stringify(err)))
+    })
+
+//点击提交
+    let submitBtn = $api.byId('btn');
+    submitBtn.addEventListener('click', function() {
+        // let form = document.querySelector("#form1");
+
+        let mobile = document.querySelector('input[name=mobile]').value;
+        let code = document.querySelector('input[name=code]').value;
+        let code2 = document.querySelector('input[name=code2]').value;
+        api.ajax({
+            url: 'http://192.168.2.24/api/index/register',
+            method: 'post',
+            data: {
+                values: {
+                    mobile: mobile,
+                    code: code,
+                    code2: code2,
+                }
+            }
+        }, function(ret, err) {
+            if (ret) {
+                $api.setStorage('token', ret.data.ACCESS_TOKEN);
+                api.openWin({
+                    name: 'index',
+                    url: '../index.html',
+                    pageParam: {
+                        name: 'test'
+                    }
+                });
+
+            } else {
+                alert(JSON.stringify(err.msg));
+            }
+        });
+
+        // ajaxPost('/index/register',{'mobile':mobile, 'code':code})
+        // .then(res => {
+        //   api.setStorage('token', res.data.ACCESS_TOKEN)
+        //   console.log('注册成功')
+        // })
+        // .catch(err => {
+        //   api.toast({
+        //     msg: err.msg,
+        //     duration: 2000,
+        //     location: 'middle'
+        //   });
+        //   console.log(JSON.stringify(err));
+        // })
+        // console.log(JSON.stringify({'mobile':mobile, 'code':code}));
+    })
 </script>
 
 </html>
