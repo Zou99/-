@@ -82,6 +82,7 @@
 <script type="text/javascript" src="./script/aui-tab.js"></script>
 <script type="text/javascript" src="./script/aui-slide.js"></script>
 <script type="text/javascript" src="./script/tabo.js"></script>
+<script type="text/javascript" src="./script/is_login.js"></script>
 <script type="text/javascript">
     apiready = function() {
         api.parseTapmode();
@@ -94,7 +95,8 @@
         // 最新api.js为了适配iPhoneX增加的方法，修复底部Footer部分与iPhoneX的底部虚拟横条键重叠的问题；
         var footerH = $api.fixTabBar(footer);
         funIniGroup();
-}
+
+  }
 
 
 function funIniGroup(){
@@ -154,13 +156,25 @@ var tab = new auiTab({
     index: 1,
     repeatClick: true
 }, function(ret) {
-    api.setFrameGroupIndex({
-        name: 'group',
-        index: (ret.index-1),
-        scroll: true
+    // $api.setStorage('token', "sssss");
 
-    });
+    if(ret.index !=1){
+      if(isLogin(2)){
 
+      }else{
+          api.setFrameGroupIndex({
+              name: 'group',
+              index: (ret.index-1),
+              scroll: true
+          });
+      }
+    }else{
+      api.setFrameGroupIndex({
+          name: 'group',
+          index: (ret.index-1),
+          scroll: true
+      });
+    }
 });
 </script>
 

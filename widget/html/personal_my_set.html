@@ -61,6 +61,7 @@
         <div class="dqf_title">关于手机淘宝<i class="icon ion-chevron-right"></i></div>
       </div>
   </div>
+  <div class="dqf_footer" tapmode onclick="loginOut()">退出当前账户</div>
   <script type="text/javascript" src="../script/api.js"></script>
   <script>
     apiready = function() {
@@ -143,6 +144,16 @@
       api.openWin({
           name: 'install_about_taobao',
           url: './install_about_taobao.html',
+          pageParam: {
+              name: 'test'
+          }
+      });
+    }
+    function loginOut(){
+      $api.rmStorage('token');
+      api.openWin({
+          name: 'login',
+          url: './login.html',
           pageParam: {
               name: 'test'
           }

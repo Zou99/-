@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
-    <title>title</title>
+    <title>登录</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css" />
     <link rel="stylesheet" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
@@ -81,7 +81,7 @@
             <li class="aui-list-item">
                 <div class="aui-list-item-inner">
                     <div class="aui-list-item-input" style="padding-left:0.8rem;">
-                        <input type="text" placeholder="请输入淘宝账户" id="name">
+                        <input type="text" placeholder="请输入淘宝账户(手机号)" id="name">
                     </div>
                 </div>
             </li>
@@ -96,13 +96,13 @@
         </ul>
     </div>
     <div class="butn">
-        <div class="aui-btn aui-btn-danger aui-btn-block btn" style="border-radius:20px;" id="btn">登录</div>
+        <div class="aui-btn aui-btn-danger aui-btn-block btn" onclick="login()" style="border-radius:20px;" id="btn">登录</div>
     </div>
     <div class="foot">
         <div class="left">
             短信验证码登录
         </div>
-        <div class="right">
+        <div class="right" id="dqf_register_btn">
             注册
         </div>
     </div>
@@ -118,10 +118,50 @@
         });
         var header = $api.byId('aui-header');
         $api.fixStatusBar(header);
-        var headerH = $api.offset(header).h;
+        var regisBtn = $api.byId('dqf_register_btn');
+        regisBtn.onclick = function(){
+          api.openWin({
+              name: 'register',
+              url: './register.html',
+              pageParam: {
+                  name: 'test'
+              }
+          });
+
+        }
 
     };
 
+    // 登录
+    function login(){
+      var name = document.getElementById("name").value;
+      var pwd = document.getElementById("password").value;
+      api.ajax({
+          url: 'http://sn.huyp.xin/api/index/login',
+          method: 'post',
+          data: {
+              values: {
+                "account": name,
+                "password": pwd
+              }
+          }
+      },function(ret, err){
+          if (ret) {
+              if(ret ['msg'] == "ok"){
+                $api.setStorage('token', ret ['data']['ACCESS_TOKEN']);
+                api.closeWin({
+                    name: 'login'
+                });
+
+              }else{
+                alert(ret ['msg']);
+              }
+          } else {
+              alert( JSON.stringify( err ) );
+          }
+      });
+
+    }
     var nameInput = document.querySelector("#name")
     var pwdInput = document.querySelector("#password")
     var btn = document.querySelector("#btn")

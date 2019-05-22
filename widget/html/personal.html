@@ -130,7 +130,7 @@
                 <div class="dqf_alltool">查看全部工具&gt;</div>
             </div>
             <div class="dqf_tool_list clearfix">
-                <div class="dqf_tool_box">
+                <div class="dqf_tool_box" tapmode onclick="test()">
                     <div class="dqf_img_box">
                         <img src="../image/tool_01.png" alt="">
                     </div>
@@ -161,10 +161,29 @@
 
 </html>
 <script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/is_login.js"></script>
 <script type="text/javascript">
     apiready = function() {
         var header = $api.byId("dqf_header");
         $api.fixStatusBar(header);
+    }
+    // 登录
+    function test(){
+      var tokens = $api.getStorage('token');
+      api.ajax({
+          url: 'http://sn.huyp.xin/api/user/info',
+          method: 'get',
+          headers: {
+            "Authorization": "bearer " + tokens
+          }
+      },function(ret, err){
+          if (ret) {
+              alert( JSON.stringify( ret ) );
+          } else {
+              alert( JSON.stringify( err ) );
+          }
+      });
+
     }
     function openMySet(){
       api.openWin({

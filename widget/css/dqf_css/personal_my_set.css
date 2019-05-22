@@ -92,11 +92,15 @@
 .dqf_box .dqf_option_box:first-child{
   border: none;
 }
-
-
-
-
-
-
-
-
+.dqf_footer{
+  height: 50px;
+  width: 100%;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE7700), to(#FF5511));
+  line-height: 50px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 18px;
+}
